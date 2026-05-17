@@ -1,0 +1,9 @@
+project.manifest = manifest.xml
+
+# Compiler options
+base.sourcePath = source
+base.resourcePath = resources
+base.barrelPath = barrel
+
+fr165.sourcePath = $(base.sourcePath)
+fr165.resourcePath = $(base.resourcePath)

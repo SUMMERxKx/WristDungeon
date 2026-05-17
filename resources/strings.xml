@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<strings>
+    <string id="AppName">Wrist Dungeon</string>
+    <string id="MenuPlay">Play</string>
+    <string id="MenuInstructions">How To Play</string>
+    <string id="MenuQuit">Quit</string>
+    <string id="PauseResume">Resume</string>
+    <string id="PauseRestart">Restart</string>
+    <string id="PauseQuit">Quit</string>
+    <string id="GameOver">GAME OVER</string>
+    <string id="YouWin">YOU WIN!</string>
+    <string id="Score">Score</string>
+    <string id="Level">Level</string>
+    <string id="Ammo">Ammo</string>
+    <string id="HP">HP</string>
+</strings>
