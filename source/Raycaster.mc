@@ -52,10 +52,10 @@ class Raycaster {
             var deltaDistX = (cosA == 0.0f) ? 1e30f : _absF(1.0f / cosA);
             var deltaDistY = (sinA == 0.0f) ? 1e30f : _absF(1.0f / sinA);
 
-            var stepX as Number;
-            var stepY as Number;
-            var sideDistX as Float;
-            var sideDistY as Float;
+            var stepX = 0;
+            var stepY = 0;
+            var sideDistX = 0.0f;
+            var sideDistY = 0.0f;
 
             if (cosA < 0.0f) {
                 stepX    = -1;
@@ -91,7 +91,7 @@ class Raycaster {
             }
 
             // Perp wall distance (uncorrected fish-eye)
-            var perpDist as Float;
+            var perpDist = 0.0f;
             if (side == 0) {
                 perpDist = (mapX.toFloat() - posX + (1.0f - stepX.toFloat()) / 2.0f) / cosA;
             } else {
@@ -132,7 +132,7 @@ class Raycaster {
 
     // ── Private: wall color from distance and side ────────────────────────────
     hidden function _wallColor(dist as Float, side as Number) as Number {
-        var brightness as Number;
+        var brightness = 0;
         if (dist < 2.0f)      { brightness = 0; }
         else if (dist < 4.0f) { brightness = 1; }
         else if (dist < 6.0f) { brightness = 2; }
