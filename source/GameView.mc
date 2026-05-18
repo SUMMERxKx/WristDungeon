@@ -167,11 +167,11 @@ class GameDelegate extends WatchUi.BehaviorDelegate {
             if (typ == WatchUi.PRESS_TYPE_ACTION) {
                 player.movingForward = true;
                 _upPressed = true;
-            } else if (typ == WatchUi.PRESS_TYPE_RELEASE) {
+            } else if (typ == 0) {   // PRESS_TYPE_RELEASE
                 player.movingForward = false;
                 _upPressed = false;
                 _upHoldMs  = 0;
-            } else if (typ == WatchUi.PRESS_TYPE_HOLD) {
+            } else if (typ == 1) {   // PRESS_TYPE_HOLD
                 // Long press toggle minimap
                 gs.showMinimap = !gs.showMinimap;
                 gs.markDirty();
@@ -182,7 +182,7 @@ class GameDelegate extends WatchUi.BehaviorDelegate {
         if (key == WatchUi.KEY_DOWN) {
             if (typ == WatchUi.PRESS_TYPE_ACTION) {
                 player.movingBack = true;
-            } else if (typ == WatchUi.PRESS_TYPE_RELEASE) {
+            } else if (typ == 0) {   // PRESS_TYPE_RELEASE
                 player.movingBack = false;
             }
             return true;
@@ -202,7 +202,7 @@ class GameDelegate extends WatchUi.BehaviorDelegate {
                 var menuView = new MenuView();
                 var menuDelegate = new MenuDelegate(menuView);
                 WatchUi.pushView(menuView, menuDelegate, WatchUi.SLIDE_UP);
-            } else if (typ == WatchUi.PRESS_TYPE_HOLD) {
+            } else if (typ == 1) {   // PRESS_TYPE_HOLD
                 // Force quit after 2s
                 gs.mode = C.MODE_MENU;
                 WatchUi.popView(WatchUi.SLIDE_DOWN);
@@ -238,9 +238,9 @@ class GameDelegate extends WatchUi.BehaviorDelegate {
         if (gs.mode != C.MODE_GAME) { return false; }
         var player = gs.player as Player;
         var dir = evt.getDirection();
-        var x   = evt.getCoordinates()[0];
 
-        if (dir == WatchUi.SWIPE_UP && x > C.SCREEN_W / 3 && x < 2 * C.SCREEN_W / 3) {
+        // SwipeEvent on fr165 has no getCoordinates(); direction-only is supported.
+        if (dir == WatchUi.SWIPE_UP) {
             player.movingForward = true;
             // Will be cleared next tick automatically (single step on swipe)
         }

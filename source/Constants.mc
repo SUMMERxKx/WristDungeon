@@ -1,5 +1,7 @@
 // Constants.mc — All magic numbers, colors, and map data for Wrist Dungeon
 
+import Toybox.Lang;
+
 module WristDungeon {
 
     // ── Colors ──────────────────────────────────────────────────────────────
