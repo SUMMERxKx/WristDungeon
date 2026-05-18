@@ -31,6 +31,8 @@ class GameView extends WatchUi.View {
     function onShow() as Void {
         // 10 fps — 100ms per frame
         _timer.start(method(:gameLoop), 100, true);
+        GameState.get().needsRedraw = true;
+        WatchUi.requestUpdate();
     }
 
     function onHide() as Void {

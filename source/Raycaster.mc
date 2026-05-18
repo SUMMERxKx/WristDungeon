@@ -8,7 +8,7 @@ class Raycaster {
 
     // Flat pre-computed value used for wall projection
     // focal = (screen_width/2) / tan(FOV/2)  = 120 / tan(30°) ≈ 207.8
-    hidden var _focal as Float = 207.8f;
+    hidden var _focal as Float = 337.7f;   // (SCREEN_W/2) / tan(30°) for 390px wide display
 
     function initialize() {
     }

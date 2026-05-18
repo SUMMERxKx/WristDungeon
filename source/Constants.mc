@@ -38,13 +38,13 @@ module WristDungeon {
     const COLOR_MENU_SELECT  = 0xFFDD00;
     const COLOR_MENU_NORMAL  = 0xBBBBBB;
 
-    // ── Screen dimensions ────────────────────────────────────────────────────
-    const SCREEN_W           = 240;
-    const SCREEN_H           = 240;
-    const VIEWPORT_H         = 170;
-    const HUD_H              = 70;
-    const HUD_Y              = 170;
-    const NUM_RAYS           = 60;       // rays per frame (1 per 4 columns)
+    // ── Screen dimensions (fr165: 390×390 AMOLED) ─────────────────────────
+    const SCREEN_W           = 390;
+    const SCREEN_H           = 390;
+    const VIEWPORT_H         = 276;
+    const HUD_H              = 114;
+    const HUD_Y              = 276;
+    const NUM_RAYS           = 98;       // rays per frame (1 per 4 columns)
     const RAY_STEP           = 4;        // screen columns per ray
 
     // ── Gameplay ─────────────────────────────────────────────────────────────
@@ -66,8 +66,8 @@ module WristDungeon {
     const LEVEL_SCORE        = 500;
     const AMMO_PICKUP        = 10;
     const HEALTH_PICKUP      = 25;
-    const MINIMAP_SIZE       = 40;
-    const MINIMAP_TILE       = 2;
+    const MINIMAP_SIZE       = 65;
+    const MINIMAP_TILE       = 3;
 
     // ── Trig lookup table (360 entries, degrees) ─────────────────────────────
     // Initialized by App.mc::initialize(), stored here for global access.
@@ -88,11 +88,11 @@ module WristDungeon {
     var MAP_1 as Array<String> = [
         "111111111111",
         "1P0000000001",
-        "1010111011011",  // note: trimmed to 12 chars in actual use
-        "1000000000011",
-        "10110011001l",
+        "101011101101",
+        "100000000001",
+        "101100110011",
         "1000E0000001",
-        "1011001100l1",
+        "101100110011",
         "10000A000001",
         "101100110011",
         "1000000H0001",
@@ -108,7 +108,7 @@ module WristDungeon {
         "11111111111111",
         "1P00000000E001",
         "10111011011011",
-        "100000000000l1",
+        "10000000000001",
         "10110011001111",
         "10000000000001",
         "10111011011011",

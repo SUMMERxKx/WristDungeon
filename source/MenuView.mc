@@ -43,33 +43,39 @@ class MenuView extends WatchUi.View {
 
     // ── Main Menu ─────────────────────────────────────────────────────────
     hidden function _drawMainMenu(dc as Graphics.Dc) as Void {
+        var cx = C.SCREEN_W / 2;
+        var titleY = C.SCREEN_H / 8;
+        var lineY  = titleY + 95;
+        var itemY0 = lineY + 18;
+
         // Title
         dc.setColor(C.COLOR_MENU_TITLE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 30, Graphics.FONT_MEDIUM, "WRIST", Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(120, 60, Graphics.FONT_MEDIUM, "DUNGEON", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, titleY, Graphics.FONT_MEDIUM, "WRIST", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, titleY + 35, Graphics.FONT_MEDIUM, "DUNGEON", Graphics.TEXT_JUSTIFY_CENTER);
 
         // Decorative line
         dc.setColor(C.COLOR_MID_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawLine(40, 95, 200, 95);
+        dc.drawLine(cx - 80, lineY, cx + 80, lineY);
 
         // Menu items
         var items = ["PLAY", "HOW TO PLAY", "QUIT"];
         for (var i = 0; i < items.size(); i++) {
             var color = (i == _menuItem) ? C.COLOR_MENU_SELECT : C.COLOR_MENU_NORMAL;
             dc.setColor(color, Graphics.COLOR_TRANSPARENT);
-            var prefix = (i == _menuItem) ? "▶ " : "  ";
-            dc.drawText(120, 108 + i * 28, Graphics.FONT_SMALL, prefix + items[i], Graphics.TEXT_JUSTIFY_CENTER);
+            var prefix = (i == _menuItem) ? "> " : "  ";
+            dc.drawText(cx, itemY0 + i * 42, Graphics.FONT_SMALL, prefix + items[i], Graphics.TEXT_JUSTIFY_CENTER);
         }
 
         // Version tag
         dc.setColor(C.COLOR_DARK_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 220, Graphics.FONT_XTINY, "v1.0 | FR165", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, C.SCREEN_H - 32, Graphics.FONT_XTINY, "v1.0 | FR165", Graphics.TEXT_JUSTIFY_CENTER);
     }
 
     // ── Instructions ──────────────────────────────────────────────────────
     hidden function _drawInstructions(dc as Graphics.Dc) as Void {
+        var cx = C.SCREEN_W / 2;
         dc.setColor(C.COLOR_MENU_TITLE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 10, Graphics.FONT_SMALL, "HOW TO PLAY", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, 16, Graphics.FONT_SMALL, "HOW TO PLAY", Graphics.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(C.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         var lines = [
@@ -91,65 +97,68 @@ class MenuView extends WatchUi.View {
         }
 
         dc.setColor(C.COLOR_MID_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 228, Graphics.FONT_XTINY, "BACK to return", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, C.SCREEN_H - 28, Graphics.FONT_XTINY, "BACK to return", Graphics.TEXT_JUSTIFY_CENTER);
     }
 
     // ── Pause ─────────────────────────────────────────────────────────────
     hidden function _drawPause(dc as Graphics.Dc) as Void {
         var gs = GameState.get();
+        var cx = C.SCREEN_W / 2;
         dc.setColor(C.COLOR_MENU_TITLE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 55, Graphics.FONT_MEDIUM, "PAUSED", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, C.SCREEN_H / 7, Graphics.FONT_MEDIUM, "PAUSED", Graphics.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(C.COLOR_MID_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawLine(55, 95, 185, 95);
+        dc.drawLine(cx - 65, C.SCREEN_H / 4, cx + 65, C.SCREEN_H / 4);
 
         var items = ["RESUME", "RESTART", "QUIT"];
         for (var i = 0; i < items.size(); i++) {
             var color = (i == _menuItem) ? C.COLOR_MENU_SELECT : C.COLOR_MENU_NORMAL;
             dc.setColor(color, Graphics.COLOR_TRANSPARENT);
-            var prefix = (i == _menuItem) ? "▶ " : "  ";
-            dc.drawText(120, 110 + i * 30, Graphics.FONT_SMALL, prefix + items[i], Graphics.TEXT_JUSTIFY_CENTER);
+            var prefix = (i == _menuItem) ? "> " : "  ";
+            dc.drawText(cx, C.SCREEN_H / 3 + i * 45, Graphics.FONT_SMALL, prefix + items[i], Graphics.TEXT_JUSTIFY_CENTER);
         }
 
         // Show score
         dc.setColor(C.COLOR_SCORE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 210, Graphics.FONT_XTINY, "Score: " + gs.score.toString(), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, C.SCREEN_H - 50, Graphics.FONT_XTINY, "Score: " + gs.score.toString(), Graphics.TEXT_JUSTIFY_CENTER);
     }
 
     // ── Game Over ─────────────────────────────────────────────────────────
     hidden function _drawGameOver(dc as Graphics.Dc) as Void {
         var gs = GameState.get();
+        var cx = C.SCREEN_W / 2;
         dc.setColor(C.COLOR_HP_RED, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 60, Graphics.FONT_LARGE, "GAME OVER", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, C.SCREEN_H / 6, Graphics.FONT_LARGE, "GAME OVER", Graphics.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(C.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 110, Graphics.FONT_MEDIUM, "Score", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, C.SCREEN_H / 3, Graphics.FONT_MEDIUM, "Score", Graphics.TEXT_JUSTIFY_CENTER);
         dc.setColor(C.COLOR_SCORE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 135, Graphics.FONT_MEDIUM, gs.score.toString(), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, C.SCREEN_H / 3 + 30, Graphics.FONT_MEDIUM, gs.score.toString(), Graphics.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(C.COLOR_MENU_NORMAL, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 175, Graphics.FONT_SMALL, "Level " + gs.level.toString(), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, C.SCREEN_H / 2, Graphics.FONT_SMALL, "Level " + gs.level.toString(), Graphics.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(C.COLOR_MENU_SELECT, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 210, Graphics.FONT_XTINY, "START: Play Again  BACK: Menu", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, C.SCREEN_H - 50, Graphics.FONT_XTINY, "START: Play Again  BACK: Menu", Graphics.TEXT_JUSTIFY_CENTER);
     }
 
     // ── Win ───────────────────────────────────────────────────────────────
     hidden function _drawWin(dc as Graphics.Dc) as Void {
         var gs = GameState.get();
+        var cx = C.SCREEN_W / 2;
         dc.setColor(C.COLOR_HP_GREEN, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 50, Graphics.FONT_LARGE, "YOU WIN!", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, C.SCREEN_H / 7, Graphics.FONT_LARGE, "YOU WIN!", Graphics.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(C.COLOR_AMMO, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 95, Graphics.FONT_SMALL, "Dungeon Cleared!", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, C.SCREEN_H / 4, Graphics.FONT_SMALL, "Dungeon Cleared!", Graphics.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(C.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 125, Graphics.FONT_MEDIUM, "Score", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, C.SCREEN_H / 3, Graphics.FONT_MEDIUM, "Score", Graphics.TEXT_JUSTIFY_CENTER);
         dc.setColor(C.COLOR_SCORE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 148, Graphics.FONT_MEDIUM, gs.score.toString(), Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, C.SCREEN_H / 3 + 30, Graphics.FONT_MEDIUM, gs.score.toString(), Graphics.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(C.COLOR_MENU_SELECT, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(120, 210, Graphics.FONT_XTINY, "START: Play Again  BACK: Menu", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, C.SCREEN_H - 50, Graphics.FONT_XTINY, "START: Play Again  BACK: Menu", Graphics.TEXT_JUSTIFY_CENTER);
     }
 
 }
@@ -179,6 +188,53 @@ class MenuDelegate extends WatchUi.BehaviorDelegate {
         return false;
     }
 
+    // START/ENTER on fr165 — same as selecting the highlighted menu item
+    function onSelect() as Boolean {
+        var gs = GameState.get();
+        if (gs.mode == C.MODE_MENU)  { return _confirmMainMenu(gs); }
+        if (gs.mode == C.MODE_PAUSE) { return _confirmPause(gs); }
+        return false;
+    }
+
+    hidden function _isConfirmKey(key as Number) as Boolean {
+        return key == WatchUi.KEY_START || key == WatchUi.KEY_ENTER;
+    }
+
+    hidden function _confirmMainMenu(gs as GameState) as Boolean {
+        var sel = _view.getSelectedItem();
+        if (sel == 0) {  // Play
+            gs.resetGame();
+            gs.mode = C.MODE_GAME;
+            var gameView = new GameView();
+            var gameDelegate = new GameDelegate(gameView);
+            WatchUi.pushView(gameView, gameDelegate, WatchUi.SLIDE_LEFT);
+        } else if (sel == 1) {  // Instructions
+            gs.mode = C.MODE_INSTRUCTIONS;
+            WatchUi.requestUpdate();
+        } else {  // Quit
+            System.exit();
+        }
+        return true;
+    }
+
+    hidden function _confirmPause(gs as GameState) as Boolean {
+        var sel = _view.getSelectedItem();
+        if (sel == 0) {  // Resume
+            gs.mode  = C.MODE_GAME;
+            gs.needsRedraw = true;
+            WatchUi.popView(WatchUi.SLIDE_RIGHT);
+        } else if (sel == 1) {  // Restart
+            gs.resetGame();
+            gs.mode = C.MODE_GAME;
+            WatchUi.popView(WatchUi.SLIDE_DOWN);
+        } else {  // Quit
+            gs.mode = C.MODE_MENU;
+            WatchUi.popView(WatchUi.SLIDE_DOWN);
+            WatchUi.popView(WatchUi.SLIDE_DOWN);
+        }
+        return true;
+    }
+
     hidden function _handleMainMenu(key as Number, typ as Number, gs as GameState) as Boolean {
         if (key == WatchUi.KEY_UP && typ == WatchUi.PRESS_TYPE_ACTION) {
             _view.setSelectedItem((_view.getSelectedItem() - 1 + 3) % 3);
@@ -186,20 +242,8 @@ class MenuDelegate extends WatchUi.BehaviorDelegate {
         } else if (key == WatchUi.KEY_DOWN && typ == WatchUi.PRESS_TYPE_ACTION) {
             _view.setSelectedItem((_view.getSelectedItem() + 1) % 3);
             WatchUi.requestUpdate();
-        } else if (key == WatchUi.KEY_START && typ == WatchUi.PRESS_TYPE_ACTION) {
-            var sel = _view.getSelectedItem();
-            if (sel == 0) {  // Play
-                gs.resetGame();
-                gs.mode = C.MODE_GAME;
-                var gameView = new GameView();
-                var gameDelegate = new GameDelegate(gameView);
-                WatchUi.pushView(gameView, gameDelegate, WatchUi.SLIDE_LEFT);
-            } else if (sel == 1) {  // Instructions
-                gs.mode = C.MODE_INSTRUCTIONS;
-                WatchUi.requestUpdate();
-            } else {  // Quit
-                System.exit();
-            }
+        } else if (_isConfirmKey(key) && typ == WatchUi.PRESS_TYPE_ACTION) {
+            _confirmMainMenu(gs);
         }
         return true;
     }
@@ -219,21 +263,8 @@ class MenuDelegate extends WatchUi.BehaviorDelegate {
         } else if (key == WatchUi.KEY_DOWN && typ == WatchUi.PRESS_TYPE_ACTION) {
             _view.setSelectedItem((_view.getSelectedItem() + 1) % 3);
             WatchUi.requestUpdate();
-        } else if (key == WatchUi.KEY_START && typ == WatchUi.PRESS_TYPE_ACTION) {
-            var sel = _view.getSelectedItem();
-            if (sel == 0) {  // Resume
-                gs.mode  = C.MODE_GAME;
-                gs.needsRedraw = true;
-                WatchUi.popView(WatchUi.SLIDE_RIGHT);
-            } else if (sel == 1) {  // Restart
-                gs.resetGame();
-                gs.mode = C.MODE_GAME;
-                WatchUi.popView(WatchUi.SLIDE_DOWN);
-            } else {  // Quit
-                gs.mode = C.MODE_MENU;
-                WatchUi.popView(WatchUi.SLIDE_DOWN);
-                WatchUi.popView(WatchUi.SLIDE_DOWN);
-            }
+        } else if (_isConfirmKey(key) && typ == WatchUi.PRESS_TYPE_ACTION) {
+            _confirmPause(gs);
         } else if (key == WatchUi.KEY_LAP) {
             // Also resume on back press from pause
             gs.mode  = C.MODE_GAME;
@@ -244,7 +275,7 @@ class MenuDelegate extends WatchUi.BehaviorDelegate {
     }
 
     hidden function _handleEndScreen(key as Number, gs as GameState) as Boolean {
-        if (key == WatchUi.KEY_START) {
+        if (_isConfirmKey(key)) {
             gs.resetGame();
             gs.mode = C.MODE_GAME;
             var gameView = new GameView();
