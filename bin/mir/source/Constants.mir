@@ -1,0 +1,314 @@
+[ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 3; @symbol_moduledef = [WristDungeon,3,7,19]; ]
+module WristDungeon {
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 3; ]
+    <init> {
+[ "/Users/samar/Desktop/DOOM/source/Constants.mc" 72 8 ]
+        %tmp.2 = 360;
+        %tmp.1 = newa Array<Float> %tmp.2;
+        symbol [ Array %tmp.1 72 39 44 ];
+        symbol [ Float %tmp.1 72 45 50 ];
+        putv self :sinTable %tmp.1;
+[ "/Users/samar/Desktop/DOOM/source/Constants.mc" 73 8 ]
+        %tmp.4 = 360;
+        %tmp.3 = newa Array<Float> %tmp.4;
+        symbol [ Array %tmp.3 73 39 44 ];
+        symbol [ Float %tmp.3 73 45 50 ];
+        putv self :cosTable %tmp.3;
+[ "/Users/samar/Desktop/DOOM/source/Constants.mc" 86 8 ]
+        %tmp.5 = newa 12 Array<String>;
+        symbol [ Array %tmp.5 99 9 14 ];
+        symbol [ String %tmp.5 99 15 21 ];
+        %tmp.6 = "111111111111";
+        %tmp.7 = dup %tmp.5;
+        %tmp.8 = aputv %tmp.7 0 %tmp.6;
+        %tmp.9 = "1P0000000001";
+        %tmp.10 = dup %tmp.8;
+        %tmp.11 = aputv %tmp.10 1 %tmp.9;
+        %tmp.12 = "1010111011011";
+        %tmp.13 = dup %tmp.11;
+        %tmp.14 = aputv %tmp.13 2 %tmp.12;
+        %tmp.15 = "1000000000011";
+        %tmp.16 = dup %tmp.14;
+        %tmp.17 = aputv %tmp.16 3 %tmp.15;
+        %tmp.18 = "10110011001l";
+        %tmp.19 = dup %tmp.17;
+        %tmp.20 = aputv %tmp.19 4 %tmp.18;
+        %tmp.21 = "1000E0000001";
+        %tmp.22 = dup %tmp.20;
+        %tmp.23 = aputv %tmp.22 5 %tmp.21;
+        %tmp.24 = "1011001100l1";
+        %tmp.25 = dup %tmp.23;
+        %tmp.26 = aputv %tmp.25 6 %tmp.24;
+        %tmp.27 = "10000A000001";
+        %tmp.28 = dup %tmp.26;
+        %tmp.29 = aputv %tmp.28 7 %tmp.27;
+        %tmp.30 = "101100110011";
+        %tmp.31 = dup %tmp.29;
+        %tmp.32 = aputv %tmp.31 8 %tmp.30;
+        %tmp.33 = "1000000H0001";
+        %tmp.34 = dup %tmp.32;
+        %tmp.35 = aputv %tmp.34 9 %tmp.33;
+        %tmp.36 = "10000E000001";
+        %tmp.37 = dup %tmp.35;
+        %tmp.38 = aputv %tmp.37 10 %tmp.36;
+        %tmp.39 = "111111111111";
+        %tmp.40 = dup %tmp.38;
+        %tmp.41 = aputv %tmp.40 11 %tmp.39;
+        putv self :MAP_1 %tmp.41;
+[ "/Users/samar/Desktop/DOOM/source/Constants.mc" 105 8 ]
+        %tmp.42 = newa 14 Array<String>;
+        symbol [ Array %tmp.42 120 9 14 ];
+        symbol [ String %tmp.42 120 15 21 ];
+        %tmp.43 = "11111111111111";
+        %tmp.44 = dup %tmp.42;
+        %tmp.45 = aputv %tmp.44 0 %tmp.43;
+        %tmp.46 = "1P00000000E001";
+        %tmp.47 = dup %tmp.45;
+        %tmp.48 = aputv %tmp.47 1 %tmp.46;
+        %tmp.49 = "10111011011011";
+        %tmp.50 = dup %tmp.48;
+        %tmp.51 = aputv %tmp.50 2 %tmp.49;
+        %tmp.52 = "100000000000l1";
+        %tmp.53 = dup %tmp.51;
+        %tmp.54 = aputv %tmp.53 3 %tmp.52;
+        %tmp.55 = "10110011001111";
+        %tmp.56 = dup %tmp.54;
+        %tmp.57 = aputv %tmp.56 4 %tmp.55;
+        %tmp.58 = "10000000000001";
+        %tmp.59 = dup %tmp.57;
+        %tmp.60 = aputv %tmp.59 5 %tmp.58;
+        %tmp.61 = "10111011011011";
+        %tmp.62 = dup %tmp.60;
+        %tmp.63 = aputv %tmp.62 6 %tmp.61;
+        %tmp.64 = "10000A000H0001";
+        %tmp.65 = dup %tmp.63;
+        %tmp.66 = aputv %tmp.65 7 %tmp.64;
+        %tmp.67 = "10111011011011";
+        %tmp.68 = dup %tmp.66;
+        %tmp.69 = aputv %tmp.68 8 %tmp.67;
+        %tmp.70 = "10000000000001";
+        %tmp.71 = dup %tmp.69;
+        %tmp.72 = aputv %tmp.71 9 %tmp.70;
+        %tmp.73 = "10110011001111";
+        %tmp.74 = dup %tmp.72;
+        %tmp.75 = aputv %tmp.74 10 %tmp.73;
+        %tmp.76 = "10000E0000E001";
+        %tmp.77 = dup %tmp.75;
+        %tmp.78 = aputv %tmp.77 11 %tmp.76;
+        %tmp.79 = "10111011011011";
+        %tmp.80 = dup %tmp.78;
+        %tmp.81 = aputv %tmp.80 12 %tmp.79;
+        %tmp.82 = "11111111111111";
+        %tmp.83 = dup %tmp.81;
+        %tmp.84 = aputv %tmp.83 13 %tmp.82;
+        putv self :MAP_2 %tmp.84;
+[ "/Users/samar/Desktop/DOOM/source/Constants.mc" 126 8 ]
+        %tmp.85 = newa 16 Array<String>;
+        symbol [ Array %tmp.85 143 9 14 ];
+        symbol [ String %tmp.85 143 15 21 ];
+        %tmp.86 = "1111111111111111";
+        %tmp.87 = dup %tmp.85;
+        %tmp.88 = aputv %tmp.87 0 %tmp.86;
+        %tmp.89 = "1P0000000000E001";
+        %tmp.90 = dup %tmp.88;
+        %tmp.91 = aputv %tmp.90 1 %tmp.89;
+        %tmp.92 = "1011101101101111";
+        %tmp.93 = dup %tmp.91;
+        %tmp.94 = aputv %tmp.93 2 %tmp.92;
+        %tmp.95 = "1000000000000001";
+        %tmp.96 = dup %tmp.94;
+        %tmp.97 = aputv %tmp.96 3 %tmp.95;
+        %tmp.98 = "1011100110111011";
+        %tmp.99 = dup %tmp.97;
+        %tmp.100 = aputv %tmp.99 4 %tmp.98;
+        %tmp.101 = "1000000000000001";
+        %tmp.102 = dup %tmp.100;
+        %tmp.103 = aputv %tmp.102 5 %tmp.101;
+        %tmp.104 = "1011011011011011";
+        %tmp.105 = dup %tmp.103;
+        %tmp.106 = aputv %tmp.105 6 %tmp.104;
+        %tmp.107 = "10000A000H000001";
+        %tmp.108 = dup %tmp.106;
+        %tmp.109 = aputv %tmp.108 7 %tmp.107;
+        %tmp.110 = "1011011011011011";
+        %tmp.111 = dup %tmp.109;
+        %tmp.112 = aputv %tmp.111 8 %tmp.110;
+        %tmp.113 = "1000000000000001";
+        %tmp.114 = dup %tmp.112;
+        %tmp.115 = aputv %tmp.114 9 %tmp.113;
+        %tmp.116 = "1011100110111011";
+        %tmp.117 = dup %tmp.115;
+        %tmp.118 = aputv %tmp.117 10 %tmp.116;
+        %tmp.119 = "1000E0000E0E0001";
+        %tmp.120 = dup %tmp.118;
+        %tmp.121 = aputv %tmp.120 11 %tmp.119;
+        %tmp.122 = "1011101101101111";
+        %tmp.123 = dup %tmp.121;
+        %tmp.124 = aputv %tmp.123 12 %tmp.122;
+        %tmp.125 = "1000000000000001";
+        %tmp.126 = dup %tmp.124;
+        %tmp.127 = aputv %tmp.126 13 %tmp.125;
+        %tmp.128 = "10H0E000A0000001";
+        %tmp.129 = dup %tmp.127;
+        %tmp.130 = aputv %tmp.129 14 %tmp.128;
+        %tmp.131 = "1111111111111111";
+        %tmp.132 = dup %tmp.130;
+        %tmp.133 = aputv %tmp.132 15 %tmp.131;
+        putv self :MAP_3 %tmp.133;
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 6; @position = 10; @symbol_constdef = [COLOR_BLACK,6,10,21]; ]
+    const COLOR_BLACK = 0x000000;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 7; @position = 10; @symbol_constdef = [COLOR_WHITE,7,10,21]; ]
+    const COLOR_WHITE = 0xFFFFFF;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 8; @position = 10; @symbol_constdef = [COLOR_DARK_GRAY,8,10,25]; ]
+    const COLOR_DARK_GRAY = 0x303030;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 9; @position = 10; @symbol_constdef = [COLOR_MID_GRAY,9,10,24]; ]
+    const COLOR_MID_GRAY = 0x606060;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 10; @position = 10; @symbol_constdef = [COLOR_LIGHT_GRAY,10,10,26]; ]
+    const COLOR_LIGHT_GRAY = 0xA0A0A0;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 11; @position = 10; @symbol_constdef = [COLOR_CEILING,11,10,23]; ]
+    const COLOR_CEILING = 0x1A1A2E;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 12; @position = 10; @symbol_constdef = [COLOR_FLOOR,12,10,21]; ]
+    const COLOR_FLOOR = 0x12100E;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 13; @position = 10; @symbol_constdef = [COLOR_WALL_BRIGHT,13,10,27]; ]
+    const COLOR_WALL_BRIGHT = 0xE0E0E0;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 14; @position = 10; @symbol_constdef = [COLOR_WALL_MID,14,10,24]; ]
+    const COLOR_WALL_MID = 0x909090;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 15; @position = 10; @symbol_constdef = [COLOR_WALL_DARK,15,10,25]; ]
+    const COLOR_WALL_DARK = 0x404040;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 16; @position = 10; @symbol_constdef = [COLOR_HP_GREEN,16,10,24]; ]
+    const COLOR_HP_GREEN = 0x00CC44;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 17; @position = 10; @symbol_constdef = [COLOR_HP_YELLOW,17,10,25]; ]
+    const COLOR_HP_YELLOW = 0xFFCC00;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 18; @position = 10; @symbol_constdef = [COLOR_HP_RED,18,10,22]; ]
+    const COLOR_HP_RED = 0xFF2200;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 19; @position = 10; @symbol_constdef = [COLOR_AMMO,19,10,20]; ]
+    const COLOR_AMMO = 0xFFDD00;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 20; @position = 10; @symbol_constdef = [COLOR_CROSSHAIR,20,10,25]; ]
+    const COLOR_CROSSHAIR = 0x00FF66;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 21; @position = 10; @symbol_constdef = [COLOR_SCORE,21,10,21]; ]
+    const COLOR_SCORE = 0xAAFFFF;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 22; @position = 10; @symbol_constdef = [COLOR_HUD_BG,22,10,22]; ]
+    const COLOR_HUD_BG = 0x0A0A0A;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 23; @position = 10; @symbol_constdef = [COLOR_HUD_BORDER,23,10,26]; ]
+    const COLOR_HUD_BORDER = 0x333333;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 24; @position = 10; @symbol_constdef = [COLOR_ENEMY_BODY,24,10,26]; ]
+    const COLOR_ENEMY_BODY = 0xCC3300;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 25; @position = 10; @symbol_constdef = [COLOR_ENEMY_EYE,25,10,25]; ]
+    const COLOR_ENEMY_EYE = 0xFFFF00;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 26; @position = 10; @symbol_constdef = [COLOR_ENEMY_MOUTH,26,10,27]; ]
+    const COLOR_ENEMY_MOUTH = 0x220000;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 27; @position = 10; @symbol_constdef = [COLOR_BULLET,27,10,22]; ]
+    const COLOR_BULLET = 0xFFFF88;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 28; @position = 10; @symbol_constdef = [COLOR_ITEM_HEALTH,28,10,27]; ]
+    const COLOR_ITEM_HEALTH = 0xFF4466;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 29; @position = 10; @symbol_constdef = [COLOR_ITEM_AMMO,29,10,25]; ]
+    const COLOR_ITEM_AMMO = 0xFFDD00;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 30; @position = 10; @symbol_constdef = [COLOR_MINIMAP_WALL,30,10,28]; ]
+    const COLOR_MINIMAP_WALL = 0x888888;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 31; @position = 10; @symbol_constdef = [COLOR_MINIMAP_FLOOR,31,10,29]; ]
+    const COLOR_MINIMAP_FLOOR = 0x222222;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 32; @position = 10; @symbol_constdef = [COLOR_MINIMAP_PLAYER,32,10,30]; ]
+    const COLOR_MINIMAP_PLAYER = 0x00FF00;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 33; @position = 10; @symbol_constdef = [COLOR_MINIMAP_ENEMY,33,10,29]; ]
+    const COLOR_MINIMAP_ENEMY = 0xFF0000;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 34; @position = 10; @symbol_constdef = [COLOR_MINIMAP_BG,34,10,26]; ]
+    const COLOR_MINIMAP_BG = 0x000000;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 35; @position = 10; @symbol_constdef = [COLOR_MENU_TITLE,35,10,26]; ]
+    const COLOR_MENU_TITLE = 0xFF5500;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 36; @position = 10; @symbol_constdef = [COLOR_MENU_SELECT,36,10,27]; ]
+    const COLOR_MENU_SELECT = 0xFFDD00;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 37; @position = 10; @symbol_constdef = [COLOR_MENU_NORMAL,37,10,27]; ]
+    const COLOR_MENU_NORMAL = 0xBBBBBB;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 40; @position = 10; @symbol_constdef = [SCREEN_W,40,10,18]; ]
+    const SCREEN_W = 240;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 41; @position = 10; @symbol_constdef = [SCREEN_H,41,10,18]; ]
+    const SCREEN_H = 240;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 42; @position = 10; @symbol_constdef = [VIEWPORT_H,42,10,20]; ]
+    const VIEWPORT_H = 170;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 43; @position = 10; @symbol_constdef = [HUD_H,43,10,15]; ]
+    const HUD_H = 70;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 44; @position = 10; @symbol_constdef = [HUD_Y,44,10,15]; ]
+    const HUD_Y = 170;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 45; @position = 10; @symbol_constdef = [NUM_RAYS,45,10,18]; ]
+    const NUM_RAYS = 60;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 46; @position = 10; @symbol_constdef = [RAY_STEP,46,10,18]; ]
+    const RAY_STEP = 4;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 49; @position = 10; @symbol_constdef = [PLAYER_SPEED,49,10,22]; ]
+    const PLAYER_SPEED = 0.08f;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 50; @position = 10; @symbol_constdef = [PLAYER_TURN_SPEED,50,10,27]; ]
+    const PLAYER_TURN_SPEED = 0.05f;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 51; @position = 10; @symbol_constdef = [PLAYER_COLLISION_R,51,10,28]; ]
+    const PLAYER_COLLISION_R = 0.3f;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 52; @position = 10; @symbol_constdef = [PLAYER_START_HP,52,10,25]; ]
+    const PLAYER_START_HP = 100;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 53; @position = 10; @symbol_constdef = [PLAYER_START_AMMO,53,10,27]; ]
+    const PLAYER_START_AMMO = 20;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 54; @position = 10; @symbol_constdef = [MAX_ENEMIES,54,10,21]; ]
+    const MAX_ENEMIES = 6;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 55; @position = 10; @symbol_constdef = [MAX_BULLETS,55,10,21]; ]
+    const MAX_BULLETS = 3;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 56; @position = 10; @symbol_constdef = [ENEMY_SPEED,56,10,21]; ]
+    const ENEMY_SPEED = 0.03f;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 57; @position = 10; @symbol_constdef = [ENEMY_AI_TICKS,57,10,24]; ]
+    const ENEMY_AI_TICKS = 3;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 58; @position = 10; @symbol_constdef = [BULLET_SPEED,58,10,22]; ]
+    const BULLET_SPEED = 0.15f;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 59; @position = 10; @symbol_constdef = [MAX_RAY_DIST,59,10,22]; ]
+    const MAX_RAY_DIST = 8;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 60; @position = 10; @symbol_constdef = [FOV_HALF,60,10,18]; ]
+    const FOV_HALF = 30;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 61; @position = 10; @symbol_constdef = [ENEMY_DAMAGE,61,10,22]; ]
+    const ENEMY_DAMAGE = 10;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 62; @position = 10; @symbol_constdef = [ENEMY_HP,62,10,18]; ]
+    const ENEMY_HP = 30;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 63; @position = 10; @symbol_constdef = [KILL_SCORE,63,10,20]; ]
+    const KILL_SCORE = 100;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 64; @position = 10; @symbol_constdef = [LEVEL_SCORE,64,10,21]; ]
+    const LEVEL_SCORE = 500;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 65; @position = 10; @symbol_constdef = [AMMO_PICKUP,65,10,21]; ]
+    const AMMO_PICKUP = 10;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 66; @position = 10; @symbol_constdef = [HEALTH_PICKUP,66,10,23]; ]
+    const HEALTH_PICKUP = 25;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 67; @position = 10; @symbol_constdef = [MINIMAP_SIZE,67,10,22]; ]
+    const MINIMAP_SIZE = 40;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 68; @position = 10; @symbol_constdef = [MINIMAP_TILE,68,10,22]; ]
+    const MINIMAP_TILE = 2;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 72; @position = 8; @symbol_vardef = [sinTable,72,8,16]; @symbol_type<0> = [Array,72,20,25]; @symbol_type<1> = [Float,72,26,31]; ]
+    var sinTable as Array<Float>;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 73; @position = 8; @symbol_vardef = [cosTable,73,8,16]; @symbol_type<0> = [Array,73,20,25]; @symbol_type<1> = [Float,73,26,31]; ]
+    var cosTable as Array<Float>;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 76; @position = 10; @symbol_constdef = [MODE_MENU,76,10,19]; ]
+    const MODE_MENU = 0;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 77; @position = 10; @symbol_constdef = [MODE_GAME,77,10,19]; ]
+    const MODE_GAME = 1;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 78; @position = 10; @symbol_constdef = [MODE_PAUSE,78,10,20]; ]
+    const MODE_PAUSE = 2;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 79; @position = 10; @symbol_constdef = [MODE_GAMEOVER,79,10,23]; ]
+    const MODE_GAMEOVER = 3;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 80; @position = 10; @symbol_constdef = [MODE_WIN,80,10,18]; ]
+    const MODE_WIN = 4;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 81; @position = 10; @symbol_constdef = [MODE_INSTRUCTIONS,81,10,27]; ]
+    const MODE_INSTRUCTIONS = 5;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 86; @position = 8; @symbol_vardef = [MAP_1,86,8,13]; @symbol_type<0> = [Array,86,17,22]; @symbol_type<1> = [String,86,23,29]; ]
+    var MAP_1 as Array<String>;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 101; @position = 8; @symbol_vardef = [MAP_1_W,101,8,15]; @symbol_type<0> = [Number,101,19,25]; ]
+    var MAP_1_W as Number = 12;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 102; @position = 8; @symbol_vardef = [MAP_1_H,102,8,15]; @symbol_type<0> = [Number,102,19,25]; ]
+    var MAP_1_H as Number = 12;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 105; @position = 8; @symbol_vardef = [MAP_2,105,8,13]; @symbol_type<0> = [Array,105,17,22]; @symbol_type<1> = [String,105,23,29]; ]
+    var MAP_2 as Array<String>;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 122; @position = 8; @symbol_vardef = [MAP_2_W,122,8,15]; @symbol_type<0> = [Number,122,19,25]; ]
+    var MAP_2_W as Number = 14;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 123; @position = 8; @symbol_vardef = [MAP_2_H,123,8,15]; @symbol_type<0> = [Number,123,19,25]; ]
+    var MAP_2_H as Number = 14;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 126; @position = 8; @symbol_vardef = [MAP_3,126,8,13]; @symbol_type<0> = [Array,126,17,22]; @symbol_type<1> = [String,126,23,29]; ]
+    var MAP_3 as Array<String>;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 145; @position = 8; @symbol_vardef = [MAP_3_W,145,8,15]; @symbol_type<0> = [Number,145,19,25]; ]
+    var MAP_3_W as Number = 16;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 146; @position = 8; @symbol_vardef = [MAP_3_H,146,8,15]; @symbol_type<0> = [Number,146,19,25]; ]
+    var MAP_3_H as Number = 16;
+}
+[ @file = "/Users/samar/Desktop/DOOM/source/Constants.mc"; @line = 3; ]
+<init> {
+}

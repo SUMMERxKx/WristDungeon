@@ -1,0 +1,384 @@
+[ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Lang,3,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 4; @symbol_usingdef<0> = [WristDungeon,4,6,18]; @symbol_usingAlias = [C,4,22,23]; ]
+using WristDungeon as :C;
+[ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 6; @symbol_classdef = [GameState,6,6,15]; ]
+class GameState {
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 6; ]
+    <init> {
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 19 8 ]
+        symbol [ C %tmp.1 19 33 34 ];
+        %tmp.1 = getm $.WristDungeon;
+        symbol [ MODE_MENU %tmp.2 19 35 44 ];
+        %tmp.2 = getv %tmp.1 :MODE_MENU;
+        putv self :mode %tmp.2;
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 28 8 ]
+        symbol [ C %tmp.4 28 57 58 ];
+        %tmp.4 = getm $.WristDungeon;
+        symbol [ MAX_ENEMIES %tmp.5 28 59 70 ];
+        %tmp.5 = getv %tmp.4 :MAX_ENEMIES;
+        %tmp.3 = newa Array<Enemy or Null> %tmp.5;
+        symbol [ Array %tmp.3 28 43 48 ];
+        symbol [ Enemy %tmp.3 28 49 54 ];
+        putv self :enemies %tmp.3;
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 29 8 ]
+        symbol [ C %tmp.7 29 59 60 ];
+        %tmp.7 = getm $.WristDungeon;
+        symbol [ MAX_BULLETS %tmp.8 29 61 72 ];
+        %tmp.8 = getv %tmp.7 :MAX_BULLETS;
+        %tmp.6 = newa Array<Bullet or Null> %tmp.8;
+        symbol [ Array %tmp.6 29 44 49 ];
+        symbol [ Bullet %tmp.6 29 50 56 ];
+        putv self :bullets %tmp.6;
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 9; @position = 15; @symbol_vardef = [instance,9,15,23]; @symbol_type<0> = [GameState,9,27,36]; ]
+    static
+    var instance as GameState or Null;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 11; @symbol_functiondef = [get,11,20,23]; @symbol_return<0> = [GameState,11,29,38]; ]
+    static
+    function get() as GameState {
+_Users_samar_Desktop_DOOM_source_GameState_mc_11_39_16_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 12 8 ]
+_Users_samar_Desktop_DOOM_source_GameState_mc_12_8_14_8_if_stmt:
+        symbol [ instance %tmp.2 12 12 20 ];
+        %tmp.2 = getv ? :instance;
+        %tmp.3 = null;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @_Users_samar_Desktop_DOOM_source_GameState_mc_12_8_14_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameState_mc_12_8_14_8_if_true:
+_Users_samar_Desktop_DOOM_source_GameState_mc_12_30_14_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 13 12 ]
+        symbol [ GameState %tmp.8 13 27 36 ];
+        %tmp.8 = getv ? :GameState;
+        %tmp.5 = newc %tmp.8 ();
+        symbol [ instance ? 13 12 20 ];
+        putv self :instance %tmp.5;
+_Users_samar_Desktop_DOOM_source_GameState_mc_12_30_14_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameState_mc_12_8_14_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameState_mc_12_8_14_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 15 8 ]
+        symbol [ instance %tmp.10 15 15 23 ];
+        %tmp.10 = getv ? :instance;
+        %tmp.11 = as %tmp.10 GameState;
+        symbol [ GameState %tmp.11 15 27 36 ];
+        ret %tmp.11;
+_Users_samar_Desktop_DOOM_source_GameState_mc_11_39_16_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 19; @position = 8; @symbol_vardef = [mode,19,8,12]; @symbol_type<0> = [Number,19,23,29]; ]
+    var mode as Number;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 20; @position = 8; @symbol_vardef = [score,20,8,13]; @symbol_type<0> = [Number,20,23,29]; ]
+    var score as Number = 0;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 21; @position = 8; @symbol_vardef = [level,21,8,13]; @symbol_type<0> = [Number,21,23,29]; ]
+    var level as Number = 1;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 22; @position = 8; @symbol_vardef = [tick,22,8,12]; @symbol_type<0> = [Number,22,23,29]; ]
+    var tick as Number = 0;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 23; @position = 8; @symbol_vardef = [needsRedraw,23,8,19]; @symbol_type<0> = [Boolean,23,23,30]; ]
+    var needsRedraw as Boolean = true;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 24; @position = 8; @symbol_vardef = [showMinimap,24,8,19]; @symbol_type<0> = [Boolean,24,23,30]; ]
+    var showMinimap as Boolean = false;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 27; @position = 8; @symbol_vardef = [player,27,8,14]; @symbol_type<0> = [Player,27,23,29]; ]
+    var player as Player or Null;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 28; @position = 8; @symbol_vardef = [enemies,28,8,15]; @symbol_type<0> = [Array,28,23,28]; @symbol_type<1> = [Enemy,28,29,34]; ]
+    var enemies as Array<Enemy or Null>;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 29; @position = 8; @symbol_vardef = [bullets,29,8,15]; @symbol_type<0> = [Array,29,23,28]; @symbol_type<1> = [Bullet,29,29,35]; ]
+    var bullets as Array<Bullet or Null>;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 30; @position = 8; @symbol_vardef = [map,30,8,11]; @symbol_type<0> = [GameMap,30,23,30]; ]
+    var map as GameMap or Null;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 32; @symbol_functiondef = [initialize,32,13,23]; ]
+    function initialize() as Void {
+_Users_samar_Desktop_DOOM_source_GameState_mc_32_26_34_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 33 8 ]
+        %tmp.1 = self;
+        symbol [ _clearArrays %tmp.2 33 8 20 ];
+        %tmp.2 = getv function %tmp.1 :_clearArrays;
+        invoke %tmp.1 %tmp.2();
+_Users_samar_Desktop_DOOM_source_GameState_mc_32_26_34_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 37; @symbol_functiondef = [resetGame,37,13,22]; ]
+    function resetGame() as Void {
+_Users_samar_Desktop_DOOM_source_GameState_mc_37_33_44_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 38 8 ]
+        %tmp.1 = 0;
+        symbol [ score ? 38 8 13 ];
+        putv self :score %tmp.1;
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 39 8 ]
+        %tmp.2 = 1;
+        symbol [ level ? 39 8 13 ];
+        putv self :level %tmp.2;
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 40 8 ]
+        %tmp.3 = 0;
+        symbol [ tick ? 40 8 12 ];
+        putv self :tick %tmp.3;
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 41 8 ]
+        %tmp.4 = true;
+        symbol [ needsRedraw ? 41 8 19 ];
+        putv self :needsRedraw %tmp.4;
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 42 8 ]
+        %tmp.5 = false;
+        symbol [ showMinimap ? 42 8 19 ];
+        putv self :showMinimap %tmp.5;
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 43 8 ]
+        %tmp.6 = self;
+        symbol [ loadLevel %tmp.7 43 8 17 ];
+        %tmp.7 = getv function %tmp.6 :loadLevel;
+        %tmp.8 = 1;
+        invoke %tmp.6 %tmp.7(%tmp.8);
+_Users_samar_Desktop_DOOM_source_GameState_mc_37_33_44_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 46; @symbol_functiondef = [loadLevel,46,13,22]; @symbol_param<0> = [lvl,46,23,26]; @symbol_param<0>_type<0> = [Number,46,30,36]; ]
+    function loadLevel(lvl as Number) as Void {
+_Users_samar_Desktop_DOOM_source_GameState_mc_46_46_53_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 47 8 ]
+        %tmp.1 = lgetv %lvl;
+        symbol [ lvl %tmp.1 47 16 19 ];
+        symbol [ level ? 47 8 13 ];
+        putv self :level %tmp.1;
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 48 8 ]
+        %tmp.2 = 0;
+        symbol [ tick ? 48 8 12 ];
+        putv self :tick %tmp.2;
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 49 8 ]
+        symbol [ GameMap %tmp.6 49 20 27 ];
+        %tmp.6 = getv ? :GameMap;
+        %tmp.7 = lgetv %lvl;
+        symbol [ lvl %tmp.7 49 28 31 ];
+        %tmp.3 = newc %tmp.6 (%tmp.7);
+        symbol [ map ? 49 8 11 ];
+        putv self :map %tmp.3;
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 50 8 ]
+        %tmp.8 = self;
+        symbol [ _clearArrays %tmp.9 50 8 20 ];
+        %tmp.9 = getv function %tmp.8 :_clearArrays;
+        invoke %tmp.8 %tmp.9();
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 51 8 ]
+        %tmp.10 = self;
+        symbol [ _spawnEntities %tmp.11 51 8 22 ];
+        %tmp.11 = getv function %tmp.10 :_spawnEntities;
+        invoke %tmp.10 %tmp.11();
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 52 8 ]
+        %tmp.12 = true;
+        symbol [ needsRedraw ? 52 8 19 ];
+        putv self :needsRedraw %tmp.12;
+_Users_samar_Desktop_DOOM_source_GameState_mc_46_46_53_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 56; @symbol_functiondef = [markDirty,56,13,22]; ]
+    function markDirty() as Void {
+_Users_samar_Desktop_DOOM_source_GameState_mc_56_33_58_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 57 8 ]
+        %tmp.1 = true;
+        symbol [ needsRedraw ? 57 8 19 ];
+        putv self :needsRedraw %tmp.1;
+_Users_samar_Desktop_DOOM_source_GameState_mc_56_33_58_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 61; @symbol_functiondef = [_clearArrays,61,20,32]; ]
+    protected
+    function _clearArrays() as Void {
+_Users_samar_Desktop_DOOM_source_GameState_mc_61_43_64_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 62 8 ]
+        for @_Users_samar_Desktop_DOOM_source_GameState_mc_62_8_62_69_for_test @_Users_samar_Desktop_DOOM_source_GameState_mc_62_8_62_69_for_incr @_Users_samar_Desktop_DOOM_source_GameState_mc_62_8_62_69_for_end;
+_Users_samar_Desktop_DOOM_source_GameState_mc_62_8_62_69_for_init:
+        [ "_Users_samar_Desktop_DOOM_source_GameState_mc_62_8_62_69_for_begin" "_Users_samar_Desktop_DOOM_source_GameState_mc_62_8_62_69_for_end" ]
+        %i.1 = local;
+        symbol [ i %i.1 62 17 18 ];
+        %tmp.1 = 0;
+        lputv %i.1 %tmp.1;
+        symbol [ i %i.1 62 17 18 ];
+_Users_samar_Desktop_DOOM_source_GameState_mc_62_8_62_69_for_test:
+        %tmp.2 = lgetv %i.1;
+        symbol [ i %tmp.2 62 24 25 ];
+        symbol [ C %tmp.3 62 28 29 ];
+        %tmp.3 = getm $.WristDungeon;
+        symbol [ MAX_ENEMIES %tmp.4 62 30 41 ];
+        %tmp.4 = getv %tmp.3 :MAX_ENEMIES;
+        %tmp.5 = lt %tmp.2 %tmp.4;
+        bf %tmp.5 @_Users_samar_Desktop_DOOM_source_GameState_mc_62_8_62_69_for_end;
+_Users_samar_Desktop_DOOM_source_GameState_mc_62_8_62_69_for_begin:
+_Users_samar_Desktop_DOOM_source_GameState_mc_62_48_62_69_start:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 62 50 ]
+        symbol [ enemies %tmp.6 62 50 57 ];
+        %tmp.6 = getv self :enemies;
+        %tmp.7 = null;
+        %tmp.8 = lgetv %i.1;
+        symbol [ i %tmp.8 62 58 59 ];
+        aputv %tmp.6 %tmp.8 %tmp.7;
+_Users_samar_Desktop_DOOM_source_GameState_mc_62_48_62_69_stop:
+_Users_samar_Desktop_DOOM_source_GameState_mc_62_8_62_69_for_incr:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 62 ]
+        %tmp.11 = lgetv %i.1;
+        symbol [ i %tmp.11 62 43 44 ];
+        %tmp.12 = add %tmp.11 1;
+        lputv %i.1 %tmp.12;
+        symbol [ i %i.1 62 43 44 ];
+        goto @_Users_samar_Desktop_DOOM_source_GameState_mc_62_8_62_69_for_test;
+_Users_samar_Desktop_DOOM_source_GameState_mc_62_8_62_69_for_end:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 63 8 ]
+        for @_Users_samar_Desktop_DOOM_source_GameState_mc_63_8_63_69_for_test @_Users_samar_Desktop_DOOM_source_GameState_mc_63_8_63_69_for_incr @_Users_samar_Desktop_DOOM_source_GameState_mc_63_8_63_69_for_end;
+_Users_samar_Desktop_DOOM_source_GameState_mc_63_8_63_69_for_init:
+        [ "_Users_samar_Desktop_DOOM_source_GameState_mc_63_8_63_69_for_begin" "_Users_samar_Desktop_DOOM_source_GameState_mc_63_8_63_69_for_end" ]
+        %i.2 = local;
+        symbol [ i %i.2 63 17 18 ];
+        %tmp.13 = 0;
+        lputv %i.2 %tmp.13;
+        symbol [ i %i.2 63 17 18 ];
+_Users_samar_Desktop_DOOM_source_GameState_mc_63_8_63_69_for_test:
+        %tmp.14 = lgetv %i.2;
+        symbol [ i %tmp.14 63 24 25 ];
+        symbol [ C %tmp.15 63 28 29 ];
+        %tmp.15 = getm $.WristDungeon;
+        symbol [ MAX_BULLETS %tmp.16 63 30 41 ];
+        %tmp.16 = getv %tmp.15 :MAX_BULLETS;
+        %tmp.17 = lt %tmp.14 %tmp.16;
+        bf %tmp.17 @_Users_samar_Desktop_DOOM_source_GameState_mc_63_8_63_69_for_end;
+_Users_samar_Desktop_DOOM_source_GameState_mc_63_8_63_69_for_begin:
+_Users_samar_Desktop_DOOM_source_GameState_mc_63_48_63_69_start:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 63 50 ]
+        symbol [ bullets %tmp.18 63 50 57 ];
+        %tmp.18 = getv self :bullets;
+        %tmp.19 = null;
+        %tmp.20 = lgetv %i.2;
+        symbol [ i %tmp.20 63 58 59 ];
+        aputv %tmp.18 %tmp.20 %tmp.19;
+_Users_samar_Desktop_DOOM_source_GameState_mc_63_48_63_69_stop:
+_Users_samar_Desktop_DOOM_source_GameState_mc_63_8_63_69_for_incr:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 63 ]
+        %tmp.23 = lgetv %i.2;
+        symbol [ i %tmp.23 63 43 44 ];
+        %tmp.24 = add %tmp.23 1;
+        lputv %i.2 %tmp.24;
+        symbol [ i %i.2 63 43 44 ];
+        goto @_Users_samar_Desktop_DOOM_source_GameState_mc_63_8_63_69_for_test;
+_Users_samar_Desktop_DOOM_source_GameState_mc_63_8_63_69_for_end:
+_Users_samar_Desktop_DOOM_source_GameState_mc_61_43_64_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 66; @symbol_functiondef = [_spawnEntities,66,20,34]; ]
+    protected
+    function _spawnEntities() as Void {
+_Users_samar_Desktop_DOOM_source_GameState_mc_66_45_81_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 67 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameState_mc_66_45_81_4_start" "_Users_samar_Desktop_DOOM_source_GameState_mc_66_45_81_4_stop" ]
+        %m.1 = local;
+        symbol [ m %m.1 67 12 13 ];
+        symbol [ map %tmp.2 67 16 19 ];
+        %tmp.2 = getv ? :map;
+        %tmp.3 = as %tmp.2 GameMap;
+        symbol [ GameMap %tmp.3 67 23 30 ];
+        lputv %m.1 %tmp.3;
+        symbol [ m %m.1 67 12 13 ];
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 70 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameState_mc_66_45_81_4_start" "_Users_samar_Desktop_DOOM_source_GameState_mc_66_45_81_4_stop" ]
+        %entities.2 = local;
+        symbol [ entities %entities.2 70 12 20 ];
+        %tmp.4 = lgetv %m.1;
+        symbol [ m %tmp.4 70 23 24 ];
+        symbol [ getEntities %tmp.5 70 25 36 ];
+        %tmp.5 = getv function %tmp.4 :getEntities;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %entities.2 %tmp.6;
+        symbol [ entities %entities.2 70 12 20 ];
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 73 8 ]
+        %tmp.7 = lgetv %entities.2;
+        symbol [ entities %tmp.7 73 17 25 ];
+        %tmp.9 = const :player;
+        symbol [ player %tmp.9 73 27 33 const ];
+        %tmp.10 = agetv %tmp.7 %tmp.9;
+        %tmp.11 = as %tmp.10 Player;
+        symbol [ Player %tmp.11 73 38 44 ];
+        symbol [ player ? 73 8 14 ];
+        putv self :player %tmp.11;
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 76 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameState_mc_66_45_81_4_start" "_Users_samar_Desktop_DOOM_source_GameState_mc_66_45_81_4_stop" ]
+        %enemyList.3 = local;
+        symbol [ enemyList %enemyList.3 76 12 21 ];
+        %tmp.12 = lgetv %entities.2;
+        symbol [ entities %tmp.12 76 24 32 ];
+        %tmp.14 = const :enemies;
+        symbol [ enemies %tmp.14 76 34 41 const ];
+        %tmp.15 = agetv %tmp.12 %tmp.14;
+        %tmp.16 = as %tmp.15 Array<Enemy or Null>;
+        symbol [ Array %tmp.16 76 46 51 ];
+        symbol [ Enemy %tmp.16 76 52 57 ];
+        lputv %enemyList.3 %tmp.16;
+        symbol [ enemyList %enemyList.3 76 12 21 ];
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 77 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameState_mc_66_45_81_4_start" "_Users_samar_Desktop_DOOM_source_GameState_mc_66_45_81_4_stop" ]
+        %count.4 = local;
+        symbol [ count %count.4 77 12 17 ];
+_Users_samar_Desktop_DOOM_source_GameState_mc_77_20_77_76_begin:
+        %tmp.17 = lgetv %enemyList.3;
+        symbol [ enemyList %tmp.17 77 20 29 ];
+        symbol [ size %tmp.18 77 30 34 ];
+        %tmp.18 = getv function %tmp.17 :size;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        symbol [ C %tmp.20 77 39 40 ];
+        %tmp.20 = getm $.WristDungeon;
+        symbol [ MAX_ENEMIES %tmp.21 77 41 52 ];
+        %tmp.21 = getv %tmp.20 :MAX_ENEMIES;
+        %tmp.22 = lt %tmp.19 %tmp.21;
+        bf %tmp.22 @_Users_samar_Desktop_DOOM_source_GameState_mc_77_20_77_76_else_false;
+_Users_samar_Desktop_DOOM_source_GameState_mc_77_20_77_76_true:
+        %tmp.23 = lgetv %enemyList.3;
+        symbol [ enemyList %tmp.23 77 55 64 ];
+        symbol [ size %tmp.24 77 65 69 ];
+        %tmp.24 = getv function %tmp.23 :size;
+        %tmp.25 = invoke %tmp.23 %tmp.24();
+        push %tmp.25;
+        goto @_Users_samar_Desktop_DOOM_source_GameState_mc_77_20_77_76_end;
+_Users_samar_Desktop_DOOM_source_GameState_mc_77_20_77_76_else_false:
+        symbol [ C %tmp.26 77 74 75 ];
+        %tmp.26 = getm $.WristDungeon;
+        symbol [ MAX_ENEMIES %tmp.27 77 76 87 ];
+        %tmp.27 = getv %tmp.26 :MAX_ENEMIES;
+        push %tmp.27;
+_Users_samar_Desktop_DOOM_source_GameState_mc_77_20_77_76_end:
+        %tmp.28 = phi [%tmp.22 @_Users_samar_Desktop_DOOM_source_GameState_mc_77_20_77_76_begin] [%tmp.25 @_Users_samar_Desktop_DOOM_source_GameState_mc_77_20_77_76_true] [%tmp.27 @_Users_samar_Desktop_DOOM_source_GameState_mc_77_20_77_76_else_false] [%tmp.28 @_Users_samar_Desktop_DOOM_source_GameState_mc_77_20_77_76_end];
+        lputv %count.4 %tmp.28;
+        symbol [ count %count.4 77 12 17 ];
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 78 8 ]
+        for @_Users_samar_Desktop_DOOM_source_GameState_mc_78_8_80_8_for_test @_Users_samar_Desktop_DOOM_source_GameState_mc_78_8_80_8_for_incr @_Users_samar_Desktop_DOOM_source_GameState_mc_78_8_80_8_for_end;
+_Users_samar_Desktop_DOOM_source_GameState_mc_78_8_80_8_for_init:
+        [ "_Users_samar_Desktop_DOOM_source_GameState_mc_78_8_80_8_for_begin" "_Users_samar_Desktop_DOOM_source_GameState_mc_78_8_80_8_for_end" ]
+        %i.5 = local;
+        symbol [ i %i.5 78 17 18 ];
+        %tmp.29 = 0;
+        lputv %i.5 %tmp.29;
+        symbol [ i %i.5 78 17 18 ];
+_Users_samar_Desktop_DOOM_source_GameState_mc_78_8_80_8_for_test:
+        %tmp.30 = lgetv %i.5;
+        symbol [ i %tmp.30 78 24 25 ];
+        %tmp.31 = lgetv %count.4;
+        symbol [ count %tmp.31 78 28 33 ];
+        %tmp.32 = lt %tmp.30 %tmp.31;
+        bf %tmp.32 @_Users_samar_Desktop_DOOM_source_GameState_mc_78_8_80_8_for_end;
+_Users_samar_Desktop_DOOM_source_GameState_mc_78_8_80_8_for_begin:
+_Users_samar_Desktop_DOOM_source_GameState_mc_78_40_80_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 79 12 ]
+        symbol [ enemies %tmp.33 79 12 19 ];
+        %tmp.33 = getv self :enemies;
+        %tmp.34 = lgetv %enemyList.3;
+        symbol [ enemyList %tmp.34 79 25 34 ];
+        %tmp.35 = lgetv %i.5;
+        symbol [ i %tmp.35 79 35 36 ];
+        %tmp.36 = agetv %tmp.34 %tmp.35;
+        %tmp.37 = lgetv %i.5;
+        symbol [ i %tmp.37 79 20 21 ];
+        aputv %tmp.33 %tmp.37 %tmp.36;
+_Users_samar_Desktop_DOOM_source_GameState_mc_78_40_80_8_stop:
+_Users_samar_Desktop_DOOM_source_GameState_mc_78_8_80_8_for_incr:
+[ "/Users/samar/Desktop/DOOM/source/GameState.mc" 78 ]
+        %tmp.40 = lgetv %i.5;
+        symbol [ i %tmp.40 78 35 36 ];
+        %tmp.41 = add %tmp.40 1;
+        lputv %i.5 %tmp.41;
+        symbol [ i %i.5 78 35 36 ];
+        goto @_Users_samar_Desktop_DOOM_source_GameState_mc_78_8_80_8_for_test;
+_Users_samar_Desktop_DOOM_source_GameState_mc_78_8_80_8_for_end:
+_Users_samar_Desktop_DOOM_source_GameState_mc_66_45_81_4_stop:
+    }
+}
+[ @file = "/Users/samar/Desktop/DOOM/source/GameState.mc"; @line = 3; ]
+<init> {
+}

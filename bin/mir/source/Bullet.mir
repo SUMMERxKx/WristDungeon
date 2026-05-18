@@ -1,0 +1,363 @@
+[ @file = "/Users/samar/Desktop/DOOM/source/Bullet.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Lang,3,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/samar/Desktop/DOOM/source/Bullet.mc"; @line = 4; @symbol_usingdef<0> = [WristDungeon,4,6,18]; @symbol_usingAlias = [C,4,22,23]; ]
+using WristDungeon as :C;
+[ @file = "/Users/samar/Desktop/DOOM/source/Bullet.mc"; @line = 6; @symbol_classdef = [Bullet,6,6,12]; ]
+class Bullet {
+    [ @file = "/Users/samar/Desktop/DOOM/source/Bullet.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/Bullet.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/Bullet.mc"; @line = 8; @position = 8; @symbol_vardef = [x,8,8,9]; @symbol_type<0> = [Float,8,18,23]; ]
+    var x as Float;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Bullet.mc"; @line = 9; @position = 8; @symbol_vardef = [y,9,8,9]; @symbol_type<0> = [Float,9,18,23]; ]
+    var y as Float;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Bullet.mc"; @line = 10; @position = 8; @symbol_vardef = [dx,10,8,10]; @symbol_type<0> = [Float,10,18,23]; ]
+    var dx as Float;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Bullet.mc"; @line = 11; @position = 8; @symbol_vardef = [dy,11,8,10]; @symbol_type<0> = [Float,11,18,23]; ]
+    var dy as Float;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Bullet.mc"; @line = 12; @position = 8; @symbol_vardef = [active,12,8,14]; @symbol_type<0> = [Boolean,12,18,25]; ]
+    var active as Boolean = true;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Bullet.mc"; @line = 14; @symbol_functiondef = [initialize,14,13,23]; @symbol_param<0> = [startX,14,24,30]; @symbol_param<0>_type<0> = [Float,14,34,39]; @symbol_param<1> = [startY,14,41,47]; @symbol_param<1>_type<0> = [Float,14,51,56]; @symbol_param<2> = [angle,14,58,63]; @symbol_param<2>_type<0> = [Number,14,67,73]; ]
+    function initialize(startX as Float, startY as Float, angle as Number) as Void {
+_Users_samar_Desktop_DOOM_source_Bullet_mc_14_75_19_4_start:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 15 8 ]
+        %tmp.1 = lgetv %startX;
+        symbol [ startX %tmp.1 15 13 19 ];
+        symbol [ x ? 15 8 9 ];
+        putv self :x %tmp.1;
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 16 8 ]
+        %tmp.2 = lgetv %startY;
+        symbol [ startY %tmp.2 16 13 19 ];
+        symbol [ y ? 16 8 9 ];
+        putv self :y %tmp.2;
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 17 8 ]
+        symbol [ C %tmp.3 17 13 14 ];
+        %tmp.3 = getm $.WristDungeon;
+        symbol [ cosTable %tmp.4 17 15 23 ];
+        %tmp.4 = getv %tmp.3 :cosTable;
+        %tmp.5 = lgetv %angle;
+        symbol [ angle %tmp.5 17 24 29 ];
+        %tmp.6 = agetv %tmp.4 %tmp.5;
+        symbol [ C %tmp.7 17 33 34 ];
+        %tmp.7 = getm $.WristDungeon;
+        symbol [ BULLET_SPEED %tmp.8 17 35 47 ];
+        %tmp.8 = getv %tmp.7 :BULLET_SPEED;
+        %tmp.9 = mul %tmp.6 %tmp.8;
+        symbol [ dx ? 17 8 10 ];
+        putv self :dx %tmp.9;
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 18 8 ]
+        symbol [ C %tmp.10 18 13 14 ];
+        %tmp.10 = getm $.WristDungeon;
+        symbol [ sinTable %tmp.11 18 15 23 ];
+        %tmp.11 = getv %tmp.10 :sinTable;
+        %tmp.12 = lgetv %angle;
+        symbol [ angle %tmp.12 18 24 29 ];
+        %tmp.13 = agetv %tmp.11 %tmp.12;
+        symbol [ C %tmp.14 18 33 34 ];
+        %tmp.14 = getm $.WristDungeon;
+        symbol [ BULLET_SPEED %tmp.15 18 35 47 ];
+        %tmp.15 = getv %tmp.14 :BULLET_SPEED;
+        %tmp.16 = mul %tmp.13 %tmp.15;
+        symbol [ dy ? 18 8 10 ];
+        putv self :dy %tmp.16;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_14_75_19_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/Bullet.mc"; @line = 22; @symbol_functiondef = [update,22,13,19]; ]
+    function update() as Void {
+_Users_samar_Desktop_DOOM_source_Bullet_mc_22_30_54_4_start:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 23 8 ]
+_Users_samar_Desktop_DOOM_source_Bullet_mc_23_8_23_31_if_stmt:
+        symbol [ active %tmp.2 23 13 19 ];
+        %tmp.2 = getv ? :active;
+        %tmp.3 = not %tmp.2;
+        bf %tmp.3 @_Users_samar_Desktop_DOOM_source_Bullet_mc_23_8_23_31_if_end;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_23_8_23_31_if_true:
+_Users_samar_Desktop_DOOM_source_Bullet_mc_23_21_23_31_start:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 23 23 ]
+        ret ?;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_23_21_23_31_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Bullet_mc_23_8_23_31_if_end;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_23_8_23_31_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 24 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Bullet_mc_22_30_54_4_start" "_Users_samar_Desktop_DOOM_source_Bullet_mc_22_30_54_4_stop" ]
+        %gs.1 = local;
+        symbol [ gs %gs.1 24 12 14 ];
+        symbol [ GameState %tmp.5 24 18 27 ];
+        %tmp.5 = getv ? :GameState;
+        symbol [ get %tmp.6 24 28 31 ];
+        %tmp.6 = getv function %tmp.5 :get;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        lputv %gs.1 %tmp.7;
+        symbol [ gs %gs.1 24 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 25 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Bullet_mc_22_30_54_4_start" "_Users_samar_Desktop_DOOM_source_Bullet_mc_22_30_54_4_stop" ]
+        %map.2 = local;
+        symbol [ map %map.2 25 12 15 ];
+        %tmp.8 = lgetv %gs.1;
+        symbol [ gs %tmp.8 25 18 20 ];
+        symbol [ map %tmp.9 25 21 24 ];
+        %tmp.9 = getv %tmp.8 :map;
+        %tmp.10 = as %tmp.9 GameMap;
+        symbol [ GameMap %tmp.10 25 28 35 ];
+        lputv %map.2 %tmp.10;
+        symbol [ map %map.2 25 12 15 ];
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 27 8 ]
+        symbol [ x %tmp.11 27 8 9 ];
+        %tmp.11 = getv self :x;
+        symbol [ dx %tmp.13 27 13 15 ];
+        %tmp.13 = getv ? :dx;
+        %tmp.14 = add %tmp.11 %tmp.13;
+        symbol [ x ? 27 8 9 ];
+        putv self :x dup %tmp.14;
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 28 8 ]
+        symbol [ y %tmp.15 28 8 9 ];
+        %tmp.15 = getv self :y;
+        symbol [ dy %tmp.17 28 13 15 ];
+        %tmp.17 = getv ? :dy;
+        %tmp.18 = add %tmp.15 %tmp.17;
+        symbol [ y ? 28 8 9 ];
+        putv self :y dup %tmp.18;
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 31 8 ]
+_Users_samar_Desktop_DOOM_source_Bullet_mc_31_8_35_8_if_stmt:
+        %tmp.19 = lgetv %map.2;
+        symbol [ map %tmp.19 31 12 15 ];
+        symbol [ isWall %tmp.20 31 16 22 ];
+        %tmp.20 = getv function %tmp.19 :isWall;
+        symbol [ x %tmp.22 31 23 24 ];
+        %tmp.22 = getv ? :x;
+        symbol [ toNumber %tmp.23 31 25 33 ];
+        %tmp.23 = getv function %tmp.22 :toNumber;
+        %tmp.24 = invoke %tmp.22 %tmp.23();
+        symbol [ y %tmp.26 31 37 38 ];
+        %tmp.26 = getv ? :y;
+        symbol [ toNumber %tmp.27 31 39 47 ];
+        %tmp.27 = getv function %tmp.26 :toNumber;
+        %tmp.28 = invoke %tmp.26 %tmp.27();
+        %tmp.29 = invoke %tmp.19 %tmp.20(%tmp.24, %tmp.28);
+        bf %tmp.29 @_Users_samar_Desktop_DOOM_source_Bullet_mc_31_8_35_8_if_end;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_31_8_35_8_if_true:
+_Users_samar_Desktop_DOOM_source_Bullet_mc_31_52_35_8_start:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 32 12 ]
+        %tmp.30 = false;
+        symbol [ active ? 32 12 18 ];
+        putv self :active %tmp.30;
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 33 12 ]
+        %tmp.31 = lgetv %gs.1;
+        symbol [ gs %tmp.31 33 12 14 ];
+        symbol [ markDirty %tmp.32 33 15 24 ];
+        %tmp.32 = getv function %tmp.31 :markDirty;
+        invoke %tmp.31 %tmp.32();
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 34 12 ]
+        ret ?;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_31_52_35_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Bullet_mc_31_8_35_8_if_end;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_31_8_35_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 38 8 ]
+        for @_Users_samar_Desktop_DOOM_source_Bullet_mc_38_8_51_8_for_test @_Users_samar_Desktop_DOOM_source_Bullet_mc_38_8_51_8_for_incr @_Users_samar_Desktop_DOOM_source_Bullet_mc_38_8_51_8_for_end;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_38_8_51_8_for_init:
+        [ "_Users_samar_Desktop_DOOM_source_Bullet_mc_38_8_51_8_for_begin" "_Users_samar_Desktop_DOOM_source_Bullet_mc_38_8_51_8_for_end" ]
+        %i.3 = local;
+        symbol [ i %i.3 38 17 18 ];
+        %tmp.33 = 0;
+        lputv %i.3 %tmp.33;
+        symbol [ i %i.3 38 17 18 ];
+_Users_samar_Desktop_DOOM_source_Bullet_mc_38_8_51_8_for_test:
+        %tmp.34 = lgetv %i.3;
+        symbol [ i %tmp.34 38 24 25 ];
+        symbol [ C %tmp.35 38 28 29 ];
+        %tmp.35 = getm $.WristDungeon;
+        symbol [ MAX_ENEMIES %tmp.36 38 30 41 ];
+        %tmp.36 = getv %tmp.35 :MAX_ENEMIES;
+        %tmp.37 = lt %tmp.34 %tmp.36;
+        bf %tmp.37 @_Users_samar_Desktop_DOOM_source_Bullet_mc_38_8_51_8_for_end;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_38_8_51_8_for_begin:
+_Users_samar_Desktop_DOOM_source_Bullet_mc_38_48_51_8_start:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 39 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_Bullet_mc_38_48_51_8_start" "_Users_samar_Desktop_DOOM_source_Bullet_mc_38_48_51_8_stop" ]
+        %en.4 = local;
+        symbol [ en %en.4 39 16 18 ];
+        %tmp.38 = lgetv %gs.1;
+        symbol [ gs %tmp.38 39 21 23 ];
+        symbol [ enemies %tmp.39 39 24 31 ];
+        %tmp.39 = getv %tmp.38 :enemies;
+        %tmp.40 = lgetv %i.3;
+        symbol [ i %tmp.40 39 32 33 ];
+        %tmp.41 = agetv %tmp.39 %tmp.40;
+        lputv %en.4 %tmp.41;
+        symbol [ en %en.4 39 16 18 ];
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 40 12 ]
+_Users_samar_Desktop_DOOM_source_Bullet_mc_40_12_40_40_if_stmt:
+        %tmp.42 = lgetv %en.4;
+        symbol [ en %tmp.42 40 16 18 ];
+        %tmp.43 = null;
+        %tmp.44 = eq %tmp.42 %tmp.43;
+        bf %tmp.44 @_Users_samar_Desktop_DOOM_source_Bullet_mc_40_12_40_40_if_end;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_40_12_40_40_if_true:
+_Users_samar_Desktop_DOOM_source_Bullet_mc_40_28_40_40_start:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 40 30 ]
+        goto break @_Users_samar_Desktop_DOOM_source_Bullet_mc_38_8_51_8_for_incr;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_40_28_40_40_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Bullet_mc_40_12_40_40_if_end;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_40_12_40_40_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 41 12 ]
+_Users_samar_Desktop_DOOM_source_Bullet_mc_41_12_41_51_if_stmt:
+        %tmp.45 = lgetv %en.4;
+        symbol [ en %tmp.45 41 17 19 ];
+        %tmp.46 = as %tmp.45 Enemy;
+        symbol [ Enemy %tmp.46 41 23 28 ];
+        symbol [ hp %tmp.47 41 30 32 ];
+        %tmp.47 = getv %tmp.46 :hp;
+        %tmp.48 = 0;
+        %tmp.49 = lte %tmp.47 %tmp.48;
+        bf %tmp.49 @_Users_samar_Desktop_DOOM_source_Bullet_mc_41_12_41_51_if_end;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_41_12_41_51_if_true:
+_Users_samar_Desktop_DOOM_source_Bullet_mc_41_39_41_51_start:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 41 41 ]
+        goto break @_Users_samar_Desktop_DOOM_source_Bullet_mc_38_8_51_8_for_incr;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_41_39_41_51_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Bullet_mc_41_12_41_51_if_end;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_41_12_41_51_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 42 12 ]
+_Users_samar_Desktop_DOOM_source_Bullet_mc_42_12_50_12_if_stmt:
+        %tmp.50 = lgetv %en.4;
+        symbol [ en %tmp.50 42 17 19 ];
+        %tmp.51 = as %tmp.50 Enemy;
+        symbol [ Enemy %tmp.51 42 23 28 ];
+        symbol [ checkBulletHit %tmp.52 42 30 44 ];
+        %tmp.52 = getv function %tmp.51 :checkBulletHit;
+        symbol [ x %tmp.54 42 45 46 ];
+        %tmp.54 = getv ? :x;
+        symbol [ y %tmp.56 42 48 49 ];
+        %tmp.56 = getv ? :y;
+        %tmp.57 = invoke %tmp.51 %tmp.52(%tmp.54, %tmp.56);
+        bf %tmp.57 @_Users_samar_Desktop_DOOM_source_Bullet_mc_42_12_50_12_if_end;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_42_12_50_12_if_true:
+_Users_samar_Desktop_DOOM_source_Bullet_mc_42_52_50_12_start:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 43 16 ]
+        %tmp.58 = lgetv %en.4;
+        symbol [ en %tmp.58 43 17 19 ];
+        %tmp.59 = as %tmp.58 Enemy;
+        symbol [ Enemy %tmp.59 43 23 28 ];
+        %tmp.60 = lgetv %en.4;
+        symbol [ en %tmp.60 43 17 19 ];
+        %tmp.61 = as %tmp.60 Enemy;
+        symbol [ Enemy %tmp.61 43 23 28 ];
+        symbol [ hp %tmp.62 43 30 32 ];
+        %tmp.62 = getv %tmp.61 :hp;
+        %tmp.63 = 30;
+        %tmp.64 = sub %tmp.62 %tmp.63;
+        symbol [ hp ? 43 30 32 ];
+        putv %tmp.59 :hp dup %tmp.64;
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 44 16 ]
+_Users_samar_Desktop_DOOM_source_Bullet_mc_44_16_46_16_if_stmt:
+        %tmp.65 = lgetv %en.4;
+        symbol [ en %tmp.65 44 21 23 ];
+        %tmp.66 = as %tmp.65 Enemy;
+        symbol [ Enemy %tmp.66 44 27 32 ];
+        symbol [ hp %tmp.67 44 34 36 ];
+        %tmp.67 = getv %tmp.66 :hp;
+        %tmp.68 = 0;
+        %tmp.69 = lte %tmp.67 %tmp.68;
+        bf %tmp.69 @_Users_samar_Desktop_DOOM_source_Bullet_mc_44_16_46_16_if_end;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_44_16_46_16_if_true:
+_Users_samar_Desktop_DOOM_source_Bullet_mc_44_43_46_16_start:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 45 20 ]
+        %tmp.70 = lgetv %gs.1;
+        symbol [ gs %tmp.70 45 20 22 ];
+        %tmp.71 = lgetv %gs.1;
+        symbol [ gs %tmp.71 45 20 22 ];
+        symbol [ score %tmp.72 45 23 28 ];
+        %tmp.72 = getv %tmp.71 :score;
+        symbol [ C %tmp.73 45 32 33 ];
+        %tmp.73 = getm $.WristDungeon;
+        symbol [ KILL_SCORE %tmp.74 45 34 44 ];
+        %tmp.74 = getv %tmp.73 :KILL_SCORE;
+        %tmp.75 = add %tmp.72 %tmp.74;
+        symbol [ score ? 45 23 28 ];
+        putv %tmp.70 :score dup %tmp.75;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_44_43_46_16_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Bullet_mc_44_16_46_16_if_end;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_44_16_46_16_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 47 16 ]
+        %tmp.76 = false;
+        symbol [ active ? 47 16 22 ];
+        putv self :active %tmp.76;
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 48 16 ]
+        %tmp.77 = lgetv %gs.1;
+        symbol [ gs %tmp.77 48 16 18 ];
+        symbol [ markDirty %tmp.78 48 19 28 ];
+        %tmp.78 = getv function %tmp.77 :markDirty;
+        invoke %tmp.77 %tmp.78();
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 49 16 ]
+        ret ?;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_42_52_50_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Bullet_mc_42_12_50_12_if_end;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_42_12_50_12_if_end:
+_Users_samar_Desktop_DOOM_source_Bullet_mc_38_48_51_8_stop:
+_Users_samar_Desktop_DOOM_source_Bullet_mc_38_8_51_8_for_incr:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 38 ]
+        %tmp.81 = lgetv %i.3;
+        symbol [ i %tmp.81 38 43 44 ];
+        %tmp.82 = add %tmp.81 1;
+        lputv %i.3 %tmp.82;
+        symbol [ i %i.3 38 43 44 ];
+        goto @_Users_samar_Desktop_DOOM_source_Bullet_mc_38_8_51_8_for_test;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_38_8_51_8_for_end:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 53 8 ]
+        %tmp.83 = lgetv %gs.1;
+        symbol [ gs %tmp.83 53 8 10 ];
+        symbol [ markDirty %tmp.84 53 11 20 ];
+        %tmp.84 = getv function %tmp.83 :markDirty;
+        invoke %tmp.83 %tmp.84();
+_Users_samar_Desktop_DOOM_source_Bullet_mc_22_30_54_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/Bullet.mc"; @line = 57; @symbol_functiondef = [inViewRange,57,13,24]; @symbol_param<0> = [px,57,25,27]; @symbol_param<0>_type<0> = [Float,57,31,36]; @symbol_param<1> = [py,57,38,40]; @symbol_param<1>_type<0> = [Float,57,44,49]; @symbol_return<0> = [Boolean,57,54,61]; ]
+    function inViewRange(px as Float, py as Float) as Boolean {
+_Users_samar_Desktop_DOOM_source_Bullet_mc_57_62_61_4_start:
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 58 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Bullet_mc_57_62_61_4_start" "_Users_samar_Desktop_DOOM_source_Bullet_mc_57_62_61_4_stop" ]
+        %dx2.1 = local;
+        symbol [ dx2 %dx2.1 58 12 15 ];
+        symbol [ x %tmp.2 58 18 19 ];
+        %tmp.2 = getv ? :x;
+        %tmp.3 = lgetv %px;
+        symbol [ px %tmp.3 58 22 24 ];
+        %tmp.4 = sub %tmp.2 %tmp.3;
+        lputv %dx2.1 %tmp.4;
+        symbol [ dx2 %dx2.1 58 12 15 ];
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 59 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Bullet_mc_57_62_61_4_start" "_Users_samar_Desktop_DOOM_source_Bullet_mc_57_62_61_4_stop" ]
+        %dy2.2 = local;
+        symbol [ dy2 %dy2.2 59 12 15 ];
+        symbol [ y %tmp.6 59 18 19 ];
+        %tmp.6 = getv ? :y;
+        %tmp.7 = lgetv %py;
+        symbol [ py %tmp.7 59 22 24 ];
+        %tmp.8 = sub %tmp.6 %tmp.7;
+        lputv %dy2.2 %tmp.8;
+        symbol [ dy2 %dy2.2 59 12 15 ];
+[ "/Users/samar/Desktop/DOOM/source/Bullet.mc" 60 8 ]
+        %tmp.9 = lgetv %dx2.1;
+        symbol [ dx2 %tmp.9 60 16 19 ];
+        %tmp.10 = lgetv %dx2.1;
+        symbol [ dx2 %tmp.10 60 22 25 ];
+        %tmp.11 = mul %tmp.9 %tmp.10;
+        %tmp.12 = lgetv %dy2.2;
+        symbol [ dy2 %tmp.12 60 28 31 ];
+        %tmp.13 = lgetv %dy2.2;
+        symbol [ dy2 %tmp.13 60 34 37 ];
+        %tmp.14 = mul %tmp.12 %tmp.13;
+        %tmp.15 = add %tmp.11 %tmp.14;
+        %tmp.16 = 64.0f;
+        %tmp.17 = lt %tmp.15 %tmp.16;
+        ret %tmp.17;
+_Users_samar_Desktop_DOOM_source_Bullet_mc_57_62_61_4_stop:
+    }
+}
+[ @file = "/Users/samar/Desktop/DOOM/source/Bullet.mc"; @line = 3; ]
+<init> {
+}

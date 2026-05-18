@@ -1,0 +1,1529 @@
+[ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Graphics,3,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Lang,4,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [Timer,5,14,19]; ]
+import Toybox.Timer;
+[ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [WatchUi,6,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 7; @symbol_usingdef<0> = [WristDungeon,7,6,18]; @symbol_usingAlias = [C,7,22,23]; ]
+using WristDungeon as :C;
+[ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 12; @symbol_classdef = [GameView,12,6,14]; @symbol_extends<0> = [WatchUi,12,23,30]; @symbol_extends<1> = [View,12,31,35]; ]
+class GameView extends WatchUi.View {
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 12; ]
+    <init> {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 12; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 14; @position = 15; @symbol_vardef = [_raycaster,14,15,25]; @symbol_type<0> = [Raycaster,14,30,39]; ]
+    protected
+    var _raycaster as Raycaster;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 15; @position = 15; @symbol_vardef = [_hud,15,15,19]; @symbol_type<0> = [HUD,15,30,33]; ]
+    protected
+    var _hud as HUD;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 16; @position = 15; @symbol_vardef = [_minimap,16,15,23]; @symbol_type<0> = [Minimap,16,30,37]; ]
+    protected
+    var _minimap as Minimap;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 17; @position = 15; @symbol_vardef = [_timer,17,15,21]; @symbol_type<0> = [Timer,17,30,35]; @symbol_type<1> = [Timer,17,36,41]; ]
+    protected
+    var _timer as Timer.Timer;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 18; @position = 15; @symbol_vardef = [_upHoldTick,18,15,26]; @symbol_type<0> = [Number,18,30,36]; ]
+    protected
+    var _upHoldTick as Number = 0;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 20; @symbol_functiondef = [initialize,20,13,23]; ]
+    function initialize() as Void {
+_Users_samar_Desktop_DOOM_source_GameView_mc_20_26_26_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 21 8 ]
+        symbol [ View %tmp.2 21 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 21 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 22 8 ]
+        symbol [ Raycaster %tmp.7 22 25 34 ];
+        %tmp.7 = getv ? :Raycaster;
+        %tmp.4 = newc %tmp.7 ();
+        symbol [ _raycaster ? 22 8 18 ];
+        putv self :_raycaster %tmp.4;
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 23 8 ]
+        symbol [ HUD %tmp.11 23 25 28 ];
+        %tmp.11 = getv ? :HUD;
+        %tmp.8 = newc %tmp.11 ();
+        symbol [ _hud ? 23 8 12 ];
+        putv self :_hud %tmp.8;
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 24 8 ]
+        symbol [ Minimap %tmp.15 24 25 32 ];
+        %tmp.15 = getv ? :Minimap;
+        %tmp.12 = newc %tmp.15 ();
+        symbol [ _minimap ? 24 8 16 ];
+        putv self :_minimap %tmp.12;
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 25 8 ]
+        symbol [ Timer %tmp.18 25 25 30 ];
+        %tmp.18 = getm $.Toybox.Timer;
+        symbol [ Timer %tmp.19 25 31 36 ];
+        %tmp.19 = getv function ? %tmp.18 :Timer;
+        %tmp.16 = newc %tmp.19 ();
+        symbol [ _timer ? 25 8 14 ];
+        putv self :_timer %tmp.16;
+_Users_samar_Desktop_DOOM_source_GameView_mc_20_26_26_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 28; @symbol_functiondef = [onLayout,28,13,21]; @symbol_param<0> = [dc,28,22,24]; @symbol_param<0>_type<0> = [Graphics,28,28,36]; @symbol_param<0>_type<1> = [Dc,28,37,39]; ]
+    function onLayout(dc as Graphics.Dc) as Void {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 31; @symbol_functiondef = [onShow,31,13,19]; ]
+    function onShow() as Void {
+_Users_samar_Desktop_DOOM_source_GameView_mc_31_30_34_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 33 8 ]
+        symbol [ _timer %tmp.2 33 8 14 ];
+        %tmp.2 = getv ? :_timer;
+        symbol [ start %tmp.3 33 15 20 ];
+        %tmp.3 = getv function %tmp.2 :start;
+        %tmp.4 = self;
+        symbol [ method %tmp.5 33 21 27 ];
+        %tmp.5 = getv function %tmp.4 :method;
+        %tmp.7 = const :gameLoop;
+        symbol [ gameLoop %tmp.7 33 29 37 const ];
+        %tmp.8 = invoke %tmp.4 %tmp.5(%tmp.7);
+        %tmp.9 = 100;
+        %tmp.10 = true;
+        invoke %tmp.2 %tmp.3(%tmp.8, %tmp.9, %tmp.10);
+_Users_samar_Desktop_DOOM_source_GameView_mc_31_30_34_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 36; @symbol_functiondef = [onHide,36,13,19]; ]
+    function onHide() as Void {
+_Users_samar_Desktop_DOOM_source_GameView_mc_36_30_38_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 37 8 ]
+        symbol [ _timer %tmp.2 37 8 14 ];
+        %tmp.2 = getv ? :_timer;
+        symbol [ stop %tmp.3 37 15 19 ];
+        %tmp.3 = getv function %tmp.2 :stop;
+        invoke %tmp.2 %tmp.3();
+_Users_samar_Desktop_DOOM_source_GameView_mc_36_30_38_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 40; @symbol_functiondef = [onUpdate,40,13,21]; @symbol_param<0> = [dc,40,22,24]; @symbol_param<0>_type<0> = [Graphics,40,28,36]; @symbol_param<0>_type<1> = [Dc,40,37,39]; ]
+    function onUpdate(dc as Graphics.Dc) as Void {
+_Users_samar_Desktop_DOOM_source_GameView_mc_40_49_55_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 41 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_40_49_55_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_40_49_55_4_stop" ]
+        %gs.1 = local;
+        symbol [ gs %gs.1 41 12 14 ];
+        symbol [ GameState %tmp.2 41 17 26 ];
+        %tmp.2 = getv ? :GameState;
+        symbol [ get %tmp.3 41 27 30 ];
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %gs.1 %tmp.4;
+        symbol [ gs %gs.1 41 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 42 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_42_8_42_46_if_stmt:
+        %tmp.5 = lgetv %gs.1;
+        symbol [ gs %tmp.5 42 12 14 ];
+        symbol [ mode %tmp.6 42 15 19 ];
+        %tmp.6 = getv %tmp.5 :mode;
+        symbol [ C %tmp.7 42 23 24 ];
+        %tmp.7 = getm $.WristDungeon;
+        symbol [ MODE_GAME %tmp.8 42 25 34 ];
+        %tmp.8 = getv %tmp.7 :MODE_GAME;
+        %tmp.9 = ne %tmp.6 %tmp.8;
+        bf %tmp.9 @_Users_samar_Desktop_DOOM_source_GameView_mc_42_8_42_46_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_42_8_42_46_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_42_36_42_46_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 42 38 ]
+        ret ?;
+_Users_samar_Desktop_DOOM_source_GameView_mc_42_36_42_46_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_42_8_42_46_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_42_8_42_46_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 44 8 ]
+        %tmp.10 = lgetv %dc;
+        symbol [ dc %tmp.10 44 8 10 ];
+        symbol [ setColor %tmp.11 44 11 19 ];
+        %tmp.11 = getv function %tmp.10 :setColor;
+        symbol [ C %tmp.12 44 20 21 ];
+        %tmp.12 = getm $.WristDungeon;
+        symbol [ COLOR_BLACK %tmp.13 44 22 33 ];
+        %tmp.13 = getv %tmp.12 :COLOR_BLACK;
+        symbol [ C %tmp.14 44 35 36 ];
+        %tmp.14 = getm $.WristDungeon;
+        symbol [ COLOR_BLACK %tmp.15 44 37 48 ];
+        %tmp.15 = getv %tmp.14 :COLOR_BLACK;
+        invoke %tmp.10 %tmp.11(%tmp.13, %tmp.15);
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 45 8 ]
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 45 8 10 ];
+        symbol [ clear %tmp.17 45 11 16 ];
+        %tmp.17 = getv function %tmp.16 :clear;
+        invoke %tmp.16 %tmp.17();
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 47 8 ]
+        symbol [ _raycaster %tmp.19 47 8 18 ];
+        %tmp.19 = getv ? :_raycaster;
+        symbol [ renderFrame %tmp.20 47 19 30 ];
+        %tmp.20 = getv function %tmp.19 :renderFrame;
+        %tmp.21 = lgetv %dc;
+        symbol [ dc %tmp.21 47 31 33 ];
+        invoke %tmp.19 %tmp.20(%tmp.21);
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 48 8 ]
+        symbol [ _hud %tmp.23 48 8 12 ];
+        %tmp.23 = getv ? :_hud;
+        symbol [ drawHUD %tmp.24 48 13 20 ];
+        %tmp.24 = getv function %tmp.23 :drawHUD;
+        %tmp.25 = lgetv %dc;
+        symbol [ dc %tmp.25 48 21 23 ];
+        %tmp.26 = lgetv %gs.1;
+        symbol [ gs %tmp.26 48 25 27 ];
+        symbol [ player %tmp.27 48 28 34 ];
+        %tmp.27 = getv %tmp.26 :player;
+        %tmp.28 = as %tmp.27 Player;
+        symbol [ Player %tmp.28 48 38 44 ];
+        %tmp.29 = lgetv %gs.1;
+        symbol [ gs %tmp.29 48 46 48 ];
+        symbol [ score %tmp.30 48 49 54 ];
+        %tmp.30 = getv %tmp.29 :score;
+        %tmp.31 = lgetv %gs.1;
+        symbol [ gs %tmp.31 48 56 58 ];
+        symbol [ level %tmp.32 48 59 64 ];
+        %tmp.32 = getv %tmp.31 :level;
+        invoke %tmp.23 %tmp.24(%tmp.25, %tmp.28, %tmp.30, %tmp.32);
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 50 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_50_8_52_8_if_stmt:
+        %tmp.33 = lgetv %gs.1;
+        symbol [ gs %tmp.33 50 12 14 ];
+        symbol [ showMinimap %tmp.34 50 15 26 ];
+        %tmp.34 = getv %tmp.33 :showMinimap;
+        bf %tmp.34 @_Users_samar_Desktop_DOOM_source_GameView_mc_50_8_52_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_50_8_52_8_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_50_28_52_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 51 12 ]
+        symbol [ _minimap %tmp.36 51 12 20 ];
+        %tmp.36 = getv ? :_minimap;
+        symbol [ draw %tmp.37 51 21 25 ];
+        %tmp.37 = getv function %tmp.36 :draw;
+        %tmp.38 = lgetv %dc;
+        symbol [ dc %tmp.38 51 26 28 ];
+        invoke %tmp.36 %tmp.37(%tmp.38);
+_Users_samar_Desktop_DOOM_source_GameView_mc_50_28_52_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_50_8_52_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_50_8_52_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 54 8 ]
+        %tmp.39 = lgetv %gs.1;
+        symbol [ gs %tmp.39 54 8 10 ];
+        %tmp.40 = false;
+        symbol [ needsRedraw ? 54 11 22 ];
+        putv %tmp.39 :needsRedraw %tmp.40;
+_Users_samar_Desktop_DOOM_source_GameView_mc_40_49_55_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 58; @symbol_functiondef = [gameLoop,58,13,21]; ]
+    function gameLoop() as Void {
+_Users_samar_Desktop_DOOM_source_GameView_mc_58_32_123_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 59 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_58_32_123_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_58_32_123_4_stop" ]
+        %gs.1 = local;
+        symbol [ gs %gs.1 59 12 14 ];
+        symbol [ GameState %tmp.2 59 17 26 ];
+        %tmp.2 = getv ? :GameState;
+        symbol [ get %tmp.3 59 27 30 ];
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %gs.1 %tmp.4;
+        symbol [ gs %gs.1 59 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 60 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_60_8_60_46_if_stmt:
+        %tmp.5 = lgetv %gs.1;
+        symbol [ gs %tmp.5 60 12 14 ];
+        symbol [ mode %tmp.6 60 15 19 ];
+        %tmp.6 = getv %tmp.5 :mode;
+        symbol [ C %tmp.7 60 23 24 ];
+        %tmp.7 = getm $.WristDungeon;
+        symbol [ MODE_GAME %tmp.8 60 25 34 ];
+        %tmp.8 = getv %tmp.7 :MODE_GAME;
+        %tmp.9 = ne %tmp.6 %tmp.8;
+        bf %tmp.9 @_Users_samar_Desktop_DOOM_source_GameView_mc_60_8_60_46_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_60_8_60_46_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_60_36_60_46_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 60 38 ]
+        ret ?;
+_Users_samar_Desktop_DOOM_source_GameView_mc_60_36_60_46_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_60_8_60_46_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_60_8_60_46_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 62 8 ]
+        %tmp.10 = lgetv %gs.1;
+        symbol [ gs %tmp.10 62 8 10 ];
+        %tmp.13 = lgetv %gs.1;
+        symbol [ gs %tmp.13 62 8 10 ];
+        symbol [ tick %tmp.14 62 11 15 ];
+        %tmp.14 = getv %tmp.13 :tick;
+        %tmp.15 = add %tmp.14 1;
+        symbol [ tick ? 62 11 15 ];
+        putv %tmp.10 :tick dup %tmp.15;
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 63 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_58_32_123_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_58_32_123_4_stop" ]
+        %player.2 = local;
+        symbol [ player %player.2 63 12 18 ];
+        %tmp.16 = lgetv %gs.1;
+        symbol [ gs %tmp.16 63 21 23 ];
+        symbol [ player %tmp.17 63 24 30 ];
+        %tmp.17 = getv %tmp.16 :player;
+        %tmp.18 = as %tmp.17 Player;
+        symbol [ Player %tmp.18 63 34 40 ];
+        lputv %player.2 %tmp.18;
+        symbol [ player %player.2 63 12 18 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 64 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_58_32_123_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_58_32_123_4_stop" ]
+        %map.3 = local;
+        symbol [ map %map.3 64 12 15 ];
+        %tmp.19 = lgetv %gs.1;
+        symbol [ gs %tmp.19 64 21 23 ];
+        symbol [ map %tmp.20 64 24 27 ];
+        %tmp.20 = getv %tmp.19 :map;
+        %tmp.21 = as %tmp.20 GameMap;
+        symbol [ GameMap %tmp.21 64 34 41 ];
+        lputv %map.3 %tmp.21;
+        symbol [ map %map.3 64 12 15 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 67 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_67_8_67_54_if_stmt:
+        %tmp.22 = lgetv %player.2;
+        symbol [ player %tmp.22 67 12 18 ];
+        symbol [ turningLeft %tmp.23 67 19 30 ];
+        %tmp.23 = getv %tmp.22 :turningLeft;
+        bf %tmp.23 @_Users_samar_Desktop_DOOM_source_GameView_mc_67_8_67_54_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_67_8_67_54_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_67_33_67_54_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 67 35 ]
+        %tmp.24 = lgetv %player.2;
+        symbol [ player %tmp.24 67 35 41 ];
+        symbol [ turnLeft %tmp.25 67 42 50 ];
+        %tmp.25 = getv function %tmp.24 :turnLeft;
+        invoke %tmp.24 %tmp.25();
+_Users_samar_Desktop_DOOM_source_GameView_mc_67_33_67_54_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_67_8_67_54_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_67_8_67_54_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 68 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_68_8_68_55_if_stmt:
+        %tmp.26 = lgetv %player.2;
+        symbol [ player %tmp.26 68 12 18 ];
+        symbol [ turningRight %tmp.27 68 19 31 ];
+        %tmp.27 = getv %tmp.26 :turningRight;
+        bf %tmp.27 @_Users_samar_Desktop_DOOM_source_GameView_mc_68_8_68_55_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_68_8_68_55_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_68_33_68_55_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 68 35 ]
+        %tmp.28 = lgetv %player.2;
+        symbol [ player %tmp.28 68 35 41 ];
+        symbol [ turnRight %tmp.29 68 42 51 ];
+        %tmp.29 = getv function %tmp.28 :turnRight;
+        invoke %tmp.28 %tmp.29();
+_Users_samar_Desktop_DOOM_source_GameView_mc_68_33_68_55_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_68_8_68_55_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_68_8_68_55_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 69 8 ]
+        %tmp.30 = lgetv %player.2;
+        symbol [ player %tmp.30 69 8 14 ];
+        symbol [ move %tmp.31 69 15 19 ];
+        %tmp.31 = getv function %tmp.30 :move;
+        invoke %tmp.30 %tmp.31();
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 72 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_72_8_75_8_if_stmt:
+        %tmp.32 = lgetv %player.2;
+        symbol [ player %tmp.32 72 12 18 ];
+        symbol [ wantShoot %tmp.33 72 19 28 ];
+        %tmp.33 = getv %tmp.32 :wantShoot;
+        bf %tmp.33 @_Users_samar_Desktop_DOOM_source_GameView_mc_72_8_75_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_72_8_75_8_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_72_30_75_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 73 12 ]
+        %tmp.34 = lgetv %player.2;
+        symbol [ player %tmp.34 73 12 18 ];
+        %tmp.35 = false;
+        symbol [ wantShoot ? 73 19 28 ];
+        putv %tmp.34 :wantShoot %tmp.35;
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 74 12 ]
+        %tmp.36 = lgetv %player.2;
+        symbol [ player %tmp.36 74 12 18 ];
+        symbol [ shoot %tmp.37 74 19 24 ];
+        %tmp.37 = getv function %tmp.36 :shoot;
+        invoke %tmp.36 %tmp.37();
+_Users_samar_Desktop_DOOM_source_GameView_mc_72_30_75_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_72_8_75_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_72_8_75_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 78 8 ]
+        for @_Users_samar_Desktop_DOOM_source_GameView_mc_78_8_84_8_for_test @_Users_samar_Desktop_DOOM_source_GameView_mc_78_8_84_8_for_incr @_Users_samar_Desktop_DOOM_source_GameView_mc_78_8_84_8_for_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_78_8_84_8_for_init:
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_78_8_84_8_for_begin" "_Users_samar_Desktop_DOOM_source_GameView_mc_78_8_84_8_for_end" ]
+        %i.4 = local;
+        symbol [ i %i.4 78 17 18 ];
+        %tmp.38 = 0;
+        lputv %i.4 %tmp.38;
+        symbol [ i %i.4 78 17 18 ];
+_Users_samar_Desktop_DOOM_source_GameView_mc_78_8_84_8_for_test:
+        %tmp.39 = lgetv %i.4;
+        symbol [ i %tmp.39 78 24 25 ];
+        symbol [ C %tmp.40 78 28 29 ];
+        %tmp.40 = getm $.WristDungeon;
+        symbol [ MAX_BULLETS %tmp.41 78 30 41 ];
+        %tmp.41 = getv %tmp.40 :MAX_BULLETS;
+        %tmp.42 = lt %tmp.39 %tmp.41;
+        bf %tmp.42 @_Users_samar_Desktop_DOOM_source_GameView_mc_78_8_84_8_for_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_78_8_84_8_for_begin:
+_Users_samar_Desktop_DOOM_source_GameView_mc_78_48_84_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 79 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_78_48_84_8_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_78_48_84_8_stop" ]
+        %b.5 = local;
+        symbol [ b %b.5 79 16 17 ];
+        %tmp.43 = lgetv %gs.1;
+        symbol [ gs %tmp.43 79 20 22 ];
+        symbol [ bullets %tmp.44 79 23 30 ];
+        %tmp.44 = getv %tmp.43 :bullets;
+        %tmp.45 = lgetv %i.4;
+        symbol [ i %tmp.45 79 31 32 ];
+        %tmp.46 = agetv %tmp.44 %tmp.45;
+        lputv %b.5 %tmp.46;
+        symbol [ b %b.5 79 16 17 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 80 12 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_80_12_83_12_if_stmt:
+        %tmp.47 = lgetv %b.5;
+        symbol [ b %tmp.47 80 16 17 ];
+        %tmp.48 = null;
+        %tmp.49 = ne %tmp.47 %tmp.48;
+        bf %tmp.49 @_Users_samar_Desktop_DOOM_source_GameView_mc_80_12_83_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_80_12_83_12_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_80_27_83_12_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 81 16 ]
+        %tmp.50 = lgetv %b.5;
+        symbol [ b %tmp.50 81 17 18 ];
+        %tmp.51 = as %tmp.50 { (!Null) };
+        %tmp.52 = as %tmp.51 Bullet;
+        symbol [ Bullet %tmp.52 81 22 28 ];
+        symbol [ update %tmp.53 81 30 36 ];
+        %tmp.53 = getv function %tmp.52 :update;
+        invoke %tmp.52 %tmp.53();
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 82 16 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_82_16_82_67_if_stmt:
+        %tmp.54 = lgetv %b.5;
+        symbol [ b %tmp.54 82 22 23 ];
+        %tmp.55 = as %tmp.54 { (!Null) };
+        %tmp.56 = as %tmp.55 Bullet;
+        symbol [ Bullet %tmp.56 82 27 33 ];
+        symbol [ active %tmp.57 82 35 41 ];
+        %tmp.57 = getv %tmp.56 :active;
+        %tmp.58 = not %tmp.57;
+        bf %tmp.58 @_Users_samar_Desktop_DOOM_source_GameView_mc_82_16_82_67_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_82_16_82_67_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_82_43_82_67_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 82 45 ]
+        %tmp.59 = lgetv %gs.1;
+        symbol [ gs %tmp.59 82 45 47 ];
+        symbol [ bullets %tmp.60 82 48 55 ];
+        %tmp.60 = getv %tmp.59 :bullets;
+        %tmp.61 = null;
+        %tmp.62 = lgetv %i.4;
+        symbol [ i %tmp.62 82 56 57 ];
+        aputv %tmp.60 %tmp.62 %tmp.61;
+_Users_samar_Desktop_DOOM_source_GameView_mc_82_43_82_67_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_82_16_82_67_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_82_16_82_67_if_end:
+_Users_samar_Desktop_DOOM_source_GameView_mc_80_27_83_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_80_12_83_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_80_12_83_12_if_end:
+_Users_samar_Desktop_DOOM_source_GameView_mc_78_48_84_8_stop:
+_Users_samar_Desktop_DOOM_source_GameView_mc_78_8_84_8_for_incr:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 78 ]
+        %tmp.65 = lgetv %i.4;
+        symbol [ i %tmp.65 78 43 44 ];
+        %tmp.66 = add %tmp.65 1;
+        lputv %i.4 %tmp.66;
+        symbol [ i %i.4 78 43 44 ];
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_78_8_84_8_for_test;
+_Users_samar_Desktop_DOOM_source_GameView_mc_78_8_84_8_for_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 87 8 ]
+        for @_Users_samar_Desktop_DOOM_source_GameView_mc_87_8_92_8_for_test @_Users_samar_Desktop_DOOM_source_GameView_mc_87_8_92_8_for_incr @_Users_samar_Desktop_DOOM_source_GameView_mc_87_8_92_8_for_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_87_8_92_8_for_init:
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_87_8_92_8_for_begin" "_Users_samar_Desktop_DOOM_source_GameView_mc_87_8_92_8_for_end" ]
+        %i.6 = local;
+        symbol [ i %i.6 87 17 18 ];
+        %tmp.67 = 0;
+        lputv %i.6 %tmp.67;
+        symbol [ i %i.6 87 17 18 ];
+_Users_samar_Desktop_DOOM_source_GameView_mc_87_8_92_8_for_test:
+        %tmp.68 = lgetv %i.6;
+        symbol [ i %tmp.68 87 24 25 ];
+        symbol [ C %tmp.69 87 28 29 ];
+        %tmp.69 = getm $.WristDungeon;
+        symbol [ MAX_ENEMIES %tmp.70 87 30 41 ];
+        %tmp.70 = getv %tmp.69 :MAX_ENEMIES;
+        %tmp.71 = lt %tmp.68 %tmp.70;
+        bf %tmp.71 @_Users_samar_Desktop_DOOM_source_GameView_mc_87_8_92_8_for_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_87_8_92_8_for_begin:
+_Users_samar_Desktop_DOOM_source_GameView_mc_87_48_92_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 88 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_87_48_92_8_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_87_48_92_8_stop" ]
+        %en.7 = local;
+        symbol [ en %en.7 88 16 18 ];
+        %tmp.72 = lgetv %gs.1;
+        symbol [ gs %tmp.72 88 21 23 ];
+        symbol [ enemies %tmp.73 88 24 31 ];
+        %tmp.73 = getv %tmp.72 :enemies;
+        %tmp.74 = lgetv %i.6;
+        symbol [ i %tmp.74 88 32 33 ];
+        %tmp.75 = agetv %tmp.73 %tmp.74;
+        lputv %en.7 %tmp.75;
+        symbol [ en %en.7 88 16 18 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 89 12 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_89_12_91_12_if_stmt:
+_Users_samar_Desktop_DOOM_source_GameView_mc_89_16_89_49_begin:
+        %tmp.76 = lgetv %en.7;
+        symbol [ en %tmp.76 89 16 18 ];
+        %tmp.77 = null;
+        %tmp.78 = ne %tmp.76 %tmp.77;
+        bf %tmp.78 @_Users_samar_Desktop_DOOM_source_GameView_mc_89_12_91_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_89_30_89_49_true:
+        %tmp.79 = lgetv %en.7;
+        symbol [ en %tmp.79 89 31 33 ];
+        %tmp.80 = as %tmp.79 { (!Null) };
+        %tmp.81 = as %tmp.80 Enemy;
+        symbol [ Enemy %tmp.81 89 37 42 ];
+        symbol [ hp %tmp.82 89 44 46 ];
+        %tmp.82 = getv %tmp.81 :hp;
+        %tmp.83 = 0;
+        %tmp.84 = gt %tmp.82 %tmp.83;
+        push %tmp.84;
+_Users_samar_Desktop_DOOM_source_GameView_mc_89_30_89_49_end:
+        %tmp.85 = phi [%tmp.78 @_Users_samar_Desktop_DOOM_source_GameView_mc_89_16_89_49_begin] [%tmp.84 @_Users_samar_Desktop_DOOM_source_GameView_mc_89_30_89_49_true] [%tmp.85 @_Users_samar_Desktop_DOOM_source_GameView_mc_89_30_89_49_end];
+        bf %tmp.85 @_Users_samar_Desktop_DOOM_source_GameView_mc_89_12_91_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_89_12_91_12_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_89_52_91_12_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 90 16 ]
+        %tmp.86 = lgetv %en.7;
+        symbol [ en %tmp.86 90 17 19 ];
+        %tmp.87 = as %tmp.86 { (!Null) };
+        %tmp.88 = as %tmp.87 Enemy;
+        symbol [ Enemy %tmp.88 90 23 28 ];
+        symbol [ update %tmp.89 90 30 36 ];
+        %tmp.89 = getv function %tmp.88 :update;
+        invoke %tmp.88 %tmp.89();
+_Users_samar_Desktop_DOOM_source_GameView_mc_89_52_91_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_89_12_91_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_89_12_91_12_if_end:
+_Users_samar_Desktop_DOOM_source_GameView_mc_87_48_92_8_stop:
+_Users_samar_Desktop_DOOM_source_GameView_mc_87_8_92_8_for_incr:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 87 ]
+        %tmp.92 = lgetv %i.6;
+        symbol [ i %tmp.92 87 43 44 ];
+        %tmp.93 = add %tmp.92 1;
+        lputv %i.6 %tmp.93;
+        symbol [ i %i.6 87 43 44 ];
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_87_8_92_8_for_test;
+_Users_samar_Desktop_DOOM_source_GameView_mc_87_8_92_8_for_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 95 8 ]
+        %tmp.94 = lgetv %map.3;
+        symbol [ map %tmp.94 95 8 11 ];
+        symbol [ checkPickups %tmp.95 95 12 24 ];
+        %tmp.95 = getv function %tmp.94 :checkPickups;
+        %tmp.96 = lgetv %player.2;
+        symbol [ player %tmp.96 95 25 31 ];
+        invoke %tmp.94 %tmp.95(%tmp.96);
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 98 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_58_32_123_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_58_32_123_4_stop" ]
+        %allDead.8 = local;
+        symbol [ allDead %allDead.8 98 12 19 ];
+        %tmp.97 = true;
+        lputv %allDead.8 %tmp.97;
+        symbol [ allDead %allDead.8 98 12 19 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 99 8 ]
+        for @_Users_samar_Desktop_DOOM_source_GameView_mc_99_8_102_8_for_test @_Users_samar_Desktop_DOOM_source_GameView_mc_99_8_102_8_for_incr @_Users_samar_Desktop_DOOM_source_GameView_mc_99_8_102_8_for_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_99_8_102_8_for_init:
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_99_8_102_8_for_begin" "_Users_samar_Desktop_DOOM_source_GameView_mc_99_8_102_8_for_end" ]
+        %i.9 = local;
+        symbol [ i %i.9 99 17 18 ];
+        %tmp.98 = 0;
+        lputv %i.9 %tmp.98;
+        symbol [ i %i.9 99 17 18 ];
+_Users_samar_Desktop_DOOM_source_GameView_mc_99_8_102_8_for_test:
+        %tmp.99 = lgetv %i.9;
+        symbol [ i %tmp.99 99 24 25 ];
+        symbol [ C %tmp.100 99 28 29 ];
+        %tmp.100 = getm $.WristDungeon;
+        symbol [ MAX_ENEMIES %tmp.101 99 30 41 ];
+        %tmp.101 = getv %tmp.100 :MAX_ENEMIES;
+        %tmp.102 = lt %tmp.99 %tmp.101;
+        bf %tmp.102 @_Users_samar_Desktop_DOOM_source_GameView_mc_99_8_102_8_for_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_99_8_102_8_for_begin:
+_Users_samar_Desktop_DOOM_source_GameView_mc_99_48_102_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 100 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_99_48_102_8_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_99_48_102_8_stop" ]
+        %en.10 = local;
+        symbol [ en %en.10 100 16 18 ];
+        %tmp.103 = lgetv %gs.1;
+        symbol [ gs %tmp.103 100 21 23 ];
+        symbol [ enemies %tmp.104 100 24 31 ];
+        %tmp.104 = getv %tmp.103 :enemies;
+        %tmp.105 = lgetv %i.9;
+        symbol [ i %tmp.105 100 32 33 ];
+        %tmp.106 = agetv %tmp.104 %tmp.105;
+        lputv %en.10 %tmp.106;
+        symbol [ en %en.10 100 16 18 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 101 12 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_101_12_101_78_if_stmt:
+_Users_samar_Desktop_DOOM_source_GameView_mc_101_16_101_49_begin:
+        %tmp.107 = lgetv %en.10;
+        symbol [ en %tmp.107 101 16 18 ];
+        %tmp.108 = null;
+        %tmp.109 = ne %tmp.107 %tmp.108;
+        bf %tmp.109 @_Users_samar_Desktop_DOOM_source_GameView_mc_101_12_101_78_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_101_30_101_49_true:
+        %tmp.110 = lgetv %en.10;
+        symbol [ en %tmp.110 101 31 33 ];
+        %tmp.111 = as %tmp.110 { (!Null) };
+        %tmp.112 = as %tmp.111 Enemy;
+        symbol [ Enemy %tmp.112 101 37 42 ];
+        symbol [ hp %tmp.113 101 44 46 ];
+        %tmp.113 = getv %tmp.112 :hp;
+        %tmp.114 = 0;
+        %tmp.115 = gt %tmp.113 %tmp.114;
+        push %tmp.115;
+_Users_samar_Desktop_DOOM_source_GameView_mc_101_30_101_49_end:
+        %tmp.116 = phi [%tmp.109 @_Users_samar_Desktop_DOOM_source_GameView_mc_101_16_101_49_begin] [%tmp.115 @_Users_samar_Desktop_DOOM_source_GameView_mc_101_30_101_49_true] [%tmp.116 @_Users_samar_Desktop_DOOM_source_GameView_mc_101_30_101_49_end];
+        bf %tmp.116 @_Users_samar_Desktop_DOOM_source_GameView_mc_101_12_101_78_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_101_12_101_78_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_101_52_101_78_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 101 54 ]
+        %tmp.117 = false;
+        lputv %allDead.8 %tmp.117;
+        symbol [ allDead %allDead.8 101 54 61 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 101 71 ]
+        goto break @_Users_samar_Desktop_DOOM_source_GameView_mc_99_8_102_8_for_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_101_52_101_78_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_101_12_101_78_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_101_12_101_78_if_end:
+_Users_samar_Desktop_DOOM_source_GameView_mc_99_48_102_8_stop:
+_Users_samar_Desktop_DOOM_source_GameView_mc_99_8_102_8_for_incr:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 99 ]
+        %tmp.120 = lgetv %i.9;
+        symbol [ i %tmp.120 99 43 44 ];
+        %tmp.121 = add %tmp.120 1;
+        lputv %i.9 %tmp.121;
+        symbol [ i %i.9 99 43 44 ];
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_99_8_102_8_for_test;
+_Users_samar_Desktop_DOOM_source_GameView_mc_99_8_102_8_for_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 104 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_104_8_107_8_if_stmt:
+        %tmp.122 = lgetv %player.2;
+        symbol [ player %tmp.122 104 12 18 ];
+        symbol [ hp %tmp.123 104 19 21 ];
+        %tmp.123 = getv %tmp.122 :hp;
+        %tmp.124 = 0;
+        %tmp.125 = lte %tmp.123 %tmp.124;
+        bf %tmp.125 @_Users_samar_Desktop_DOOM_source_GameView_mc_104_8_107_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_104_8_107_8_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_104_28_107_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 105 12 ]
+        %tmp.126 = self;
+        symbol [ _triggerGameOver %tmp.127 105 12 28 ];
+        %tmp.127 = getv function %tmp.126 :_triggerGameOver;
+        %tmp.128 = lgetv %gs.1;
+        symbol [ gs %tmp.128 105 29 31 ];
+        invoke %tmp.126 %tmp.127(%tmp.128);
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 106 12 ]
+        ret ?;
+_Users_samar_Desktop_DOOM_source_GameView_mc_104_28_107_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_104_8_107_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_104_8_107_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 109 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_109_8_118_8_if_stmt:
+        %tmp.129 = lgetv %allDead.8;
+        symbol [ allDead %tmp.129 109 12 19 ];
+        bf %tmp.129 @_Users_samar_Desktop_DOOM_source_GameView_mc_109_8_118_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_109_8_118_8_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_109_21_118_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 110 12 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_110_12_117_12_if_stmt:
+        %tmp.130 = lgetv %gs.1;
+        symbol [ gs %tmp.130 110 16 18 ];
+        symbol [ level %tmp.131 110 19 24 ];
+        %tmp.131 = getv %tmp.130 :level;
+        %tmp.132 = 3;
+        %tmp.133 = lt %tmp.131 %tmp.132;
+        bf %tmp.133 @_Users_samar_Desktop_DOOM_source_GameView_mc_110_12_117_12_if_else_false;
+_Users_samar_Desktop_DOOM_source_GameView_mc_110_12_117_12_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_110_30_114_12_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 112 16 ]
+        %tmp.134 = lgetv %gs.1;
+        symbol [ gs %tmp.134 112 16 18 ];
+        %tmp.135 = lgetv %gs.1;
+        symbol [ gs %tmp.135 112 16 18 ];
+        symbol [ score %tmp.136 112 19 24 ];
+        %tmp.136 = getv %tmp.135 :score;
+        symbol [ C %tmp.137 112 28 29 ];
+        %tmp.137 = getm $.WristDungeon;
+        symbol [ LEVEL_SCORE %tmp.138 112 30 41 ];
+        %tmp.138 = getv %tmp.137 :LEVEL_SCORE;
+        %tmp.139 = add %tmp.136 %tmp.138;
+        symbol [ score ? 112 19 24 ];
+        putv %tmp.134 :score dup %tmp.139;
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 113 16 ]
+        %tmp.140 = lgetv %gs.1;
+        symbol [ gs %tmp.140 113 16 18 ];
+        symbol [ loadLevel %tmp.141 113 19 28 ];
+        %tmp.141 = getv function %tmp.140 :loadLevel;
+        %tmp.142 = lgetv %gs.1;
+        symbol [ gs %tmp.142 113 29 31 ];
+        symbol [ level %tmp.143 113 32 37 ];
+        %tmp.143 = getv %tmp.142 :level;
+        %tmp.144 = 1;
+        %tmp.145 = add %tmp.143 %tmp.144;
+        invoke %tmp.140 %tmp.141(%tmp.145);
+_Users_samar_Desktop_DOOM_source_GameView_mc_110_30_114_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_110_12_117_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_110_12_117_12_if_else_false:
+_Users_samar_Desktop_DOOM_source_GameView_mc_114_19_117_12_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 115 16 ]
+        %tmp.146 = self;
+        symbol [ _triggerWin %tmp.147 115 16 27 ];
+        %tmp.147 = getv function %tmp.146 :_triggerWin;
+        %tmp.148 = lgetv %gs.1;
+        symbol [ gs %tmp.148 115 28 30 ];
+        invoke %tmp.146 %tmp.147(%tmp.148);
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 116 16 ]
+        ret ?;
+_Users_samar_Desktop_DOOM_source_GameView_mc_114_19_117_12_stop:
+_Users_samar_Desktop_DOOM_source_GameView_mc_110_12_117_12_if_end:
+_Users_samar_Desktop_DOOM_source_GameView_mc_109_21_118_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_109_8_118_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_109_8_118_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 120 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_120_8_122_8_if_stmt:
+        %tmp.149 = lgetv %gs.1;
+        symbol [ gs %tmp.149 120 12 14 ];
+        symbol [ needsRedraw %tmp.150 120 15 26 ];
+        %tmp.150 = getv %tmp.149 :needsRedraw;
+        bf %tmp.150 @_Users_samar_Desktop_DOOM_source_GameView_mc_120_8_122_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_120_8_122_8_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_120_28_122_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 121 12 ]
+        symbol [ WatchUi %tmp.151 121 12 19 ];
+        %tmp.151 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.152 121 20 33 ];
+        %tmp.152 = getv function %tmp.151 :requestUpdate;
+        invoke %tmp.151 %tmp.152();
+_Users_samar_Desktop_DOOM_source_GameView_mc_120_28_122_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_120_8_122_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_120_8_122_8_if_end:
+_Users_samar_Desktop_DOOM_source_GameView_mc_58_32_123_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 126; @symbol_functiondef = [_triggerGameOver,126,20,36]; @symbol_param<0> = [gs,126,37,39]; @symbol_param<0>_type<0> = [GameState,126,43,52]; ]
+    protected
+    function _triggerGameOver(gs as GameState) as Void {
+_Users_samar_Desktop_DOOM_source_GameView_mc_126_62_132_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 127 8 ]
+        symbol [ _timer %tmp.2 127 8 14 ];
+        %tmp.2 = getv ? :_timer;
+        symbol [ stop %tmp.3 127 15 19 ];
+        %tmp.3 = getv function %tmp.2 :stop;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 128 8 ]
+        %tmp.4 = lgetv %gs;
+        symbol [ gs %tmp.4 128 8 10 ];
+        symbol [ C %tmp.5 128 18 19 ];
+        %tmp.5 = getm $.WristDungeon;
+        symbol [ MODE_GAMEOVER %tmp.6 128 20 33 ];
+        %tmp.6 = getv %tmp.5 :MODE_GAMEOVER;
+        symbol [ mode ? 128 11 15 ];
+        putv %tmp.4 :mode %tmp.6;
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 129 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_126_62_132_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_126_62_132_4_stop" ]
+        %menuView.1 = local;
+        symbol [ menuView %menuView.1 129 12 20 ];
+        symbol [ MenuView %tmp.10 129 27 35 ];
+        %tmp.10 = getv ? :MenuView;
+        %tmp.7 = newc %tmp.10 ();
+        lputv %menuView.1 %tmp.7;
+        symbol [ menuView %menuView.1 129 12 20 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 130 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_126_62_132_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_126_62_132_4_stop" ]
+        %menuDelegate.2 = local;
+        symbol [ menuDelegate %menuDelegate.2 130 12 24 ];
+        symbol [ MenuDelegate %tmp.14 130 31 43 ];
+        %tmp.14 = getv ? :MenuDelegate;
+        %tmp.15 = lgetv %menuView.1;
+        symbol [ menuView %tmp.15 130 44 52 ];
+        %tmp.11 = newc %tmp.14 (%tmp.15);
+        lputv %menuDelegate.2 %tmp.11;
+        symbol [ menuDelegate %menuDelegate.2 130 12 24 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 131 8 ]
+        symbol [ WatchUi %tmp.16 131 8 15 ];
+        %tmp.16 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.17 131 16 24 ];
+        %tmp.17 = getv function %tmp.16 :pushView;
+        %tmp.18 = lgetv %menuView.1;
+        symbol [ menuView %tmp.18 131 25 33 ];
+        %tmp.19 = lgetv %menuDelegate.2;
+        symbol [ menuDelegate %tmp.19 131 35 47 ];
+        symbol [ WatchUi %tmp.20 131 49 56 ];
+        %tmp.20 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.21 131 57 67 ];
+        %tmp.21 = getv %tmp.20 :SLIDE_DOWN;
+        invoke %tmp.16 %tmp.17(%tmp.18, %tmp.19, %tmp.21);
+_Users_samar_Desktop_DOOM_source_GameView_mc_126_62_132_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 134; @symbol_functiondef = [_triggerWin,134,20,31]; @symbol_param<0> = [gs,134,32,34]; @symbol_param<0>_type<0> = [GameState,134,38,47]; ]
+    protected
+    function _triggerWin(gs as GameState) as Void {
+_Users_samar_Desktop_DOOM_source_GameView_mc_134_57_141_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 135 8 ]
+        symbol [ _timer %tmp.2 135 8 14 ];
+        %tmp.2 = getv ? :_timer;
+        symbol [ stop %tmp.3 135 15 19 ];
+        %tmp.3 = getv function %tmp.2 :stop;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 136 8 ]
+        %tmp.4 = lgetv %gs;
+        symbol [ gs %tmp.4 136 8 10 ];
+        %tmp.5 = lgetv %gs;
+        symbol [ gs %tmp.5 136 8 10 ];
+        symbol [ score %tmp.6 136 11 16 ];
+        %tmp.6 = getv %tmp.5 :score;
+        symbol [ C %tmp.7 136 20 21 ];
+        %tmp.7 = getm $.WristDungeon;
+        symbol [ LEVEL_SCORE %tmp.8 136 22 33 ];
+        %tmp.8 = getv %tmp.7 :LEVEL_SCORE;
+        %tmp.9 = add %tmp.6 %tmp.8;
+        symbol [ score ? 136 11 16 ];
+        putv %tmp.4 :score dup %tmp.9;
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 137 8 ]
+        %tmp.10 = lgetv %gs;
+        symbol [ gs %tmp.10 137 8 10 ];
+        symbol [ C %tmp.11 137 18 19 ];
+        %tmp.11 = getm $.WristDungeon;
+        symbol [ MODE_WIN %tmp.12 137 20 28 ];
+        %tmp.12 = getv %tmp.11 :MODE_WIN;
+        symbol [ mode ? 137 11 15 ];
+        putv %tmp.10 :mode %tmp.12;
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 138 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_134_57_141_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_134_57_141_4_stop" ]
+        %menuView.1 = local;
+        symbol [ menuView %menuView.1 138 12 20 ];
+        symbol [ MenuView %tmp.16 138 27 35 ];
+        %tmp.16 = getv ? :MenuView;
+        %tmp.13 = newc %tmp.16 ();
+        lputv %menuView.1 %tmp.13;
+        symbol [ menuView %menuView.1 138 12 20 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 139 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_134_57_141_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_134_57_141_4_stop" ]
+        %menuDelegate.2 = local;
+        symbol [ menuDelegate %menuDelegate.2 139 12 24 ];
+        symbol [ MenuDelegate %tmp.20 139 31 43 ];
+        %tmp.20 = getv ? :MenuDelegate;
+        %tmp.21 = lgetv %menuView.1;
+        symbol [ menuView %tmp.21 139 44 52 ];
+        %tmp.17 = newc %tmp.20 (%tmp.21);
+        lputv %menuDelegate.2 %tmp.17;
+        symbol [ menuDelegate %menuDelegate.2 139 12 24 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 140 8 ]
+        symbol [ WatchUi %tmp.22 140 8 15 ];
+        %tmp.22 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.23 140 16 24 ];
+        %tmp.23 = getv function %tmp.22 :pushView;
+        %tmp.24 = lgetv %menuView.1;
+        symbol [ menuView %tmp.24 140 25 33 ];
+        %tmp.25 = lgetv %menuDelegate.2;
+        symbol [ menuDelegate %tmp.25 140 35 47 ];
+        symbol [ WatchUi %tmp.26 140 49 56 ];
+        %tmp.26 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.27 140 57 65 ];
+        %tmp.27 = getv %tmp.26 :SLIDE_UP;
+        invoke %tmp.22 %tmp.23(%tmp.24, %tmp.25, %tmp.27);
+_Users_samar_Desktop_DOOM_source_GameView_mc_134_57_141_4_stop:
+    }
+}
+[ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 148; @symbol_classdef = [GameDelegate,148,6,18]; @symbol_extends<0> = [WatchUi,148,27,34]; @symbol_extends<1> = [BehaviorDelegate,148,35,51]; ]
+class GameDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 148; ]
+    <init> {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 148; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 150; @position = 15; @symbol_vardef = [_view,150,15,20]; @symbol_type<0> = [GameView,150,30,38]; ]
+    protected
+    var _view as GameView;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 151; @position = 15; @symbol_vardef = [_upPressed,151,15,25]; @symbol_type<0> = [Boolean,151,30,37]; ]
+    protected
+    var _upPressed as Boolean = false;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 152; @position = 15; @symbol_vardef = [_upHoldMs,152,15,24]; @symbol_type<0> = [Number,152,30,36]; ]
+    protected
+    var _upHoldMs as Number = 0;
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 154; @symbol_functiondef = [initialize,154,13,23]; @symbol_param<0> = [view,154,24,28]; @symbol_param<0>_type<0> = [GameView,154,32,40]; ]
+    function initialize(view as GameView) as Void {
+_Users_samar_Desktop_DOOM_source_GameView_mc_154_42_157_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 155 8 ]
+        symbol [ BehaviorDelegate %tmp.2 155 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 155 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 156 8 ]
+        %tmp.4 = lgetv %view;
+        symbol [ view %tmp.4 156 16 20 ];
+        symbol [ _view ? 156 8 13 ];
+        putv self :_view %tmp.4;
+_Users_samar_Desktop_DOOM_source_GameView_mc_154_42_157_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 159; @symbol_functiondef = [onKey,159,13,18]; @symbol_param<0> = [evt,159,19,22]; @symbol_param<0>_type<0> = [WatchUi,159,26,33]; @symbol_param<0>_type<1> = [KeyEvent,159,34,42]; @symbol_return<0> = [Boolean,159,47,54]; ]
+    function onKey(evt as WatchUi.KeyEvent) as Boolean {
+_Users_samar_Desktop_DOOM_source_GameView_mc_159_55_214_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 160 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_159_55_214_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_159_55_214_4_stop" ]
+        %gs.1 = local;
+        symbol [ gs %gs.1 160 12 14 ];
+        symbol [ GameState %tmp.2 160 21 30 ];
+        %tmp.2 = getv ? :GameState;
+        symbol [ get %tmp.3 160 31 34 ];
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %gs.1 %tmp.4;
+        symbol [ gs %gs.1 160 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 161 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_161_8_161_52_if_stmt:
+        %tmp.5 = lgetv %gs.1;
+        symbol [ gs %tmp.5 161 12 14 ];
+        symbol [ mode %tmp.6 161 15 19 ];
+        %tmp.6 = getv %tmp.5 :mode;
+        symbol [ C %tmp.7 161 23 24 ];
+        %tmp.7 = getm $.WristDungeon;
+        symbol [ MODE_GAME %tmp.8 161 25 34 ];
+        %tmp.8 = getv %tmp.7 :MODE_GAME;
+        %tmp.9 = ne %tmp.6 %tmp.8;
+        bf %tmp.9 @_Users_samar_Desktop_DOOM_source_GameView_mc_161_8_161_52_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_161_8_161_52_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_161_36_161_52_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 161 38 ]
+        %tmp.10 = false;
+        ret %tmp.10;
+_Users_samar_Desktop_DOOM_source_GameView_mc_161_36_161_52_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_161_8_161_52_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_161_8_161_52_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 162 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_159_55_214_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_159_55_214_4_stop" ]
+        %player.2 = local;
+        symbol [ player %player.2 162 12 18 ];
+        %tmp.11 = lgetv %gs.1;
+        symbol [ gs %tmp.11 162 21 23 ];
+        symbol [ player %tmp.12 162 24 30 ];
+        %tmp.12 = getv %tmp.11 :player;
+        %tmp.13 = as %tmp.12 Player;
+        symbol [ Player %tmp.13 162 34 40 ];
+        lputv %player.2 %tmp.13;
+        symbol [ player %player.2 162 12 18 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 163 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_159_55_214_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_159_55_214_4_stop" ]
+        %key.3 = local;
+        symbol [ key %key.3 163 12 15 ];
+        %tmp.14 = lgetv %evt;
+        symbol [ evt %tmp.14 163 21 24 ];
+        symbol [ getKey %tmp.15 163 25 31 ];
+        %tmp.15 = getv function %tmp.14 :getKey;
+        %tmp.16 = invoke %tmp.14 %tmp.15();
+        lputv %key.3 %tmp.16;
+        symbol [ key %key.3 163 12 15 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 164 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_159_55_214_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_159_55_214_4_stop" ]
+        %typ.4 = local;
+        symbol [ typ %typ.4 164 12 15 ];
+        %tmp.17 = lgetv %evt;
+        symbol [ evt %tmp.17 164 21 24 ];
+        symbol [ getType %tmp.18 164 25 32 ];
+        %tmp.18 = getv function %tmp.17 :getType;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        lputv %typ.4 %tmp.19;
+        symbol [ typ %typ.4 164 12 15 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 166 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_166_8_180_8_if_stmt:
+        %tmp.20 = lgetv %key.3;
+        symbol [ key %tmp.20 166 12 15 ];
+        symbol [ WatchUi %tmp.21 166 19 26 ];
+        %tmp.21 = getm $.Toybox.WatchUi;
+        symbol [ KEY_UP %tmp.22 166 27 33 ];
+        %tmp.22 = getv %tmp.21 :KEY_UP;
+        %tmp.23 = eq %tmp.20 %tmp.22;
+        bf %tmp.23 @_Users_samar_Desktop_DOOM_source_GameView_mc_166_8_180_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_166_8_180_8_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_166_35_180_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 167 12 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_167_12_178_12_if_stmt:
+        %tmp.24 = lgetv %typ.4;
+        symbol [ typ %tmp.24 167 16 19 ];
+        symbol [ WatchUi %tmp.25 167 23 30 ];
+        %tmp.25 = getm $.Toybox.WatchUi;
+        symbol [ PRESS_TYPE_ACTION %tmp.26 167 31 48 ];
+        %tmp.26 = getv %tmp.25 :PRESS_TYPE_ACTION;
+        %tmp.27 = eq %tmp.24 %tmp.26;
+        bf %tmp.27 @_Users_samar_Desktop_DOOM_source_GameView_mc_167_12_178_12_if_false;
+_Users_samar_Desktop_DOOM_source_GameView_mc_167_12_178_12_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_167_50_170_12_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 168 16 ]
+        %tmp.28 = lgetv %player.2;
+        symbol [ player %tmp.28 168 16 22 ];
+        %tmp.29 = true;
+        symbol [ movingForward ? 168 23 36 ];
+        putv %tmp.28 :movingForward %tmp.29;
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 169 16 ]
+        %tmp.30 = true;
+        symbol [ _upPressed ? 169 16 26 ];
+        putv self :_upPressed %tmp.30;
+_Users_samar_Desktop_DOOM_source_GameView_mc_167_50_170_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_167_12_178_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_167_12_178_12_if_false:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 170 19 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_170_19_178_12_if_stmt:
+        %tmp.31 = lgetv %typ.4;
+        symbol [ typ %tmp.31 170 23 26 ];
+        symbol [ WatchUi %tmp.32 170 30 37 ];
+        %tmp.32 = getm $.Toybox.WatchUi;
+        symbol [ PRESS_TYPE_RELEASE %tmp.33 170 38 56 ];
+        %tmp.33 = getv %tmp.32 :PRESS_TYPE_RELEASE;
+        %tmp.34 = eq %tmp.31 %tmp.33;
+        bf %tmp.34 @_Users_samar_Desktop_DOOM_source_GameView_mc_170_19_178_12_if_false;
+_Users_samar_Desktop_DOOM_source_GameView_mc_170_19_178_12_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_170_58_174_12_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 171 16 ]
+        %tmp.35 = lgetv %player.2;
+        symbol [ player %tmp.35 171 16 22 ];
+        %tmp.36 = false;
+        symbol [ movingForward ? 171 23 36 ];
+        putv %tmp.35 :movingForward %tmp.36;
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 172 16 ]
+        %tmp.37 = false;
+        symbol [ _upPressed ? 172 16 26 ];
+        putv self :_upPressed %tmp.37;
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 173 16 ]
+        %tmp.38 = 0;
+        symbol [ _upHoldMs ? 173 16 25 ];
+        putv self :_upHoldMs %tmp.38;
+_Users_samar_Desktop_DOOM_source_GameView_mc_170_58_174_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_170_19_178_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_170_19_178_12_if_false:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 174 19 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_174_19_178_12_if_stmt:
+        %tmp.39 = lgetv %typ.4;
+        symbol [ typ %tmp.39 174 23 26 ];
+        symbol [ WatchUi %tmp.40 174 30 37 ];
+        %tmp.40 = getm $.Toybox.WatchUi;
+        symbol [ PRESS_TYPE_HOLD %tmp.41 174 38 53 ];
+        %tmp.41 = getv %tmp.40 :PRESS_TYPE_HOLD;
+        %tmp.42 = eq %tmp.39 %tmp.41;
+        bf %tmp.42 @_Users_samar_Desktop_DOOM_source_GameView_mc_174_19_178_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_174_19_178_12_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_174_55_178_12_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 176 16 ]
+        %tmp.43 = lgetv %gs.1;
+        symbol [ gs %tmp.43 176 16 18 ];
+        %tmp.44 = lgetv %gs.1;
+        symbol [ gs %tmp.44 176 34 36 ];
+        symbol [ showMinimap %tmp.45 176 37 48 ];
+        %tmp.45 = getv %tmp.44 :showMinimap;
+        %tmp.46 = not %tmp.45;
+        symbol [ showMinimap ? 176 19 30 ];
+        putv %tmp.43 :showMinimap %tmp.46;
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 177 16 ]
+        %tmp.47 = lgetv %gs.1;
+        symbol [ gs %tmp.47 177 16 18 ];
+        symbol [ markDirty %tmp.48 177 19 28 ];
+        %tmp.48 = getv function %tmp.47 :markDirty;
+        invoke %tmp.47 %tmp.48();
+_Users_samar_Desktop_DOOM_source_GameView_mc_174_55_178_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_174_19_178_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_174_19_178_12_if_end:
+_Users_samar_Desktop_DOOM_source_GameView_mc_170_19_178_12_if_end:
+_Users_samar_Desktop_DOOM_source_GameView_mc_167_12_178_12_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 179 12 ]
+        %tmp.49 = true;
+        ret %tmp.49;
+_Users_samar_Desktop_DOOM_source_GameView_mc_166_35_180_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_166_8_180_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_166_8_180_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 182 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_182_8_189_8_if_stmt:
+        %tmp.50 = lgetv %key.3;
+        symbol [ key %tmp.50 182 12 15 ];
+        symbol [ WatchUi %tmp.51 182 19 26 ];
+        %tmp.51 = getm $.Toybox.WatchUi;
+        symbol [ KEY_DOWN %tmp.52 182 27 35 ];
+        %tmp.52 = getv %tmp.51 :KEY_DOWN;
+        %tmp.53 = eq %tmp.50 %tmp.52;
+        bf %tmp.53 @_Users_samar_Desktop_DOOM_source_GameView_mc_182_8_189_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_182_8_189_8_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_182_37_189_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 183 12 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_183_12_187_12_if_stmt:
+        %tmp.54 = lgetv %typ.4;
+        symbol [ typ %tmp.54 183 16 19 ];
+        symbol [ WatchUi %tmp.55 183 23 30 ];
+        %tmp.55 = getm $.Toybox.WatchUi;
+        symbol [ PRESS_TYPE_ACTION %tmp.56 183 31 48 ];
+        %tmp.56 = getv %tmp.55 :PRESS_TYPE_ACTION;
+        %tmp.57 = eq %tmp.54 %tmp.56;
+        bf %tmp.57 @_Users_samar_Desktop_DOOM_source_GameView_mc_183_12_187_12_if_false;
+_Users_samar_Desktop_DOOM_source_GameView_mc_183_12_187_12_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_183_50_185_12_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 184 16 ]
+        %tmp.58 = lgetv %player.2;
+        symbol [ player %tmp.58 184 16 22 ];
+        %tmp.59 = true;
+        symbol [ movingBack ? 184 23 33 ];
+        putv %tmp.58 :movingBack %tmp.59;
+_Users_samar_Desktop_DOOM_source_GameView_mc_183_50_185_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_183_12_187_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_183_12_187_12_if_false:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 185 19 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_185_19_187_12_if_stmt:
+        %tmp.60 = lgetv %typ.4;
+        symbol [ typ %tmp.60 185 23 26 ];
+        symbol [ WatchUi %tmp.61 185 30 37 ];
+        %tmp.61 = getm $.Toybox.WatchUi;
+        symbol [ PRESS_TYPE_RELEASE %tmp.62 185 38 56 ];
+        %tmp.62 = getv %tmp.61 :PRESS_TYPE_RELEASE;
+        %tmp.63 = eq %tmp.60 %tmp.62;
+        bf %tmp.63 @_Users_samar_Desktop_DOOM_source_GameView_mc_185_19_187_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_185_19_187_12_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_185_58_187_12_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 186 16 ]
+        %tmp.64 = lgetv %player.2;
+        symbol [ player %tmp.64 186 16 22 ];
+        %tmp.65 = false;
+        symbol [ movingBack ? 186 23 33 ];
+        putv %tmp.64 :movingBack %tmp.65;
+_Users_samar_Desktop_DOOM_source_GameView_mc_185_58_187_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_185_19_187_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_185_19_187_12_if_end:
+_Users_samar_Desktop_DOOM_source_GameView_mc_183_12_187_12_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 188 12 ]
+        %tmp.66 = true;
+        ret %tmp.66;
+_Users_samar_Desktop_DOOM_source_GameView_mc_182_37_189_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_182_8_189_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_182_8_189_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 191 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_191_8_196_8_if_stmt:
+        %tmp.67 = lgetv %key.3;
+        symbol [ key %tmp.67 191 12 15 ];
+        symbol [ WatchUi %tmp.68 191 19 26 ];
+        %tmp.68 = getm $.Toybox.WatchUi;
+        symbol [ KEY_START %tmp.69 191 27 36 ];
+        %tmp.69 = getv %tmp.68 :KEY_START;
+        %tmp.70 = eq %tmp.67 %tmp.69;
+        bf %tmp.70 @_Users_samar_Desktop_DOOM_source_GameView_mc_191_8_196_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_191_8_196_8_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_191_38_196_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 192 12 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_192_12_194_12_if_stmt:
+        %tmp.71 = lgetv %typ.4;
+        symbol [ typ %tmp.71 192 16 19 ];
+        symbol [ WatchUi %tmp.72 192 23 30 ];
+        %tmp.72 = getm $.Toybox.WatchUi;
+        symbol [ PRESS_TYPE_ACTION %tmp.73 192 31 48 ];
+        %tmp.73 = getv %tmp.72 :PRESS_TYPE_ACTION;
+        %tmp.74 = eq %tmp.71 %tmp.73;
+        bf %tmp.74 @_Users_samar_Desktop_DOOM_source_GameView_mc_192_12_194_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_192_12_194_12_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_192_50_194_12_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 193 16 ]
+        %tmp.75 = lgetv %player.2;
+        symbol [ player %tmp.75 193 16 22 ];
+        %tmp.76 = true;
+        symbol [ wantShoot ? 193 23 32 ];
+        putv %tmp.75 :wantShoot %tmp.76;
+_Users_samar_Desktop_DOOM_source_GameView_mc_192_50_194_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_192_12_194_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_192_12_194_12_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 195 12 ]
+        %tmp.77 = true;
+        ret %tmp.77;
+_Users_samar_Desktop_DOOM_source_GameView_mc_191_38_196_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_191_8_196_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_191_8_196_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 198 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_198_8_211_8_if_stmt:
+        %tmp.78 = lgetv %key.3;
+        symbol [ key %tmp.78 198 12 15 ];
+        symbol [ WatchUi %tmp.79 198 19 26 ];
+        %tmp.79 = getm $.Toybox.WatchUi;
+        symbol [ KEY_LAP %tmp.80 198 27 34 ];
+        %tmp.80 = getv %tmp.79 :KEY_LAP;
+        %tmp.81 = eq %tmp.78 %tmp.80;
+        bf %tmp.81 @_Users_samar_Desktop_DOOM_source_GameView_mc_198_8_211_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_198_8_211_8_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_198_36_211_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 199 12 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_199_12_209_12_if_stmt:
+        %tmp.82 = lgetv %typ.4;
+        symbol [ typ %tmp.82 199 16 19 ];
+        symbol [ WatchUi %tmp.83 199 23 30 ];
+        %tmp.83 = getm $.Toybox.WatchUi;
+        symbol [ PRESS_TYPE_ACTION %tmp.84 199 31 48 ];
+        %tmp.84 = getv %tmp.83 :PRESS_TYPE_ACTION;
+        %tmp.85 = eq %tmp.82 %tmp.84;
+        bf %tmp.85 @_Users_samar_Desktop_DOOM_source_GameView_mc_199_12_209_12_if_false;
+_Users_samar_Desktop_DOOM_source_GameView_mc_199_12_209_12_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_199_50_205_12_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 201 16 ]
+        %tmp.86 = lgetv %gs.1;
+        symbol [ gs %tmp.86 201 16 18 ];
+        symbol [ C %tmp.87 201 26 27 ];
+        %tmp.87 = getm $.WristDungeon;
+        symbol [ MODE_PAUSE %tmp.88 201 28 38 ];
+        %tmp.88 = getv %tmp.87 :MODE_PAUSE;
+        symbol [ mode ? 201 19 23 ];
+        putv %tmp.86 :mode %tmp.88;
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 202 16 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_199_50_205_12_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_199_50_205_12_stop" ]
+        %menuView.5 = local;
+        symbol [ menuView %menuView.5 202 20 28 ];
+        symbol [ MenuView %tmp.92 202 35 43 ];
+        %tmp.92 = getv ? :MenuView;
+        %tmp.89 = newc %tmp.92 ();
+        lputv %menuView.5 %tmp.89;
+        symbol [ menuView %menuView.5 202 20 28 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 203 16 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_199_50_205_12_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_199_50_205_12_stop" ]
+        %menuDelegate.6 = local;
+        symbol [ menuDelegate %menuDelegate.6 203 20 32 ];
+        symbol [ MenuDelegate %tmp.96 203 39 51 ];
+        %tmp.96 = getv ? :MenuDelegate;
+        %tmp.97 = lgetv %menuView.5;
+        symbol [ menuView %tmp.97 203 52 60 ];
+        %tmp.93 = newc %tmp.96 (%tmp.97);
+        lputv %menuDelegate.6 %tmp.93;
+        symbol [ menuDelegate %menuDelegate.6 203 20 32 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 204 16 ]
+        symbol [ WatchUi %tmp.98 204 16 23 ];
+        %tmp.98 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.99 204 24 32 ];
+        %tmp.99 = getv function %tmp.98 :pushView;
+        %tmp.100 = lgetv %menuView.5;
+        symbol [ menuView %tmp.100 204 33 41 ];
+        %tmp.101 = lgetv %menuDelegate.6;
+        symbol [ menuDelegate %tmp.101 204 43 55 ];
+        symbol [ WatchUi %tmp.102 204 57 64 ];
+        %tmp.102 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.103 204 65 73 ];
+        %tmp.103 = getv %tmp.102 :SLIDE_UP;
+        invoke %tmp.98 %tmp.99(%tmp.100, %tmp.101, %tmp.103);
+_Users_samar_Desktop_DOOM_source_GameView_mc_199_50_205_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_199_12_209_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_199_12_209_12_if_false:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 205 19 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_205_19_209_12_if_stmt:
+        %tmp.104 = lgetv %typ.4;
+        symbol [ typ %tmp.104 205 23 26 ];
+        symbol [ WatchUi %tmp.105 205 30 37 ];
+        %tmp.105 = getm $.Toybox.WatchUi;
+        symbol [ PRESS_TYPE_HOLD %tmp.106 205 38 53 ];
+        %tmp.106 = getv %tmp.105 :PRESS_TYPE_HOLD;
+        %tmp.107 = eq %tmp.104 %tmp.106;
+        bf %tmp.107 @_Users_samar_Desktop_DOOM_source_GameView_mc_205_19_209_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_205_19_209_12_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_205_55_209_12_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 207 16 ]
+        %tmp.108 = lgetv %gs.1;
+        symbol [ gs %tmp.108 207 16 18 ];
+        symbol [ C %tmp.109 207 26 27 ];
+        %tmp.109 = getm $.WristDungeon;
+        symbol [ MODE_MENU %tmp.110 207 28 37 ];
+        %tmp.110 = getv %tmp.109 :MODE_MENU;
+        symbol [ mode ? 207 19 23 ];
+        putv %tmp.108 :mode %tmp.110;
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 208 16 ]
+        symbol [ WatchUi %tmp.111 208 16 23 ];
+        %tmp.111 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.112 208 24 31 ];
+        %tmp.112 = getv function %tmp.111 :popView;
+        symbol [ WatchUi %tmp.113 208 32 39 ];
+        %tmp.113 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.114 208 40 50 ];
+        %tmp.114 = getv %tmp.113 :SLIDE_DOWN;
+        invoke %tmp.111 %tmp.112(%tmp.114);
+_Users_samar_Desktop_DOOM_source_GameView_mc_205_55_209_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_205_19_209_12_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_205_19_209_12_if_end:
+_Users_samar_Desktop_DOOM_source_GameView_mc_199_12_209_12_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 210 12 ]
+        %tmp.115 = true;
+        ret %tmp.115;
+_Users_samar_Desktop_DOOM_source_GameView_mc_198_36_211_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_198_8_211_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_198_8_211_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 213 8 ]
+        %tmp.116 = false;
+        ret %tmp.116;
+_Users_samar_Desktop_DOOM_source_GameView_mc_159_55_214_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 217; @symbol_functiondef = [onTap,217,13,18]; @symbol_param<0> = [evt,217,19,22]; @symbol_param<0>_type<0> = [WatchUi,217,26,33]; @symbol_param<0>_type<1> = [ClickEvent,217,34,44]; @symbol_return<0> = [Boolean,217,49,56]; ]
+    function onTap(evt as WatchUi.ClickEvent) as Boolean {
+_Users_samar_Desktop_DOOM_source_GameView_mc_217_57_233_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 218 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_217_57_233_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_217_57_233_4_stop" ]
+        %gs.1 = local;
+        symbol [ gs %gs.1 218 12 14 ];
+        symbol [ GameState %tmp.2 218 17 26 ];
+        %tmp.2 = getv ? :GameState;
+        symbol [ get %tmp.3 218 27 30 ];
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %gs.1 %tmp.4;
+        symbol [ gs %gs.1 218 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 219 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_219_8_219_52_if_stmt:
+        %tmp.5 = lgetv %gs.1;
+        symbol [ gs %tmp.5 219 12 14 ];
+        symbol [ mode %tmp.6 219 15 19 ];
+        %tmp.6 = getv %tmp.5 :mode;
+        symbol [ C %tmp.7 219 23 24 ];
+        %tmp.7 = getm $.WristDungeon;
+        symbol [ MODE_GAME %tmp.8 219 25 34 ];
+        %tmp.8 = getv %tmp.7 :MODE_GAME;
+        %tmp.9 = ne %tmp.6 %tmp.8;
+        bf %tmp.9 @_Users_samar_Desktop_DOOM_source_GameView_mc_219_8_219_52_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_219_8_219_52_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_219_36_219_52_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 219 38 ]
+        %tmp.10 = false;
+        ret %tmp.10;
+_Users_samar_Desktop_DOOM_source_GameView_mc_219_36_219_52_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_219_8_219_52_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_219_8_219_52_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 220 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_217_57_233_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_217_57_233_4_stop" ]
+        %player.2 = local;
+        symbol [ player %player.2 220 12 18 ];
+        %tmp.11 = lgetv %gs.1;
+        symbol [ gs %tmp.11 220 21 23 ];
+        symbol [ player %tmp.12 220 24 30 ];
+        %tmp.12 = getv %tmp.11 :player;
+        %tmp.13 = as %tmp.12 Player;
+        symbol [ Player %tmp.13 220 34 40 ];
+        lputv %player.2 %tmp.13;
+        symbol [ player %player.2 220 12 18 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 221 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_217_57_233_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_217_57_233_4_stop" ]
+        %x.3 = local;
+        symbol [ x %x.3 221 12 13 ];
+        %tmp.14 = lgetv %evt;
+        symbol [ evt %tmp.14 221 16 19 ];
+        symbol [ getCoordinates %tmp.15 221 20 34 ];
+        %tmp.15 = getv function %tmp.14 :getCoordinates;
+        %tmp.16 = invoke %tmp.14 %tmp.15();
+        %tmp.17 = 0;
+        %tmp.18 = agetv %tmp.16 %tmp.17;
+        lputv %x.3 %tmp.18;
+        symbol [ x %x.3 221 12 13 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 223 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_223_8_231_8_if_stmt:
+        %tmp.19 = lgetv %x.3;
+        symbol [ x %tmp.19 223 12 13 ];
+        symbol [ C %tmp.20 223 16 17 ];
+        %tmp.20 = getm $.WristDungeon;
+        symbol [ SCREEN_W %tmp.21 223 18 26 ];
+        %tmp.21 = getv %tmp.20 :SCREEN_W;
+        %tmp.22 = 3;
+        %tmp.23 = div %tmp.21 %tmp.22;
+        %tmp.24 = lt %tmp.19 %tmp.23;
+        bf %tmp.24 @_Users_samar_Desktop_DOOM_source_GameView_mc_223_8_231_8_if_false;
+_Users_samar_Desktop_DOOM_source_GameView_mc_223_8_231_8_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_223_32_227_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 224 12 ]
+        %tmp.25 = lgetv %player.2;
+        symbol [ player %tmp.25 224 12 18 ];
+        symbol [ turnLeft %tmp.26 224 19 27 ];
+        %tmp.26 = getv function %tmp.25 :turnLeft;
+        invoke %tmp.25 %tmp.26();
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 225 12 ]
+        %tmp.27 = lgetv %gs.1;
+        symbol [ gs %tmp.27 225 12 14 ];
+        symbol [ markDirty %tmp.28 225 15 24 ];
+        %tmp.28 = getv function %tmp.27 :markDirty;
+        invoke %tmp.27 %tmp.28();
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 226 12 ]
+        symbol [ WatchUi %tmp.29 226 12 19 ];
+        %tmp.29 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.30 226 20 33 ];
+        %tmp.30 = getv function %tmp.29 :requestUpdate;
+        invoke %tmp.29 %tmp.30();
+_Users_samar_Desktop_DOOM_source_GameView_mc_223_32_227_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_223_8_231_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_223_8_231_8_if_false:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 227 15 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_227_15_231_8_if_stmt:
+        %tmp.31 = lgetv %x.3;
+        symbol [ x %tmp.31 227 19 20 ];
+        %tmp.32 = 2;
+        symbol [ C %tmp.33 227 27 28 ];
+        %tmp.33 = getm $.WristDungeon;
+        symbol [ SCREEN_W %tmp.34 227 29 37 ];
+        %tmp.34 = getv %tmp.33 :SCREEN_W;
+        %tmp.35 = mul %tmp.32 %tmp.34;
+        %tmp.36 = 3;
+        %tmp.37 = div %tmp.35 %tmp.36;
+        %tmp.38 = gt %tmp.31 %tmp.37;
+        bf %tmp.38 @_Users_samar_Desktop_DOOM_source_GameView_mc_227_15_231_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_227_15_231_8_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_227_43_231_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 228 12 ]
+        %tmp.39 = lgetv %player.2;
+        symbol [ player %tmp.39 228 12 18 ];
+        symbol [ turnRight %tmp.40 228 19 28 ];
+        %tmp.40 = getv function %tmp.39 :turnRight;
+        invoke %tmp.39 %tmp.40();
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 229 12 ]
+        %tmp.41 = lgetv %gs.1;
+        symbol [ gs %tmp.41 229 12 14 ];
+        symbol [ markDirty %tmp.42 229 15 24 ];
+        %tmp.42 = getv function %tmp.41 :markDirty;
+        invoke %tmp.41 %tmp.42();
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 230 12 ]
+        symbol [ WatchUi %tmp.43 230 12 19 ];
+        %tmp.43 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.44 230 20 33 ];
+        %tmp.44 = getv function %tmp.43 :requestUpdate;
+        invoke %tmp.43 %tmp.44();
+_Users_samar_Desktop_DOOM_source_GameView_mc_227_43_231_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_227_15_231_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_227_15_231_8_if_end:
+_Users_samar_Desktop_DOOM_source_GameView_mc_223_8_231_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 232 8 ]
+        %tmp.45 = true;
+        ret %tmp.45;
+_Users_samar_Desktop_DOOM_source_GameView_mc_217_57_233_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 236; @symbol_functiondef = [onSwipe,236,13,20]; @symbol_param<0> = [evt,236,21,24]; @symbol_param<0>_type<0> = [WatchUi,236,28,35]; @symbol_param<0>_type<1> = [SwipeEvent,236,36,46]; @symbol_return<0> = [Boolean,236,51,58]; ]
+    function onSwipe(evt as WatchUi.SwipeEvent) as Boolean {
+_Users_samar_Desktop_DOOM_source_GameView_mc_236_59_248_4_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 237 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_236_59_248_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_236_59_248_4_stop" ]
+        %gs.1 = local;
+        symbol [ gs %gs.1 237 12 14 ];
+        symbol [ GameState %tmp.2 237 17 26 ];
+        %tmp.2 = getv ? :GameState;
+        symbol [ get %tmp.3 237 27 30 ];
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %gs.1 %tmp.4;
+        symbol [ gs %gs.1 237 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 238 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_238_8_238_52_if_stmt:
+        %tmp.5 = lgetv %gs.1;
+        symbol [ gs %tmp.5 238 12 14 ];
+        symbol [ mode %tmp.6 238 15 19 ];
+        %tmp.6 = getv %tmp.5 :mode;
+        symbol [ C %tmp.7 238 23 24 ];
+        %tmp.7 = getm $.WristDungeon;
+        symbol [ MODE_GAME %tmp.8 238 25 34 ];
+        %tmp.8 = getv %tmp.7 :MODE_GAME;
+        %tmp.9 = ne %tmp.6 %tmp.8;
+        bf %tmp.9 @_Users_samar_Desktop_DOOM_source_GameView_mc_238_8_238_52_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_238_8_238_52_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_238_36_238_52_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 238 38 ]
+        %tmp.10 = false;
+        ret %tmp.10;
+_Users_samar_Desktop_DOOM_source_GameView_mc_238_36_238_52_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_238_8_238_52_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_238_8_238_52_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 239 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_236_59_248_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_236_59_248_4_stop" ]
+        %player.2 = local;
+        symbol [ player %player.2 239 12 18 ];
+        %tmp.11 = lgetv %gs.1;
+        symbol [ gs %tmp.11 239 21 23 ];
+        symbol [ player %tmp.12 239 24 30 ];
+        %tmp.12 = getv %tmp.11 :player;
+        %tmp.13 = as %tmp.12 Player;
+        symbol [ Player %tmp.13 239 34 40 ];
+        lputv %player.2 %tmp.13;
+        symbol [ player %player.2 239 12 18 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 240 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_236_59_248_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_236_59_248_4_stop" ]
+        %dir.3 = local;
+        symbol [ dir %dir.3 240 12 15 ];
+        %tmp.14 = lgetv %evt;
+        symbol [ evt %tmp.14 240 18 21 ];
+        symbol [ getDirection %tmp.15 240 22 34 ];
+        %tmp.15 = getv function %tmp.14 :getDirection;
+        %tmp.16 = invoke %tmp.14 %tmp.15();
+        lputv %dir.3 %tmp.16;
+        symbol [ dir %dir.3 240 12 15 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 241 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_GameView_mc_236_59_248_4_start" "_Users_samar_Desktop_DOOM_source_GameView_mc_236_59_248_4_stop" ]
+        %x.4 = local;
+        symbol [ x %x.4 241 12 13 ];
+        %tmp.17 = lgetv %evt;
+        symbol [ evt %tmp.17 241 18 21 ];
+        symbol [ getCoordinates %tmp.18 241 22 36 ];
+        %tmp.18 = getv function %tmp.17 :getCoordinates;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        %tmp.20 = 0;
+        %tmp.21 = agetv %tmp.19 %tmp.20;
+        lputv %x.4 %tmp.21;
+        symbol [ x %x.4 241 12 13 ];
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 243 8 ]
+_Users_samar_Desktop_DOOM_source_GameView_mc_243_8_246_8_if_stmt:
+_Users_samar_Desktop_DOOM_source_GameView_mc_243_12_243_82_begin:
+_Users_samar_Desktop_DOOM_source_GameView_mc_243_12_243_56_begin:
+        %tmp.22 = lgetv %dir.3;
+        symbol [ dir %tmp.22 243 12 15 ];
+        symbol [ WatchUi %tmp.23 243 19 26 ];
+        %tmp.23 = getm $.Toybox.WatchUi;
+        symbol [ SWIPE_UP %tmp.24 243 27 35 ];
+        %tmp.24 = getv %tmp.23 :SWIPE_UP;
+        %tmp.25 = eq %tmp.22 %tmp.24;
+        bf %tmp.25 @_Users_samar_Desktop_DOOM_source_GameView_mc_243_8_246_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_243_39_243_56_true:
+        %tmp.26 = lgetv %x.4;
+        symbol [ x %tmp.26 243 39 40 ];
+        symbol [ C %tmp.27 243 43 44 ];
+        %tmp.27 = getm $.WristDungeon;
+        symbol [ SCREEN_W %tmp.28 243 45 53 ];
+        %tmp.28 = getv %tmp.27 :SCREEN_W;
+        %tmp.29 = 3;
+        %tmp.30 = div %tmp.28 %tmp.29;
+        %tmp.31 = gt %tmp.26 %tmp.30;
+        push %tmp.31;
+_Users_samar_Desktop_DOOM_source_GameView_mc_243_39_243_56_end:
+        %tmp.32 = phi [%tmp.25 @_Users_samar_Desktop_DOOM_source_GameView_mc_243_12_243_56_begin] [%tmp.31 @_Users_samar_Desktop_DOOM_source_GameView_mc_243_39_243_56_true] [%tmp.32 @_Users_samar_Desktop_DOOM_source_GameView_mc_243_39_243_56_end];
+        bf %tmp.32 @_Users_samar_Desktop_DOOM_source_GameView_mc_243_8_246_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_243_61_243_82_true:
+        %tmp.33 = lgetv %x.4;
+        symbol [ x %tmp.33 243 61 62 ];
+        %tmp.34 = 2;
+        symbol [ C %tmp.35 243 69 70 ];
+        %tmp.35 = getm $.WristDungeon;
+        symbol [ SCREEN_W %tmp.36 243 71 79 ];
+        %tmp.36 = getv %tmp.35 :SCREEN_W;
+        %tmp.37 = mul %tmp.34 %tmp.36;
+        %tmp.38 = 3;
+        %tmp.39 = div %tmp.37 %tmp.38;
+        %tmp.40 = lt %tmp.33 %tmp.39;
+        push %tmp.40;
+_Users_samar_Desktop_DOOM_source_GameView_mc_243_61_243_82_end:
+        %tmp.41 = phi [%tmp.32 @_Users_samar_Desktop_DOOM_source_GameView_mc_243_12_243_82_begin] [%tmp.40 @_Users_samar_Desktop_DOOM_source_GameView_mc_243_61_243_82_true] [%tmp.41 @_Users_samar_Desktop_DOOM_source_GameView_mc_243_61_243_82_end];
+        bf %tmp.41 @_Users_samar_Desktop_DOOM_source_GameView_mc_243_8_246_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_243_8_246_8_if_true:
+_Users_samar_Desktop_DOOM_source_GameView_mc_243_85_246_8_start:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 244 12 ]
+        %tmp.42 = lgetv %player.2;
+        symbol [ player %tmp.42 244 12 18 ];
+        %tmp.43 = true;
+        symbol [ movingForward ? 244 19 32 ];
+        putv %tmp.42 :movingForward %tmp.43;
+_Users_samar_Desktop_DOOM_source_GameView_mc_243_85_246_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_GameView_mc_243_8_246_8_if_end;
+_Users_samar_Desktop_DOOM_source_GameView_mc_243_8_246_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/GameView.mc" 247 8 ]
+        %tmp.44 = true;
+        ret %tmp.44;
+_Users_samar_Desktop_DOOM_source_GameView_mc_236_59_248_4_stop:
+    }
+}
+[ @file = "/Users/samar/Desktop/DOOM/source/GameView.mc"; @line = 3; ]
+<init> {
+}

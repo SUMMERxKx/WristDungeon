@@ -1,13 +1,25 @@
-<?xml version="1.0"?>
-<iq:manifest xmlns:iq="com.garmin.iq" version="3">
-    <iq:application id="a914ca9b-0f0d-4957-9aec-0e6d99c98f40" launcherIcon="@Drawables.LauncherIcon" minApiLevel="4.2.0" name="@Strings.AppName" type="watch-app" version="1.0.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="3">
+    <iq:application
+        id="1f95270f-c810-47ae-ace6-c1a1b16c9128"
+        launcherIcon="@Drawables.LauncherIcon"
+        minApiLevel="4.2.0"
+        name="@Strings.AppName"
+        type="watch-app"
+        version="1.0.0"
+        entry="WristDungeonApp">
+
         <iq:products>
             <iq:product id="fr165"/>
         </iq:products>
+
         <iq:permissions/>
+
         <iq:languages>
             <iq:language>eng</iq:language>
         </iq:languages>
-        <iq:iq-version>9.1.0</iq:iq-version>
+
+        <iq:barrels/>
+
     </iq:application>
 </iq:manifest>

@@ -1,0 +1,2187 @@
+[ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Graphics,3,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Lang,4,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [System,5,14,20]; ]
+import Toybox.System;
+[ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [WatchUi,6,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 7; @symbol_usingdef<0> = [WristDungeon,7,6,18]; @symbol_usingAlias = [C,7,22,23]; ]
+using WristDungeon as :C;
+[ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 12; @symbol_classdef = [MenuView,12,6,14]; @symbol_extends<0> = [WatchUi,12,23,30]; @symbol_extends<1> = [View,12,31,35]; ]
+class MenuView extends WatchUi.View {
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 12; ]
+    <init> {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 12; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 14; @position = 15; @symbol_vardef = [_menuItem,14,15,24]; @symbol_type<0> = [Number,14,28,34]; ]
+    protected
+    var _menuItem as Number = 0;
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 16; @symbol_functiondef = [initialize,16,13,23]; ]
+    function initialize() as Void {
+_Users_samar_Desktop_DOOM_source_MenuView_mc_16_26_18_4_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 17 8 ]
+        symbol [ View %tmp.2 17 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 17 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_samar_Desktop_DOOM_source_MenuView_mc_16_26_18_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 20; @symbol_functiondef = [onLayout,20,13,21]; @symbol_param<0> = [dc,20,22,24]; @symbol_param<0>_type<0> = [Graphics,20,28,36]; @symbol_param<0>_type<1> = [Dc,20,37,39]; ]
+    function onLayout(dc as Graphics.Dc) as Void {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 23; @symbol_functiondef = [onUpdate,23,13,21]; @symbol_param<0> = [dc,23,22,24]; @symbol_param<0>_type<0> = [Graphics,23,28,36]; @symbol_param<0>_type<1> = [Dc,23,37,39]; ]
+    function onUpdate(dc as Graphics.Dc) as Void {
+_Users_samar_Desktop_DOOM_source_MenuView_mc_23_49_39_4_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 24 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_23_49_39_4_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_23_49_39_4_stop" ]
+        %gs.1 = local;
+        symbol [ gs %gs.1 24 12 14 ];
+        symbol [ GameState %tmp.2 24 17 26 ];
+        %tmp.2 = getv ? :GameState;
+        symbol [ get %tmp.3 24 27 30 ];
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %gs.1 %tmp.4;
+        symbol [ gs %gs.1 24 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 25 8 ]
+        %tmp.5 = lgetv %dc;
+        symbol [ dc %tmp.5 25 8 10 ];
+        symbol [ setColor %tmp.6 25 11 19 ];
+        %tmp.6 = getv function %tmp.5 :setColor;
+        symbol [ C %tmp.7 25 20 21 ];
+        %tmp.7 = getm $.WristDungeon;
+        symbol [ COLOR_BLACK %tmp.8 25 22 33 ];
+        %tmp.8 = getv %tmp.7 :COLOR_BLACK;
+        symbol [ C %tmp.9 25 35 36 ];
+        %tmp.9 = getm $.WristDungeon;
+        symbol [ COLOR_BLACK %tmp.10 25 37 48 ];
+        %tmp.10 = getv %tmp.9 :COLOR_BLACK;
+        invoke %tmp.5 %tmp.6(%tmp.8, %tmp.10);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 26 8 ]
+        %tmp.11 = lgetv %dc;
+        symbol [ dc %tmp.11 26 8 10 ];
+        symbol [ clear %tmp.12 26 11 16 ];
+        %tmp.12 = getv function %tmp.11 :clear;
+        invoke %tmp.11 %tmp.12();
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 28 8 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_28_8_38_8_if_stmt:
+        %tmp.13 = lgetv %gs.1;
+        symbol [ gs %tmp.13 28 12 14 ];
+        symbol [ mode %tmp.14 28 15 19 ];
+        %tmp.14 = getv %tmp.13 :mode;
+        symbol [ C %tmp.15 28 23 24 ];
+        %tmp.15 = getm $.WristDungeon;
+        symbol [ MODE_MENU %tmp.16 28 25 34 ];
+        %tmp.16 = getv %tmp.15 :MODE_MENU;
+        %tmp.17 = eq %tmp.14 %tmp.16;
+        bf %tmp.17 @_Users_samar_Desktop_DOOM_source_MenuView_mc_28_8_38_8_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_28_8_38_8_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_28_36_30_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 29 12 ]
+        %tmp.18 = self;
+        symbol [ _drawMainMenu %tmp.19 29 12 25 ];
+        %tmp.19 = getv function %tmp.18 :_drawMainMenu;
+        %tmp.20 = lgetv %dc;
+        symbol [ dc %tmp.20 29 26 28 ];
+        invoke %tmp.18 %tmp.19(%tmp.20);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_28_36_30_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_28_8_38_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_28_8_38_8_if_false:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 30 15 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_30_15_38_8_if_stmt:
+        %tmp.21 = lgetv %gs.1;
+        symbol [ gs %tmp.21 30 19 21 ];
+        symbol [ mode %tmp.22 30 22 26 ];
+        %tmp.22 = getv %tmp.21 :mode;
+        symbol [ C %tmp.23 30 30 31 ];
+        %tmp.23 = getm $.WristDungeon;
+        symbol [ MODE_INSTRUCTIONS %tmp.24 30 32 49 ];
+        %tmp.24 = getv %tmp.23 :MODE_INSTRUCTIONS;
+        %tmp.25 = eq %tmp.22 %tmp.24;
+        bf %tmp.25 @_Users_samar_Desktop_DOOM_source_MenuView_mc_30_15_38_8_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_30_15_38_8_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_30_51_32_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 31 12 ]
+        %tmp.26 = self;
+        symbol [ _drawInstructions %tmp.27 31 12 29 ];
+        %tmp.27 = getv function %tmp.26 :_drawInstructions;
+        %tmp.28 = lgetv %dc;
+        symbol [ dc %tmp.28 31 30 32 ];
+        invoke %tmp.26 %tmp.27(%tmp.28);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_30_51_32_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_30_15_38_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_30_15_38_8_if_false:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 32 15 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_32_15_38_8_if_stmt:
+        %tmp.29 = lgetv %gs.1;
+        symbol [ gs %tmp.29 32 19 21 ];
+        symbol [ mode %tmp.30 32 22 26 ];
+        %tmp.30 = getv %tmp.29 :mode;
+        symbol [ C %tmp.31 32 30 31 ];
+        %tmp.31 = getm $.WristDungeon;
+        symbol [ MODE_PAUSE %tmp.32 32 32 42 ];
+        %tmp.32 = getv %tmp.31 :MODE_PAUSE;
+        %tmp.33 = eq %tmp.30 %tmp.32;
+        bf %tmp.33 @_Users_samar_Desktop_DOOM_source_MenuView_mc_32_15_38_8_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_32_15_38_8_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_32_44_34_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 33 12 ]
+        %tmp.34 = self;
+        symbol [ _drawPause %tmp.35 33 12 22 ];
+        %tmp.35 = getv function %tmp.34 :_drawPause;
+        %tmp.36 = lgetv %dc;
+        symbol [ dc %tmp.36 33 23 25 ];
+        invoke %tmp.34 %tmp.35(%tmp.36);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_32_44_34_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_32_15_38_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_32_15_38_8_if_false:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 34 15 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_34_15_38_8_if_stmt:
+        %tmp.37 = lgetv %gs.1;
+        symbol [ gs %tmp.37 34 19 21 ];
+        symbol [ mode %tmp.38 34 22 26 ];
+        %tmp.38 = getv %tmp.37 :mode;
+        symbol [ C %tmp.39 34 30 31 ];
+        %tmp.39 = getm $.WristDungeon;
+        symbol [ MODE_GAMEOVER %tmp.40 34 32 45 ];
+        %tmp.40 = getv %tmp.39 :MODE_GAMEOVER;
+        %tmp.41 = eq %tmp.38 %tmp.40;
+        bf %tmp.41 @_Users_samar_Desktop_DOOM_source_MenuView_mc_34_15_38_8_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_34_15_38_8_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_34_47_36_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 35 12 ]
+        %tmp.42 = self;
+        symbol [ _drawGameOver %tmp.43 35 12 25 ];
+        %tmp.43 = getv function %tmp.42 :_drawGameOver;
+        %tmp.44 = lgetv %dc;
+        symbol [ dc %tmp.44 35 26 28 ];
+        invoke %tmp.42 %tmp.43(%tmp.44);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_34_47_36_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_34_15_38_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_34_15_38_8_if_false:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 36 15 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_36_15_38_8_if_stmt:
+        %tmp.45 = lgetv %gs.1;
+        symbol [ gs %tmp.45 36 19 21 ];
+        symbol [ mode %tmp.46 36 22 26 ];
+        %tmp.46 = getv %tmp.45 :mode;
+        symbol [ C %tmp.47 36 30 31 ];
+        %tmp.47 = getm $.WristDungeon;
+        symbol [ MODE_WIN %tmp.48 36 32 40 ];
+        %tmp.48 = getv %tmp.47 :MODE_WIN;
+        %tmp.49 = eq %tmp.46 %tmp.48;
+        bf %tmp.49 @_Users_samar_Desktop_DOOM_source_MenuView_mc_36_15_38_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_36_15_38_8_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_36_42_38_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 37 12 ]
+        %tmp.50 = self;
+        symbol [ _drawWin %tmp.51 37 12 20 ];
+        %tmp.51 = getv function %tmp.50 :_drawWin;
+        %tmp.52 = lgetv %dc;
+        symbol [ dc %tmp.52 37 21 23 ];
+        invoke %tmp.50 %tmp.51(%tmp.52);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_36_42_38_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_36_15_38_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_36_15_38_8_if_end:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_34_15_38_8_if_end:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_32_15_38_8_if_end:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_30_15_38_8_if_end:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_28_8_38_8_if_end:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_23_49_39_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 41; @symbol_functiondef = [getSelectedItem,41,13,28]; @symbol_return<0> = [Number,41,34,40]; ]
+    function getSelectedItem() as Number {
+_Users_samar_Desktop_DOOM_source_MenuView_mc_41_41_41_61_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 41 43 ]
+        symbol [ _menuItem %tmp.2 41 50 59 ];
+        %tmp.2 = getv ? :_menuItem;
+        ret %tmp.2;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_41_41_41_61_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 42; @symbol_functiondef = [setSelectedItem,42,13,28]; @symbol_param<0> = [idx,42,29,32]; @symbol_param<0>_type<0> = [Number,42,36,42]; ]
+    function setSelectedItem(idx as Number) as Void {
+_Users_samar_Desktop_DOOM_source_MenuView_mc_42_52_42_71_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 42 54 ]
+        %tmp.1 = lgetv %idx;
+        symbol [ idx %tmp.1 42 66 69 ];
+        symbol [ _menuItem ? 42 54 63 ];
+        putv self :_menuItem %tmp.1;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_42_52_42_71_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 45; @symbol_functiondef = [_drawMainMenu,45,20,33]; @symbol_param<0> = [dc,45,34,36]; @symbol_param<0>_type<0> = [Graphics,45,40,48]; @symbol_param<0>_type<1> = [Dc,45,49,51]; ]
+    protected
+    function _drawMainMenu(dc as Graphics.Dc) as Void {
+_Users_samar_Desktop_DOOM_source_MenuView_mc_45_61_67_4_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 47 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 47 8 10 ];
+        symbol [ setColor %tmp.2 47 11 19 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ C %tmp.3 47 20 21 ];
+        %tmp.3 = getm $.WristDungeon;
+        symbol [ COLOR_MENU_TITLE %tmp.4 47 22 38 ];
+        %tmp.4 = getv %tmp.3 :COLOR_MENU_TITLE;
+        symbol [ Graphics %tmp.5 47 40 48 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.6 47 49 66 ];
+        %tmp.6 = getv %tmp.5 :COLOR_TRANSPARENT;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 48 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 48 8 10 ];
+        symbol [ drawText %tmp.8 48 11 19 ];
+        %tmp.8 = getv function %tmp.7 :drawText;
+        %tmp.9 = 120;
+        %tmp.10 = 30;
+        symbol [ Graphics %tmp.11 48 29 37 ];
+        %tmp.11 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.12 48 38 49 ];
+        %tmp.12 = getv %tmp.11 :FONT_MEDIUM;
+        %tmp.13 = "WRIST";
+        symbol [ Graphics %tmp.14 48 60 68 ];
+        %tmp.14 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.15 48 69 88 ];
+        %tmp.15 = getv %tmp.14 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.7 %tmp.8(%tmp.9, %tmp.10, %tmp.12, %tmp.13, %tmp.15);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 49 8 ]
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 49 8 10 ];
+        symbol [ drawText %tmp.17 49 11 19 ];
+        %tmp.17 = getv function %tmp.16 :drawText;
+        %tmp.18 = 120;
+        %tmp.19 = 60;
+        symbol [ Graphics %tmp.20 49 29 37 ];
+        %tmp.20 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.21 49 38 49 ];
+        %tmp.21 = getv %tmp.20 :FONT_MEDIUM;
+        %tmp.22 = "DUNGEON";
+        symbol [ Graphics %tmp.23 49 62 70 ];
+        %tmp.23 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.24 49 71 90 ];
+        %tmp.24 = getv %tmp.23 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.16 %tmp.17(%tmp.18, %tmp.19, %tmp.21, %tmp.22, %tmp.24);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 52 8 ]
+        %tmp.25 = lgetv %dc;
+        symbol [ dc %tmp.25 52 8 10 ];
+        symbol [ setColor %tmp.26 52 11 19 ];
+        %tmp.26 = getv function %tmp.25 :setColor;
+        symbol [ C %tmp.27 52 20 21 ];
+        %tmp.27 = getm $.WristDungeon;
+        symbol [ COLOR_MID_GRAY %tmp.28 52 22 36 ];
+        %tmp.28 = getv %tmp.27 :COLOR_MID_GRAY;
+        symbol [ Graphics %tmp.29 52 38 46 ];
+        %tmp.29 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.30 52 47 64 ];
+        %tmp.30 = getv %tmp.29 :COLOR_TRANSPARENT;
+        invoke %tmp.25 %tmp.26(%tmp.28, %tmp.30);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 53 8 ]
+        %tmp.31 = lgetv %dc;
+        symbol [ dc %tmp.31 53 8 10 ];
+        symbol [ drawLine %tmp.32 53 11 19 ];
+        %tmp.32 = getv function %tmp.31 :drawLine;
+        %tmp.33 = 40;
+        %tmp.34 = 95;
+        %tmp.35 = 200;
+        %tmp.36 = 95;
+        invoke %tmp.31 %tmp.32(%tmp.33, %tmp.34, %tmp.35, %tmp.36);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 56 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_45_61_67_4_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_45_61_67_4_stop" ]
+        %items.1 = local;
+        symbol [ items %items.1 56 12 17 ];
+        %tmp.37 = newa 3;
+        %tmp.38 = "PLAY";
+        %tmp.39 = dup %tmp.37;
+        %tmp.40 = aputv %tmp.39 0 %tmp.38;
+        %tmp.41 = "HOW TO PLAY";
+        %tmp.42 = dup %tmp.40;
+        %tmp.43 = aputv %tmp.42 1 %tmp.41;
+        %tmp.44 = "QUIT";
+        %tmp.45 = dup %tmp.43;
+        %tmp.46 = aputv %tmp.45 2 %tmp.44;
+        lputv %items.1 %tmp.46;
+        symbol [ items %items.1 56 12 17 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 57 8 ]
+        for @_Users_samar_Desktop_DOOM_source_MenuView_mc_57_8_62_8_for_test @_Users_samar_Desktop_DOOM_source_MenuView_mc_57_8_62_8_for_incr @_Users_samar_Desktop_DOOM_source_MenuView_mc_57_8_62_8_for_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_57_8_62_8_for_init:
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_57_8_62_8_for_begin" "_Users_samar_Desktop_DOOM_source_MenuView_mc_57_8_62_8_for_end" ]
+        %i.2 = local;
+        symbol [ i %i.2 57 17 18 ];
+        %tmp.47 = 0;
+        lputv %i.2 %tmp.47;
+        symbol [ i %i.2 57 17 18 ];
+_Users_samar_Desktop_DOOM_source_MenuView_mc_57_8_62_8_for_test:
+        %tmp.48 = lgetv %i.2;
+        symbol [ i %tmp.48 57 24 25 ];
+        %tmp.49 = lgetv %items.1;
+        symbol [ items %tmp.49 57 28 33 ];
+        symbol [ size %tmp.50 57 34 38 ];
+        %tmp.50 = getv function %tmp.49 :size;
+        %tmp.51 = invoke %tmp.49 %tmp.50();
+        %tmp.52 = lt %tmp.48 %tmp.51;
+        bf %tmp.52 @_Users_samar_Desktop_DOOM_source_MenuView_mc_57_8_62_8_for_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_57_8_62_8_for_begin:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_57_47_62_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 58 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_57_47_62_8_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_57_47_62_8_stop" ]
+        %color.3 = local;
+        symbol [ color %color.3 58 16 21 ];
+_Users_samar_Desktop_DOOM_source_MenuView_mc_58_24_58_67_begin:
+        %tmp.53 = lgetv %i.2;
+        symbol [ i %tmp.53 58 25 26 ];
+        symbol [ _menuItem %tmp.55 58 30 39 ];
+        %tmp.55 = getv ? :_menuItem;
+        %tmp.56 = eq %tmp.53 %tmp.55;
+        bf %tmp.56 @_Users_samar_Desktop_DOOM_source_MenuView_mc_58_24_58_67_else_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_58_24_58_67_true:
+        symbol [ C %tmp.57 58 43 44 ];
+        %tmp.57 = getm $.WristDungeon;
+        symbol [ COLOR_MENU_SELECT %tmp.58 58 45 62 ];
+        %tmp.58 = getv %tmp.57 :COLOR_MENU_SELECT;
+        push %tmp.58;
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_58_24_58_67_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_58_24_58_67_else_false:
+        symbol [ C %tmp.59 58 65 66 ];
+        %tmp.59 = getm $.WristDungeon;
+        symbol [ COLOR_MENU_NORMAL %tmp.60 58 67 84 ];
+        %tmp.60 = getv %tmp.59 :COLOR_MENU_NORMAL;
+        push %tmp.60;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_58_24_58_67_end:
+        %tmp.61 = phi [%tmp.56 @_Users_samar_Desktop_DOOM_source_MenuView_mc_58_24_58_67_begin] [%tmp.58 @_Users_samar_Desktop_DOOM_source_MenuView_mc_58_24_58_67_true] [%tmp.60 @_Users_samar_Desktop_DOOM_source_MenuView_mc_58_24_58_67_else_false] [%tmp.61 @_Users_samar_Desktop_DOOM_source_MenuView_mc_58_24_58_67_end];
+        lputv %color.3 %tmp.61;
+        symbol [ color %color.3 58 16 21 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 59 12 ]
+        %tmp.62 = lgetv %dc;
+        symbol [ dc %tmp.62 59 12 14 ];
+        symbol [ setColor %tmp.63 59 15 23 ];
+        %tmp.63 = getv function %tmp.62 :setColor;
+        %tmp.64 = lgetv %color.3;
+        symbol [ color %tmp.64 59 24 29 ];
+        symbol [ Graphics %tmp.65 59 31 39 ];
+        %tmp.65 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.66 59 40 57 ];
+        %tmp.66 = getv %tmp.65 :COLOR_TRANSPARENT;
+        invoke %tmp.62 %tmp.63(%tmp.64, %tmp.66);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 60 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_57_47_62_8_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_57_47_62_8_stop" ]
+        %prefix.4 = local;
+        symbol [ prefix %prefix.4 60 16 22 ];
+_Users_samar_Desktop_DOOM_source_MenuView_mc_60_25_60_51_begin:
+        %tmp.67 = lgetv %i.2;
+        symbol [ i %tmp.67 60 26 27 ];
+        symbol [ _menuItem %tmp.69 60 31 40 ];
+        %tmp.69 = getv ? :_menuItem;
+        %tmp.70 = eq %tmp.67 %tmp.69;
+        bf %tmp.70 @_Users_samar_Desktop_DOOM_source_MenuView_mc_60_25_60_51_else_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_60_25_60_51_true:
+        %tmp.71 = "▶ ";
+        push %tmp.71;
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_60_25_60_51_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_60_25_60_51_else_false:
+        %tmp.72 = "  ";
+        push %tmp.72;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_60_25_60_51_end:
+        %tmp.73 = phi [%tmp.70 @_Users_samar_Desktop_DOOM_source_MenuView_mc_60_25_60_51_begin] [%tmp.71 @_Users_samar_Desktop_DOOM_source_MenuView_mc_60_25_60_51_true] [%tmp.72 @_Users_samar_Desktop_DOOM_source_MenuView_mc_60_25_60_51_else_false] [%tmp.73 @_Users_samar_Desktop_DOOM_source_MenuView_mc_60_25_60_51_end];
+        lputv %prefix.4 %tmp.73;
+        symbol [ prefix %prefix.4 60 16 22 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 61 12 ]
+        %tmp.74 = lgetv %dc;
+        symbol [ dc %tmp.74 61 12 14 ];
+        symbol [ drawText %tmp.75 61 15 23 ];
+        %tmp.75 = getv function %tmp.74 :drawText;
+        %tmp.76 = 120;
+        %tmp.77 = 108;
+        %tmp.78 = lgetv %i.2;
+        symbol [ i %tmp.78 61 35 36 ];
+        %tmp.79 = 28;
+        %tmp.80 = mul %tmp.78 %tmp.79;
+        %tmp.81 = add %tmp.77 %tmp.80;
+        symbol [ Graphics %tmp.82 61 43 51 ];
+        %tmp.82 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.83 61 52 62 ];
+        %tmp.83 = getv %tmp.82 :FONT_SMALL;
+        %tmp.84 = lgetv %prefix.4;
+        symbol [ prefix %tmp.84 61 64 70 ];
+        %tmp.85 = lgetv %items.1;
+        symbol [ items %tmp.85 61 73 78 ];
+        %tmp.86 = lgetv %i.2;
+        symbol [ i %tmp.86 61 79 80 ];
+        %tmp.87 = agetv %tmp.85 %tmp.86;
+        %tmp.88 = add %tmp.84 %tmp.87;
+        symbol [ Graphics %tmp.89 61 83 91 ];
+        %tmp.89 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.90 61 92 111 ];
+        %tmp.90 = getv %tmp.89 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.74 %tmp.75(%tmp.76, %tmp.81, %tmp.83, %tmp.88, %tmp.90);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_57_47_62_8_stop:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_57_8_62_8_for_incr:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 57 ]
+        %tmp.93 = lgetv %i.2;
+        symbol [ i %tmp.93 57 42 43 ];
+        %tmp.94 = add %tmp.93 1;
+        lputv %i.2 %tmp.94;
+        symbol [ i %i.2 57 42 43 ];
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_57_8_62_8_for_test;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_57_8_62_8_for_end:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 65 8 ]
+        %tmp.95 = lgetv %dc;
+        symbol [ dc %tmp.95 65 8 10 ];
+        symbol [ setColor %tmp.96 65 11 19 ];
+        %tmp.96 = getv function %tmp.95 :setColor;
+        symbol [ C %tmp.97 65 20 21 ];
+        %tmp.97 = getm $.WristDungeon;
+        symbol [ COLOR_DARK_GRAY %tmp.98 65 22 37 ];
+        %tmp.98 = getv %tmp.97 :COLOR_DARK_GRAY;
+        symbol [ Graphics %tmp.99 65 39 47 ];
+        %tmp.99 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.100 65 48 65 ];
+        %tmp.100 = getv %tmp.99 :COLOR_TRANSPARENT;
+        invoke %tmp.95 %tmp.96(%tmp.98, %tmp.100);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 66 8 ]
+        %tmp.101 = lgetv %dc;
+        symbol [ dc %tmp.101 66 8 10 ];
+        symbol [ drawText %tmp.102 66 11 19 ];
+        %tmp.102 = getv function %tmp.101 :drawText;
+        %tmp.103 = 120;
+        %tmp.104 = 220;
+        symbol [ Graphics %tmp.105 66 30 38 ];
+        %tmp.105 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.106 66 39 49 ];
+        %tmp.106 = getv %tmp.105 :FONT_XTINY;
+        %tmp.107 = "v1.0 | FR165";
+        symbol [ Graphics %tmp.108 66 67 75 ];
+        %tmp.108 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.109 66 76 95 ];
+        %tmp.109 = getv %tmp.108 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.101 %tmp.102(%tmp.103, %tmp.104, %tmp.106, %tmp.107, %tmp.109);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_45_61_67_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 70; @symbol_functiondef = [_drawInstructions,70,20,37]; @symbol_param<0> = [dc,70,38,40]; @symbol_param<0>_type<0> = [Graphics,70,44,52]; @symbol_param<0>_type<1> = [Dc,70,53,55]; ]
+    protected
+    function _drawInstructions(dc as Graphics.Dc) as Void {
+_Users_samar_Desktop_DOOM_source_MenuView_mc_70_65_95_4_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 71 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 71 8 10 ];
+        symbol [ setColor %tmp.2 71 11 19 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ C %tmp.3 71 20 21 ];
+        %tmp.3 = getm $.WristDungeon;
+        symbol [ COLOR_MENU_TITLE %tmp.4 71 22 38 ];
+        %tmp.4 = getv %tmp.3 :COLOR_MENU_TITLE;
+        symbol [ Graphics %tmp.5 71 40 48 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.6 71 49 66 ];
+        %tmp.6 = getv %tmp.5 :COLOR_TRANSPARENT;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 72 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 72 8 10 ];
+        symbol [ drawText %tmp.8 72 11 19 ];
+        %tmp.8 = getv function %tmp.7 :drawText;
+        %tmp.9 = 120;
+        %tmp.10 = 10;
+        symbol [ Graphics %tmp.11 72 29 37 ];
+        %tmp.11 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.12 72 38 48 ];
+        %tmp.12 = getv %tmp.11 :FONT_SMALL;
+        %tmp.13 = "HOW TO PLAY";
+        symbol [ Graphics %tmp.14 72 65 73 ];
+        %tmp.14 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.15 72 74 93 ];
+        %tmp.15 = getv %tmp.14 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.7 %tmp.8(%tmp.9, %tmp.10, %tmp.12, %tmp.13, %tmp.15);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 74 8 ]
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 74 8 10 ];
+        symbol [ setColor %tmp.17 74 11 19 ];
+        %tmp.17 = getv function %tmp.16 :setColor;
+        symbol [ C %tmp.18 74 20 21 ];
+        %tmp.18 = getm $.WristDungeon;
+        symbol [ COLOR_WHITE %tmp.19 74 22 33 ];
+        %tmp.19 = getv %tmp.18 :COLOR_WHITE;
+        symbol [ Graphics %tmp.20 74 35 43 ];
+        %tmp.20 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.21 74 44 61 ];
+        %tmp.21 = getv %tmp.20 :COLOR_TRANSPARENT;
+        invoke %tmp.16 %tmp.17(%tmp.19, %tmp.21);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 75 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_70_65_95_4_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_70_65_95_4_stop" ]
+        %lines.1 = local;
+        symbol [ lines %lines.1 75 12 17 ];
+        %tmp.22 = newa 11;
+        %tmp.23 = "UP:      Move forward";
+        %tmp.24 = dup %tmp.22;
+        %tmp.25 = aputv %tmp.24 0 %tmp.23;
+        %tmp.26 = "DOWN:    Move back";
+        %tmp.27 = dup %tmp.25;
+        %tmp.28 = aputv %tmp.27 1 %tmp.26;
+        %tmp.29 = "START:   Shoot";
+        %tmp.30 = dup %tmp.28;
+        %tmp.31 = aputv %tmp.30 2 %tmp.29;
+        %tmp.32 = "BACK:    Pause";
+        %tmp.33 = dup %tmp.31;
+        %tmp.34 = aputv %tmp.33 3 %tmp.32;
+        %tmp.35 = "UP hold: Minimap";
+        %tmp.36 = dup %tmp.34;
+        %tmp.37 = aputv %tmp.36 4 %tmp.35;
+        %tmp.38 = "Touch L: Turn left";
+        %tmp.39 = dup %tmp.37;
+        %tmp.40 = aputv %tmp.39 5 %tmp.38;
+        %tmp.41 = "Touch R: Turn right";
+        %tmp.42 = dup %tmp.40;
+        %tmp.43 = aputv %tmp.42 6 %tmp.41;
+        %tmp.44 = "";
+        %tmp.45 = dup %tmp.43;
+        %tmp.46 = aputv %tmp.45 7 %tmp.44;
+        %tmp.47 = "Kill enemies, grab";
+        %tmp.48 = dup %tmp.46;
+        %tmp.49 = aputv %tmp.48 8 %tmp.47;
+        %tmp.50 = "ammo(◆) & health(♥)";
+        %tmp.51 = dup %tmp.49;
+        %tmp.52 = aputv %tmp.51 9 %tmp.50;
+        %tmp.53 = "Reach the exit!";
+        %tmp.54 = dup %tmp.52;
+        %tmp.55 = aputv %tmp.54 10 %tmp.53;
+        lputv %lines.1 %tmp.55;
+        symbol [ lines %lines.1 75 12 17 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 88 8 ]
+        for @_Users_samar_Desktop_DOOM_source_MenuView_mc_88_8_91_8_for_test @_Users_samar_Desktop_DOOM_source_MenuView_mc_88_8_91_8_for_incr @_Users_samar_Desktop_DOOM_source_MenuView_mc_88_8_91_8_for_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_88_8_91_8_for_init:
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_88_8_91_8_for_begin" "_Users_samar_Desktop_DOOM_source_MenuView_mc_88_8_91_8_for_end" ]
+        %i.2 = local;
+        symbol [ i %i.2 88 17 18 ];
+        %tmp.56 = 0;
+        lputv %i.2 %tmp.56;
+        symbol [ i %i.2 88 17 18 ];
+_Users_samar_Desktop_DOOM_source_MenuView_mc_88_8_91_8_for_test:
+        %tmp.57 = lgetv %i.2;
+        symbol [ i %tmp.57 88 24 25 ];
+        %tmp.58 = lgetv %lines.1;
+        symbol [ lines %tmp.58 88 28 33 ];
+        symbol [ size %tmp.59 88 34 38 ];
+        %tmp.59 = getv function %tmp.58 :size;
+        %tmp.60 = invoke %tmp.58 %tmp.59();
+        %tmp.61 = lt %tmp.57 %tmp.60;
+        bf %tmp.61 @_Users_samar_Desktop_DOOM_source_MenuView_mc_88_8_91_8_for_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_88_8_91_8_for_begin:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_88_47_91_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 89 12 ]
+        %tmp.62 = lgetv %dc;
+        symbol [ dc %tmp.62 89 12 14 ];
+        symbol [ setColor %tmp.63 89 15 23 ];
+        %tmp.63 = getv function %tmp.62 :setColor;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_89_24_89_51_begin:
+        %tmp.64 = lgetv %i.2;
+        symbol [ i %tmp.64 89 24 25 ];
+        %tmp.65 = 0;
+        %tmp.66 = eq %tmp.64 %tmp.65;
+        bf %tmp.66 @_Users_samar_Desktop_DOOM_source_MenuView_mc_89_24_89_51_else_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_89_24_89_51_true:
+        symbol [ C %tmp.67 89 33 34 ];
+        %tmp.67 = getm $.WristDungeon;
+        symbol [ COLOR_SCORE %tmp.68 89 35 46 ];
+        %tmp.68 = getv %tmp.67 :COLOR_SCORE;
+        push %tmp.68;
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_89_24_89_51_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_89_24_89_51_else_false:
+        symbol [ C %tmp.69 89 49 50 ];
+        %tmp.69 = getm $.WristDungeon;
+        symbol [ COLOR_MENU_NORMAL %tmp.70 89 51 68 ];
+        %tmp.70 = getv %tmp.69 :COLOR_MENU_NORMAL;
+        push %tmp.70;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_89_24_89_51_end:
+        %tmp.71 = phi [%tmp.66 @_Users_samar_Desktop_DOOM_source_MenuView_mc_89_24_89_51_begin] [%tmp.68 @_Users_samar_Desktop_DOOM_source_MenuView_mc_89_24_89_51_true] [%tmp.70 @_Users_samar_Desktop_DOOM_source_MenuView_mc_89_24_89_51_else_false] [%tmp.71 @_Users_samar_Desktop_DOOM_source_MenuView_mc_89_24_89_51_end];
+        symbol [ Graphics %tmp.72 89 70 78 ];
+        %tmp.72 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.73 89 79 96 ];
+        %tmp.73 = getv %tmp.72 :COLOR_TRANSPARENT;
+        invoke %tmp.62 %tmp.63(%tmp.71, %tmp.73);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 90 12 ]
+        %tmp.74 = lgetv %dc;
+        symbol [ dc %tmp.74 90 12 14 ];
+        symbol [ drawText %tmp.75 90 15 23 ];
+        %tmp.75 = getv function %tmp.74 :drawText;
+        %tmp.76 = 12;
+        %tmp.77 = 38;
+        %tmp.78 = lgetv %i.2;
+        symbol [ i %tmp.78 90 33 34 ];
+        %tmp.79 = 18;
+        %tmp.80 = mul %tmp.78 %tmp.79;
+        %tmp.81 = add %tmp.77 %tmp.80;
+        symbol [ Graphics %tmp.82 90 41 49 ];
+        %tmp.82 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.83 90 50 60 ];
+        %tmp.83 = getv %tmp.82 :FONT_XTINY;
+        %tmp.84 = lgetv %lines.1;
+        symbol [ lines %tmp.84 90 62 67 ];
+        %tmp.85 = lgetv %i.2;
+        symbol [ i %tmp.85 90 68 69 ];
+        %tmp.86 = agetv %tmp.84 %tmp.85;
+        symbol [ Graphics %tmp.87 90 72 80 ];
+        %tmp.87 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.88 90 81 98 ];
+        %tmp.88 = getv %tmp.87 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.74 %tmp.75(%tmp.76, %tmp.81, %tmp.83, %tmp.86, %tmp.88);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_88_47_91_8_stop:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_88_8_91_8_for_incr:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 88 ]
+        %tmp.91 = lgetv %i.2;
+        symbol [ i %tmp.91 88 42 43 ];
+        %tmp.92 = add %tmp.91 1;
+        lputv %i.2 %tmp.92;
+        symbol [ i %i.2 88 42 43 ];
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_88_8_91_8_for_test;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_88_8_91_8_for_end:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 93 8 ]
+        %tmp.93 = lgetv %dc;
+        symbol [ dc %tmp.93 93 8 10 ];
+        symbol [ setColor %tmp.94 93 11 19 ];
+        %tmp.94 = getv function %tmp.93 :setColor;
+        symbol [ C %tmp.95 93 20 21 ];
+        %tmp.95 = getm $.WristDungeon;
+        symbol [ COLOR_MID_GRAY %tmp.96 93 22 36 ];
+        %tmp.96 = getv %tmp.95 :COLOR_MID_GRAY;
+        symbol [ Graphics %tmp.97 93 38 46 ];
+        %tmp.97 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.98 93 47 64 ];
+        %tmp.98 = getv %tmp.97 :COLOR_TRANSPARENT;
+        invoke %tmp.93 %tmp.94(%tmp.96, %tmp.98);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 94 8 ]
+        %tmp.99 = lgetv %dc;
+        symbol [ dc %tmp.99 94 8 10 ];
+        symbol [ drawText %tmp.100 94 11 19 ];
+        %tmp.100 = getv function %tmp.99 :drawText;
+        %tmp.101 = 120;
+        %tmp.102 = 228;
+        symbol [ Graphics %tmp.103 94 30 38 ];
+        %tmp.103 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.104 94 39 49 ];
+        %tmp.104 = getv %tmp.103 :FONT_XTINY;
+        %tmp.105 = "BACK to return";
+        symbol [ Graphics %tmp.106 94 69 77 ];
+        %tmp.106 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.107 94 78 97 ];
+        %tmp.107 = getv %tmp.106 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.99 %tmp.100(%tmp.101, %tmp.102, %tmp.104, %tmp.105, %tmp.107);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_70_65_95_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 98; @symbol_functiondef = [_drawPause,98,20,30]; @symbol_param<0> = [dc,98,31,33]; @symbol_param<0>_type<0> = [Graphics,98,37,45]; @symbol_param<0>_type<1> = [Dc,98,46,48]; ]
+    protected
+    function _drawPause(dc as Graphics.Dc) as Void {
+_Users_samar_Desktop_DOOM_source_MenuView_mc_98_58_117_4_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 99 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_98_58_117_4_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_98_58_117_4_stop" ]
+        %gs.1 = local;
+        symbol [ gs %gs.1 99 12 14 ];
+        symbol [ GameState %tmp.2 99 17 26 ];
+        %tmp.2 = getv ? :GameState;
+        symbol [ get %tmp.3 99 27 30 ];
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %gs.1 %tmp.4;
+        symbol [ gs %gs.1 99 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 100 8 ]
+        %tmp.5 = lgetv %dc;
+        symbol [ dc %tmp.5 100 8 10 ];
+        symbol [ setColor %tmp.6 100 11 19 ];
+        %tmp.6 = getv function %tmp.5 :setColor;
+        symbol [ C %tmp.7 100 20 21 ];
+        %tmp.7 = getm $.WristDungeon;
+        symbol [ COLOR_MENU_TITLE %tmp.8 100 22 38 ];
+        %tmp.8 = getv %tmp.7 :COLOR_MENU_TITLE;
+        symbol [ Graphics %tmp.9 100 40 48 ];
+        %tmp.9 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.10 100 49 66 ];
+        %tmp.10 = getv %tmp.9 :COLOR_TRANSPARENT;
+        invoke %tmp.5 %tmp.6(%tmp.8, %tmp.10);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 101 8 ]
+        %tmp.11 = lgetv %dc;
+        symbol [ dc %tmp.11 101 8 10 ];
+        symbol [ drawText %tmp.12 101 11 19 ];
+        %tmp.12 = getv function %tmp.11 :drawText;
+        %tmp.13 = 120;
+        %tmp.14 = 55;
+        symbol [ Graphics %tmp.15 101 29 37 ];
+        %tmp.15 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.16 101 38 49 ];
+        %tmp.16 = getv %tmp.15 :FONT_MEDIUM;
+        %tmp.17 = "PAUSED";
+        symbol [ Graphics %tmp.18 101 61 69 ];
+        %tmp.18 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.19 101 70 89 ];
+        %tmp.19 = getv %tmp.18 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.11 %tmp.12(%tmp.13, %tmp.14, %tmp.16, %tmp.17, %tmp.19);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 103 8 ]
+        %tmp.20 = lgetv %dc;
+        symbol [ dc %tmp.20 103 8 10 ];
+        symbol [ setColor %tmp.21 103 11 19 ];
+        %tmp.21 = getv function %tmp.20 :setColor;
+        symbol [ C %tmp.22 103 20 21 ];
+        %tmp.22 = getm $.WristDungeon;
+        symbol [ COLOR_MID_GRAY %tmp.23 103 22 36 ];
+        %tmp.23 = getv %tmp.22 :COLOR_MID_GRAY;
+        symbol [ Graphics %tmp.24 103 38 46 ];
+        %tmp.24 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.25 103 47 64 ];
+        %tmp.25 = getv %tmp.24 :COLOR_TRANSPARENT;
+        invoke %tmp.20 %tmp.21(%tmp.23, %tmp.25);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 104 8 ]
+        %tmp.26 = lgetv %dc;
+        symbol [ dc %tmp.26 104 8 10 ];
+        symbol [ drawLine %tmp.27 104 11 19 ];
+        %tmp.27 = getv function %tmp.26 :drawLine;
+        %tmp.28 = 55;
+        %tmp.29 = 95;
+        %tmp.30 = 185;
+        %tmp.31 = 95;
+        invoke %tmp.26 %tmp.27(%tmp.28, %tmp.29, %tmp.30, %tmp.31);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 106 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_98_58_117_4_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_98_58_117_4_stop" ]
+        %items.2 = local;
+        symbol [ items %items.2 106 12 17 ];
+        %tmp.32 = newa 3;
+        %tmp.33 = "RESUME";
+        %tmp.34 = dup %tmp.32;
+        %tmp.35 = aputv %tmp.34 0 %tmp.33;
+        %tmp.36 = "RESTART";
+        %tmp.37 = dup %tmp.35;
+        %tmp.38 = aputv %tmp.37 1 %tmp.36;
+        %tmp.39 = "QUIT";
+        %tmp.40 = dup %tmp.38;
+        %tmp.41 = aputv %tmp.40 2 %tmp.39;
+        lputv %items.2 %tmp.41;
+        symbol [ items %items.2 106 12 17 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 107 8 ]
+        for @_Users_samar_Desktop_DOOM_source_MenuView_mc_107_8_112_8_for_test @_Users_samar_Desktop_DOOM_source_MenuView_mc_107_8_112_8_for_incr @_Users_samar_Desktop_DOOM_source_MenuView_mc_107_8_112_8_for_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_107_8_112_8_for_init:
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_107_8_112_8_for_begin" "_Users_samar_Desktop_DOOM_source_MenuView_mc_107_8_112_8_for_end" ]
+        %i.3 = local;
+        symbol [ i %i.3 107 17 18 ];
+        %tmp.42 = 0;
+        lputv %i.3 %tmp.42;
+        symbol [ i %i.3 107 17 18 ];
+_Users_samar_Desktop_DOOM_source_MenuView_mc_107_8_112_8_for_test:
+        %tmp.43 = lgetv %i.3;
+        symbol [ i %tmp.43 107 24 25 ];
+        %tmp.44 = lgetv %items.2;
+        symbol [ items %tmp.44 107 28 33 ];
+        symbol [ size %tmp.45 107 34 38 ];
+        %tmp.45 = getv function %tmp.44 :size;
+        %tmp.46 = invoke %tmp.44 %tmp.45();
+        %tmp.47 = lt %tmp.43 %tmp.46;
+        bf %tmp.47 @_Users_samar_Desktop_DOOM_source_MenuView_mc_107_8_112_8_for_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_107_8_112_8_for_begin:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_107_47_112_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 108 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_107_47_112_8_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_107_47_112_8_stop" ]
+        %color.4 = local;
+        symbol [ color %color.4 108 16 21 ];
+_Users_samar_Desktop_DOOM_source_MenuView_mc_108_24_108_67_begin:
+        %tmp.48 = lgetv %i.3;
+        symbol [ i %tmp.48 108 25 26 ];
+        symbol [ _menuItem %tmp.50 108 30 39 ];
+        %tmp.50 = getv ? :_menuItem;
+        %tmp.51 = eq %tmp.48 %tmp.50;
+        bf %tmp.51 @_Users_samar_Desktop_DOOM_source_MenuView_mc_108_24_108_67_else_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_108_24_108_67_true:
+        symbol [ C %tmp.52 108 43 44 ];
+        %tmp.52 = getm $.WristDungeon;
+        symbol [ COLOR_MENU_SELECT %tmp.53 108 45 62 ];
+        %tmp.53 = getv %tmp.52 :COLOR_MENU_SELECT;
+        push %tmp.53;
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_108_24_108_67_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_108_24_108_67_else_false:
+        symbol [ C %tmp.54 108 65 66 ];
+        %tmp.54 = getm $.WristDungeon;
+        symbol [ COLOR_MENU_NORMAL %tmp.55 108 67 84 ];
+        %tmp.55 = getv %tmp.54 :COLOR_MENU_NORMAL;
+        push %tmp.55;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_108_24_108_67_end:
+        %tmp.56 = phi [%tmp.51 @_Users_samar_Desktop_DOOM_source_MenuView_mc_108_24_108_67_begin] [%tmp.53 @_Users_samar_Desktop_DOOM_source_MenuView_mc_108_24_108_67_true] [%tmp.55 @_Users_samar_Desktop_DOOM_source_MenuView_mc_108_24_108_67_else_false] [%tmp.56 @_Users_samar_Desktop_DOOM_source_MenuView_mc_108_24_108_67_end];
+        lputv %color.4 %tmp.56;
+        symbol [ color %color.4 108 16 21 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 109 12 ]
+        %tmp.57 = lgetv %dc;
+        symbol [ dc %tmp.57 109 12 14 ];
+        symbol [ setColor %tmp.58 109 15 23 ];
+        %tmp.58 = getv function %tmp.57 :setColor;
+        %tmp.59 = lgetv %color.4;
+        symbol [ color %tmp.59 109 24 29 ];
+        symbol [ Graphics %tmp.60 109 31 39 ];
+        %tmp.60 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.61 109 40 57 ];
+        %tmp.61 = getv %tmp.60 :COLOR_TRANSPARENT;
+        invoke %tmp.57 %tmp.58(%tmp.59, %tmp.61);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 110 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_107_47_112_8_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_107_47_112_8_stop" ]
+        %prefix.5 = local;
+        symbol [ prefix %prefix.5 110 16 22 ];
+_Users_samar_Desktop_DOOM_source_MenuView_mc_110_25_110_51_begin:
+        %tmp.62 = lgetv %i.3;
+        symbol [ i %tmp.62 110 26 27 ];
+        symbol [ _menuItem %tmp.64 110 31 40 ];
+        %tmp.64 = getv ? :_menuItem;
+        %tmp.65 = eq %tmp.62 %tmp.64;
+        bf %tmp.65 @_Users_samar_Desktop_DOOM_source_MenuView_mc_110_25_110_51_else_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_110_25_110_51_true:
+        %tmp.66 = "▶ ";
+        push %tmp.66;
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_110_25_110_51_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_110_25_110_51_else_false:
+        %tmp.67 = "  ";
+        push %tmp.67;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_110_25_110_51_end:
+        %tmp.68 = phi [%tmp.65 @_Users_samar_Desktop_DOOM_source_MenuView_mc_110_25_110_51_begin] [%tmp.66 @_Users_samar_Desktop_DOOM_source_MenuView_mc_110_25_110_51_true] [%tmp.67 @_Users_samar_Desktop_DOOM_source_MenuView_mc_110_25_110_51_else_false] [%tmp.68 @_Users_samar_Desktop_DOOM_source_MenuView_mc_110_25_110_51_end];
+        lputv %prefix.5 %tmp.68;
+        symbol [ prefix %prefix.5 110 16 22 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 111 12 ]
+        %tmp.69 = lgetv %dc;
+        symbol [ dc %tmp.69 111 12 14 ];
+        symbol [ drawText %tmp.70 111 15 23 ];
+        %tmp.70 = getv function %tmp.69 :drawText;
+        %tmp.71 = 120;
+        %tmp.72 = 110;
+        %tmp.73 = lgetv %i.3;
+        symbol [ i %tmp.73 111 35 36 ];
+        %tmp.74 = 30;
+        %tmp.75 = mul %tmp.73 %tmp.74;
+        %tmp.76 = add %tmp.72 %tmp.75;
+        symbol [ Graphics %tmp.77 111 43 51 ];
+        %tmp.77 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.78 111 52 62 ];
+        %tmp.78 = getv %tmp.77 :FONT_SMALL;
+        %tmp.79 = lgetv %prefix.5;
+        symbol [ prefix %tmp.79 111 64 70 ];
+        %tmp.80 = lgetv %items.2;
+        symbol [ items %tmp.80 111 73 78 ];
+        %tmp.81 = lgetv %i.3;
+        symbol [ i %tmp.81 111 79 80 ];
+        %tmp.82 = agetv %tmp.80 %tmp.81;
+        %tmp.83 = add %tmp.79 %tmp.82;
+        symbol [ Graphics %tmp.84 111 83 91 ];
+        %tmp.84 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.85 111 92 111 ];
+        %tmp.85 = getv %tmp.84 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.69 %tmp.70(%tmp.71, %tmp.76, %tmp.78, %tmp.83, %tmp.85);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_107_47_112_8_stop:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_107_8_112_8_for_incr:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 107 ]
+        %tmp.88 = lgetv %i.3;
+        symbol [ i %tmp.88 107 42 43 ];
+        %tmp.89 = add %tmp.88 1;
+        lputv %i.3 %tmp.89;
+        symbol [ i %i.3 107 42 43 ];
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_107_8_112_8_for_test;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_107_8_112_8_for_end:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 115 8 ]
+        %tmp.90 = lgetv %dc;
+        symbol [ dc %tmp.90 115 8 10 ];
+        symbol [ setColor %tmp.91 115 11 19 ];
+        %tmp.91 = getv function %tmp.90 :setColor;
+        symbol [ C %tmp.92 115 20 21 ];
+        %tmp.92 = getm $.WristDungeon;
+        symbol [ COLOR_SCORE %tmp.93 115 22 33 ];
+        %tmp.93 = getv %tmp.92 :COLOR_SCORE;
+        symbol [ Graphics %tmp.94 115 35 43 ];
+        %tmp.94 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.95 115 44 61 ];
+        %tmp.95 = getv %tmp.94 :COLOR_TRANSPARENT;
+        invoke %tmp.90 %tmp.91(%tmp.93, %tmp.95);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 116 8 ]
+        %tmp.96 = lgetv %dc;
+        symbol [ dc %tmp.96 116 8 10 ];
+        symbol [ drawText %tmp.97 116 11 19 ];
+        %tmp.97 = getv function %tmp.96 :drawText;
+        %tmp.98 = 120;
+        %tmp.99 = 210;
+        symbol [ Graphics %tmp.100 116 30 38 ];
+        %tmp.100 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.101 116 39 49 ];
+        %tmp.101 = getv %tmp.100 :FONT_XTINY;
+        %tmp.102 = "Score: ";
+        %tmp.103 = lgetv %gs.1;
+        symbol [ gs %tmp.103 116 63 65 ];
+        symbol [ score %tmp.104 116 66 71 ];
+        %tmp.104 = getv %tmp.103 :score;
+        symbol [ toString %tmp.105 116 72 80 ];
+        %tmp.105 = getv function %tmp.104 :toString;
+        %tmp.106 = invoke %tmp.104 %tmp.105();
+        %tmp.107 = add %tmp.102 %tmp.106;
+        symbol [ Graphics %tmp.108 116 84 92 ];
+        %tmp.108 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.109 116 93 112 ];
+        %tmp.109 = getv %tmp.108 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.96 %tmp.97(%tmp.98, %tmp.99, %tmp.101, %tmp.107, %tmp.109);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_98_58_117_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 120; @symbol_functiondef = [_drawGameOver,120,20,33]; @symbol_param<0> = [dc,120,34,36]; @symbol_param<0>_type<0> = [Graphics,120,40,48]; @symbol_param<0>_type<1> = [Dc,120,49,51]; ]
+    protected
+    function _drawGameOver(dc as Graphics.Dc) as Void {
+_Users_samar_Desktop_DOOM_source_MenuView_mc_120_61_135_4_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 121 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_120_61_135_4_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_120_61_135_4_stop" ]
+        %gs.1 = local;
+        symbol [ gs %gs.1 121 12 14 ];
+        symbol [ GameState %tmp.2 121 17 26 ];
+        %tmp.2 = getv ? :GameState;
+        symbol [ get %tmp.3 121 27 30 ];
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %gs.1 %tmp.4;
+        symbol [ gs %gs.1 121 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 122 8 ]
+        %tmp.5 = lgetv %dc;
+        symbol [ dc %tmp.5 122 8 10 ];
+        symbol [ setColor %tmp.6 122 11 19 ];
+        %tmp.6 = getv function %tmp.5 :setColor;
+        symbol [ C %tmp.7 122 20 21 ];
+        %tmp.7 = getm $.WristDungeon;
+        symbol [ COLOR_HP_RED %tmp.8 122 22 34 ];
+        %tmp.8 = getv %tmp.7 :COLOR_HP_RED;
+        symbol [ Graphics %tmp.9 122 36 44 ];
+        %tmp.9 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.10 122 45 62 ];
+        %tmp.10 = getv %tmp.9 :COLOR_TRANSPARENT;
+        invoke %tmp.5 %tmp.6(%tmp.8, %tmp.10);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 123 8 ]
+        %tmp.11 = lgetv %dc;
+        symbol [ dc %tmp.11 123 8 10 ];
+        symbol [ drawText %tmp.12 123 11 19 ];
+        %tmp.12 = getv function %tmp.11 :drawText;
+        %tmp.13 = 120;
+        %tmp.14 = 60;
+        symbol [ Graphics %tmp.15 123 29 37 ];
+        %tmp.15 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.16 123 38 48 ];
+        %tmp.16 = getv %tmp.15 :FONT_LARGE;
+        %tmp.17 = "GAME OVER";
+        symbol [ Graphics %tmp.18 123 63 71 ];
+        %tmp.18 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.19 123 72 91 ];
+        %tmp.19 = getv %tmp.18 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.11 %tmp.12(%tmp.13, %tmp.14, %tmp.16, %tmp.17, %tmp.19);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 125 8 ]
+        %tmp.20 = lgetv %dc;
+        symbol [ dc %tmp.20 125 8 10 ];
+        symbol [ setColor %tmp.21 125 11 19 ];
+        %tmp.21 = getv function %tmp.20 :setColor;
+        symbol [ C %tmp.22 125 20 21 ];
+        %tmp.22 = getm $.WristDungeon;
+        symbol [ COLOR_WHITE %tmp.23 125 22 33 ];
+        %tmp.23 = getv %tmp.22 :COLOR_WHITE;
+        symbol [ Graphics %tmp.24 125 35 43 ];
+        %tmp.24 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.25 125 44 61 ];
+        %tmp.25 = getv %tmp.24 :COLOR_TRANSPARENT;
+        invoke %tmp.20 %tmp.21(%tmp.23, %tmp.25);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 126 8 ]
+        %tmp.26 = lgetv %dc;
+        symbol [ dc %tmp.26 126 8 10 ];
+        symbol [ drawText %tmp.27 126 11 19 ];
+        %tmp.27 = getv function %tmp.26 :drawText;
+        %tmp.28 = 120;
+        %tmp.29 = 110;
+        symbol [ Graphics %tmp.30 126 30 38 ];
+        %tmp.30 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.31 126 39 50 ];
+        %tmp.31 = getv %tmp.30 :FONT_MEDIUM;
+        %tmp.32 = "Score";
+        symbol [ Graphics %tmp.33 126 61 69 ];
+        %tmp.33 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.34 126 70 89 ];
+        %tmp.34 = getv %tmp.33 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.26 %tmp.27(%tmp.28, %tmp.29, %tmp.31, %tmp.32, %tmp.34);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 127 8 ]
+        %tmp.35 = lgetv %dc;
+        symbol [ dc %tmp.35 127 8 10 ];
+        symbol [ setColor %tmp.36 127 11 19 ];
+        %tmp.36 = getv function %tmp.35 :setColor;
+        symbol [ C %tmp.37 127 20 21 ];
+        %tmp.37 = getm $.WristDungeon;
+        symbol [ COLOR_SCORE %tmp.38 127 22 33 ];
+        %tmp.38 = getv %tmp.37 :COLOR_SCORE;
+        symbol [ Graphics %tmp.39 127 35 43 ];
+        %tmp.39 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.40 127 44 61 ];
+        %tmp.40 = getv %tmp.39 :COLOR_TRANSPARENT;
+        invoke %tmp.35 %tmp.36(%tmp.38, %tmp.40);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 128 8 ]
+        %tmp.41 = lgetv %dc;
+        symbol [ dc %tmp.41 128 8 10 ];
+        symbol [ drawText %tmp.42 128 11 19 ];
+        %tmp.42 = getv function %tmp.41 :drawText;
+        %tmp.43 = 120;
+        %tmp.44 = 135;
+        symbol [ Graphics %tmp.45 128 30 38 ];
+        %tmp.45 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.46 128 39 50 ];
+        %tmp.46 = getv %tmp.45 :FONT_MEDIUM;
+        %tmp.47 = lgetv %gs.1;
+        symbol [ gs %tmp.47 128 52 54 ];
+        symbol [ score %tmp.48 128 55 60 ];
+        %tmp.48 = getv %tmp.47 :score;
+        symbol [ toString %tmp.49 128 61 69 ];
+        %tmp.49 = getv function %tmp.48 :toString;
+        %tmp.50 = invoke %tmp.48 %tmp.49();
+        symbol [ Graphics %tmp.51 128 73 81 ];
+        %tmp.51 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.52 128 82 101 ];
+        %tmp.52 = getv %tmp.51 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.41 %tmp.42(%tmp.43, %tmp.44, %tmp.46, %tmp.50, %tmp.52);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 130 8 ]
+        %tmp.53 = lgetv %dc;
+        symbol [ dc %tmp.53 130 8 10 ];
+        symbol [ setColor %tmp.54 130 11 19 ];
+        %tmp.54 = getv function %tmp.53 :setColor;
+        symbol [ C %tmp.55 130 20 21 ];
+        %tmp.55 = getm $.WristDungeon;
+        symbol [ COLOR_MENU_NORMAL %tmp.56 130 22 39 ];
+        %tmp.56 = getv %tmp.55 :COLOR_MENU_NORMAL;
+        symbol [ Graphics %tmp.57 130 41 49 ];
+        %tmp.57 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.58 130 50 67 ];
+        %tmp.58 = getv %tmp.57 :COLOR_TRANSPARENT;
+        invoke %tmp.53 %tmp.54(%tmp.56, %tmp.58);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 131 8 ]
+        %tmp.59 = lgetv %dc;
+        symbol [ dc %tmp.59 131 8 10 ];
+        symbol [ drawText %tmp.60 131 11 19 ];
+        %tmp.60 = getv function %tmp.59 :drawText;
+        %tmp.61 = 120;
+        %tmp.62 = 175;
+        symbol [ Graphics %tmp.63 131 30 38 ];
+        %tmp.63 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.64 131 39 49 ];
+        %tmp.64 = getv %tmp.63 :FONT_SMALL;
+        %tmp.65 = "Level ";
+        %tmp.66 = lgetv %gs.1;
+        symbol [ gs %tmp.66 131 62 64 ];
+        symbol [ level %tmp.67 131 65 70 ];
+        %tmp.67 = getv %tmp.66 :level;
+        symbol [ toString %tmp.68 131 71 79 ];
+        %tmp.68 = getv function %tmp.67 :toString;
+        %tmp.69 = invoke %tmp.67 %tmp.68();
+        %tmp.70 = add %tmp.65 %tmp.69;
+        symbol [ Graphics %tmp.71 131 83 91 ];
+        %tmp.71 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.72 131 92 111 ];
+        %tmp.72 = getv %tmp.71 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.59 %tmp.60(%tmp.61, %tmp.62, %tmp.64, %tmp.70, %tmp.72);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 133 8 ]
+        %tmp.73 = lgetv %dc;
+        symbol [ dc %tmp.73 133 8 10 ];
+        symbol [ setColor %tmp.74 133 11 19 ];
+        %tmp.74 = getv function %tmp.73 :setColor;
+        symbol [ C %tmp.75 133 20 21 ];
+        %tmp.75 = getm $.WristDungeon;
+        symbol [ COLOR_MENU_SELECT %tmp.76 133 22 39 ];
+        %tmp.76 = getv %tmp.75 :COLOR_MENU_SELECT;
+        symbol [ Graphics %tmp.77 133 41 49 ];
+        %tmp.77 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.78 133 50 67 ];
+        %tmp.78 = getv %tmp.77 :COLOR_TRANSPARENT;
+        invoke %tmp.73 %tmp.74(%tmp.76, %tmp.78);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 134 8 ]
+        %tmp.79 = lgetv %dc;
+        symbol [ dc %tmp.79 134 8 10 ];
+        symbol [ drawText %tmp.80 134 11 19 ];
+        %tmp.80 = getv function %tmp.79 :drawText;
+        %tmp.81 = 120;
+        %tmp.82 = 210;
+        symbol [ Graphics %tmp.83 134 30 38 ];
+        %tmp.83 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.84 134 39 49 ];
+        %tmp.84 = getv %tmp.83 :FONT_XTINY;
+        %tmp.85 = "START: Play Again  BACK: Menu";
+        symbol [ Graphics %tmp.86 134 84 92 ];
+        %tmp.86 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.87 134 93 112 ];
+        %tmp.87 = getv %tmp.86 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.79 %tmp.80(%tmp.81, %tmp.82, %tmp.84, %tmp.85, %tmp.87);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_120_61_135_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 138; @symbol_functiondef = [_drawWin,138,20,28]; @symbol_param<0> = [dc,138,29,31]; @symbol_param<0>_type<0> = [Graphics,138,35,43]; @symbol_param<0>_type<1> = [Dc,138,44,46]; ]
+    protected
+    function _drawWin(dc as Graphics.Dc) as Void {
+_Users_samar_Desktop_DOOM_source_MenuView_mc_138_56_153_4_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 139 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_138_56_153_4_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_138_56_153_4_stop" ]
+        %gs.1 = local;
+        symbol [ gs %gs.1 139 12 14 ];
+        symbol [ GameState %tmp.2 139 17 26 ];
+        %tmp.2 = getv ? :GameState;
+        symbol [ get %tmp.3 139 27 30 ];
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %gs.1 %tmp.4;
+        symbol [ gs %gs.1 139 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 140 8 ]
+        %tmp.5 = lgetv %dc;
+        symbol [ dc %tmp.5 140 8 10 ];
+        symbol [ setColor %tmp.6 140 11 19 ];
+        %tmp.6 = getv function %tmp.5 :setColor;
+        symbol [ C %tmp.7 140 20 21 ];
+        %tmp.7 = getm $.WristDungeon;
+        symbol [ COLOR_HP_GREEN %tmp.8 140 22 36 ];
+        %tmp.8 = getv %tmp.7 :COLOR_HP_GREEN;
+        symbol [ Graphics %tmp.9 140 38 46 ];
+        %tmp.9 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.10 140 47 64 ];
+        %tmp.10 = getv %tmp.9 :COLOR_TRANSPARENT;
+        invoke %tmp.5 %tmp.6(%tmp.8, %tmp.10);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 141 8 ]
+        %tmp.11 = lgetv %dc;
+        symbol [ dc %tmp.11 141 8 10 ];
+        symbol [ drawText %tmp.12 141 11 19 ];
+        %tmp.12 = getv function %tmp.11 :drawText;
+        %tmp.13 = 120;
+        %tmp.14 = 50;
+        symbol [ Graphics %tmp.15 141 29 37 ];
+        %tmp.15 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.16 141 38 48 ];
+        %tmp.16 = getv %tmp.15 :FONT_LARGE;
+        %tmp.17 = "YOU WIN!";
+        symbol [ Graphics %tmp.18 141 62 70 ];
+        %tmp.18 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.19 141 71 90 ];
+        %tmp.19 = getv %tmp.18 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.11 %tmp.12(%tmp.13, %tmp.14, %tmp.16, %tmp.17, %tmp.19);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 143 8 ]
+        %tmp.20 = lgetv %dc;
+        symbol [ dc %tmp.20 143 8 10 ];
+        symbol [ setColor %tmp.21 143 11 19 ];
+        %tmp.21 = getv function %tmp.20 :setColor;
+        symbol [ C %tmp.22 143 20 21 ];
+        %tmp.22 = getm $.WristDungeon;
+        symbol [ COLOR_AMMO %tmp.23 143 22 32 ];
+        %tmp.23 = getv %tmp.22 :COLOR_AMMO;
+        symbol [ Graphics %tmp.24 143 34 42 ];
+        %tmp.24 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.25 143 43 60 ];
+        %tmp.25 = getv %tmp.24 :COLOR_TRANSPARENT;
+        invoke %tmp.20 %tmp.21(%tmp.23, %tmp.25);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 144 8 ]
+        %tmp.26 = lgetv %dc;
+        symbol [ dc %tmp.26 144 8 10 ];
+        symbol [ drawText %tmp.27 144 11 19 ];
+        %tmp.27 = getv function %tmp.26 :drawText;
+        %tmp.28 = 120;
+        %tmp.29 = 95;
+        symbol [ Graphics %tmp.30 144 29 37 ];
+        %tmp.30 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.31 144 38 48 ];
+        %tmp.31 = getv %tmp.30 :FONT_SMALL;
+        %tmp.32 = "Dungeon Cleared!";
+        symbol [ Graphics %tmp.33 144 70 78 ];
+        %tmp.33 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.34 144 79 98 ];
+        %tmp.34 = getv %tmp.33 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.26 %tmp.27(%tmp.28, %tmp.29, %tmp.31, %tmp.32, %tmp.34);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 146 8 ]
+        %tmp.35 = lgetv %dc;
+        symbol [ dc %tmp.35 146 8 10 ];
+        symbol [ setColor %tmp.36 146 11 19 ];
+        %tmp.36 = getv function %tmp.35 :setColor;
+        symbol [ C %tmp.37 146 20 21 ];
+        %tmp.37 = getm $.WristDungeon;
+        symbol [ COLOR_WHITE %tmp.38 146 22 33 ];
+        %tmp.38 = getv %tmp.37 :COLOR_WHITE;
+        symbol [ Graphics %tmp.39 146 35 43 ];
+        %tmp.39 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.40 146 44 61 ];
+        %tmp.40 = getv %tmp.39 :COLOR_TRANSPARENT;
+        invoke %tmp.35 %tmp.36(%tmp.38, %tmp.40);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 147 8 ]
+        %tmp.41 = lgetv %dc;
+        symbol [ dc %tmp.41 147 8 10 ];
+        symbol [ drawText %tmp.42 147 11 19 ];
+        %tmp.42 = getv function %tmp.41 :drawText;
+        %tmp.43 = 120;
+        %tmp.44 = 125;
+        symbol [ Graphics %tmp.45 147 30 38 ];
+        %tmp.45 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.46 147 39 50 ];
+        %tmp.46 = getv %tmp.45 :FONT_MEDIUM;
+        %tmp.47 = "Score";
+        symbol [ Graphics %tmp.48 147 61 69 ];
+        %tmp.48 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.49 147 70 89 ];
+        %tmp.49 = getv %tmp.48 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.41 %tmp.42(%tmp.43, %tmp.44, %tmp.46, %tmp.47, %tmp.49);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 148 8 ]
+        %tmp.50 = lgetv %dc;
+        symbol [ dc %tmp.50 148 8 10 ];
+        symbol [ setColor %tmp.51 148 11 19 ];
+        %tmp.51 = getv function %tmp.50 :setColor;
+        symbol [ C %tmp.52 148 20 21 ];
+        %tmp.52 = getm $.WristDungeon;
+        symbol [ COLOR_SCORE %tmp.53 148 22 33 ];
+        %tmp.53 = getv %tmp.52 :COLOR_SCORE;
+        symbol [ Graphics %tmp.54 148 35 43 ];
+        %tmp.54 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.55 148 44 61 ];
+        %tmp.55 = getv %tmp.54 :COLOR_TRANSPARENT;
+        invoke %tmp.50 %tmp.51(%tmp.53, %tmp.55);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 149 8 ]
+        %tmp.56 = lgetv %dc;
+        symbol [ dc %tmp.56 149 8 10 ];
+        symbol [ drawText %tmp.57 149 11 19 ];
+        %tmp.57 = getv function %tmp.56 :drawText;
+        %tmp.58 = 120;
+        %tmp.59 = 148;
+        symbol [ Graphics %tmp.60 149 30 38 ];
+        %tmp.60 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.61 149 39 50 ];
+        %tmp.61 = getv %tmp.60 :FONT_MEDIUM;
+        %tmp.62 = lgetv %gs.1;
+        symbol [ gs %tmp.62 149 52 54 ];
+        symbol [ score %tmp.63 149 55 60 ];
+        %tmp.63 = getv %tmp.62 :score;
+        symbol [ toString %tmp.64 149 61 69 ];
+        %tmp.64 = getv function %tmp.63 :toString;
+        %tmp.65 = invoke %tmp.63 %tmp.64();
+        symbol [ Graphics %tmp.66 149 73 81 ];
+        %tmp.66 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.67 149 82 101 ];
+        %tmp.67 = getv %tmp.66 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.56 %tmp.57(%tmp.58, %tmp.59, %tmp.61, %tmp.65, %tmp.67);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 151 8 ]
+        %tmp.68 = lgetv %dc;
+        symbol [ dc %tmp.68 151 8 10 ];
+        symbol [ setColor %tmp.69 151 11 19 ];
+        %tmp.69 = getv function %tmp.68 :setColor;
+        symbol [ C %tmp.70 151 20 21 ];
+        %tmp.70 = getm $.WristDungeon;
+        symbol [ COLOR_MENU_SELECT %tmp.71 151 22 39 ];
+        %tmp.71 = getv %tmp.70 :COLOR_MENU_SELECT;
+        symbol [ Graphics %tmp.72 151 41 49 ];
+        %tmp.72 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.73 151 50 67 ];
+        %tmp.73 = getv %tmp.72 :COLOR_TRANSPARENT;
+        invoke %tmp.68 %tmp.69(%tmp.71, %tmp.73);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 152 8 ]
+        %tmp.74 = lgetv %dc;
+        symbol [ dc %tmp.74 152 8 10 ];
+        symbol [ drawText %tmp.75 152 11 19 ];
+        %tmp.75 = getv function %tmp.74 :drawText;
+        %tmp.76 = 120;
+        %tmp.77 = 210;
+        symbol [ Graphics %tmp.78 152 30 38 ];
+        %tmp.78 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.79 152 39 49 ];
+        %tmp.79 = getv %tmp.78 :FONT_XTINY;
+        %tmp.80 = "START: Play Again  BACK: Menu";
+        symbol [ Graphics %tmp.81 152 84 92 ];
+        %tmp.81 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.82 152 93 112 ];
+        %tmp.82 = getv %tmp.81 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.74 %tmp.75(%tmp.76, %tmp.77, %tmp.79, %tmp.80, %tmp.82);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_138_56_153_4_stop:
+    }
+}
+[ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 160; @symbol_classdef = [MenuDelegate,160,6,18]; @symbol_extends<0> = [WatchUi,160,27,34]; @symbol_extends<1> = [BehaviorDelegate,160,35,51]; ]
+class MenuDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 160; ]
+    <init> {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 160; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 162; @position = 15; @symbol_vardef = [_view,162,15,20]; @symbol_type<0> = [MenuView,162,24,32]; ]
+    protected
+    var _view as MenuView;
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 164; @symbol_functiondef = [initialize,164,13,23]; @symbol_param<0> = [view,164,24,28]; @symbol_param<0>_type<0> = [MenuView,164,32,40]; ]
+    function initialize(view as MenuView) as Void {
+_Users_samar_Desktop_DOOM_source_MenuView_mc_164_42_167_4_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 165 8 ]
+        symbol [ BehaviorDelegate %tmp.2 165 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 165 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 166 8 ]
+        %tmp.4 = lgetv %view;
+        symbol [ view %tmp.4 166 16 20 ];
+        symbol [ _view ? 166 8 13 ];
+        putv self :_view %tmp.4;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_164_42_167_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 169; @symbol_functiondef = [onKey,169,13,18]; @symbol_param<0> = [evt,169,19,22]; @symbol_param<0>_type<0> = [WatchUi,169,26,33]; @symbol_param<0>_type<1> = [KeyEvent,169,34,42]; @symbol_return<0> = [Boolean,169,47,54]; ]
+    function onKey(evt as WatchUi.KeyEvent) as Boolean {
+_Users_samar_Desktop_DOOM_source_MenuView_mc_169_55_180_4_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 170 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_169_55_180_4_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_169_55_180_4_stop" ]
+        %gs.1 = local;
+        symbol [ gs %gs.1 170 12 14 ];
+        symbol [ GameState %tmp.2 170 18 27 ];
+        %tmp.2 = getv ? :GameState;
+        symbol [ get %tmp.3 170 28 31 ];
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %gs.1 %tmp.4;
+        symbol [ gs %gs.1 170 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 171 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_169_55_180_4_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_169_55_180_4_stop" ]
+        %key.2 = local;
+        symbol [ key %key.2 171 12 15 ];
+        %tmp.5 = lgetv %evt;
+        symbol [ evt %tmp.5 171 18 21 ];
+        symbol [ getKey %tmp.6 171 22 28 ];
+        %tmp.6 = getv function %tmp.5 :getKey;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        lputv %key.2 %tmp.7;
+        symbol [ key %key.2 171 12 15 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 172 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_169_55_180_4_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_169_55_180_4_stop" ]
+        %typ.3 = local;
+        symbol [ typ %typ.3 172 12 15 ];
+        %tmp.8 = lgetv %evt;
+        symbol [ evt %tmp.8 172 18 21 ];
+        symbol [ getType %tmp.9 172 22 29 ];
+        %tmp.9 = getv function %tmp.8 :getType;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        lputv %typ.3 %tmp.10;
+        symbol [ typ %typ.3 172 12 15 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 174 8 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_174_8_174_84_if_stmt:
+        %tmp.11 = lgetv %gs.1;
+        symbol [ gs %tmp.11 174 12 14 ];
+        symbol [ mode %tmp.12 174 15 19 ];
+        %tmp.12 = getv %tmp.11 :mode;
+        symbol [ C %tmp.13 174 23 24 ];
+        %tmp.13 = getm $.WristDungeon;
+        symbol [ MODE_MENU %tmp.14 174 25 34 ];
+        %tmp.14 = getv %tmp.13 :MODE_MENU;
+        %tmp.15 = eq %tmp.12 %tmp.14;
+        bf %tmp.15 @_Users_samar_Desktop_DOOM_source_MenuView_mc_174_8_174_84_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_174_8_174_84_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_174_44_174_84_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 174 46 ]
+        %tmp.16 = self;
+        symbol [ _handleMainMenu %tmp.17 174 53 68 ];
+        %tmp.17 = getv function %tmp.16 :_handleMainMenu;
+        %tmp.18 = lgetv %key.2;
+        symbol [ key %tmp.18 174 69 72 ];
+        %tmp.19 = lgetv %typ.3;
+        symbol [ typ %tmp.19 174 74 77 ];
+        %tmp.20 = lgetv %gs.1;
+        symbol [ gs %tmp.20 174 79 81 ];
+        %tmp.21 = invoke %tmp.16 %tmp.17(%tmp.18, %tmp.19, %tmp.20);
+        ret %tmp.21;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_174_44_174_84_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_174_8_174_84_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_174_8_174_84_if_end:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 175 8 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_175_8_175_83_if_stmt:
+        %tmp.22 = lgetv %gs.1;
+        symbol [ gs %tmp.22 175 12 14 ];
+        symbol [ mode %tmp.23 175 15 19 ];
+        %tmp.23 = getv %tmp.22 :mode;
+        symbol [ C %tmp.24 175 23 24 ];
+        %tmp.24 = getm $.WristDungeon;
+        symbol [ MODE_INSTRUCTIONS %tmp.25 175 25 42 ];
+        %tmp.25 = getv %tmp.24 :MODE_INSTRUCTIONS;
+        %tmp.26 = eq %tmp.23 %tmp.25;
+        bf %tmp.26 @_Users_samar_Desktop_DOOM_source_MenuView_mc_175_8_175_83_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_175_8_175_83_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_175_44_175_83_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 175 46 ]
+        %tmp.27 = self;
+        symbol [ _handleInstructions %tmp.28 175 53 72 ];
+        %tmp.28 = getv function %tmp.27 :_handleInstructions;
+        %tmp.29 = lgetv %key.2;
+        symbol [ key %tmp.29 175 73 76 ];
+        %tmp.30 = lgetv %gs.1;
+        symbol [ gs %tmp.30 175 78 80 ];
+        %tmp.31 = invoke %tmp.27 %tmp.28(%tmp.29, %tmp.30);
+        ret %tmp.31;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_175_44_175_83_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_175_8_175_83_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_175_8_175_83_if_end:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 176 8 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_176_8_176_81_if_stmt:
+        %tmp.32 = lgetv %gs.1;
+        symbol [ gs %tmp.32 176 12 14 ];
+        symbol [ mode %tmp.33 176 15 19 ];
+        %tmp.33 = getv %tmp.32 :mode;
+        symbol [ C %tmp.34 176 23 24 ];
+        %tmp.34 = getm $.WristDungeon;
+        symbol [ MODE_PAUSE %tmp.35 176 25 35 ];
+        %tmp.35 = getv %tmp.34 :MODE_PAUSE;
+        %tmp.36 = eq %tmp.33 %tmp.35;
+        bf %tmp.36 @_Users_samar_Desktop_DOOM_source_MenuView_mc_176_8_176_81_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_176_8_176_81_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_176_44_176_81_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 176 46 ]
+        %tmp.37 = self;
+        symbol [ _handlePause %tmp.38 176 53 65 ];
+        %tmp.38 = getv function %tmp.37 :_handlePause;
+        %tmp.39 = lgetv %key.2;
+        symbol [ key %tmp.39 176 66 69 ];
+        %tmp.40 = lgetv %typ.3;
+        symbol [ typ %tmp.40 176 71 74 ];
+        %tmp.41 = lgetv %gs.1;
+        symbol [ gs %tmp.41 176 76 78 ];
+        %tmp.42 = invoke %tmp.37 %tmp.38(%tmp.39, %tmp.40, %tmp.41);
+        ret %tmp.42;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_176_44_176_81_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_176_8_176_81_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_176_8_176_81_if_end:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 177 8 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_177_8_177_80_if_stmt:
+        %tmp.43 = lgetv %gs.1;
+        symbol [ gs %tmp.43 177 12 14 ];
+        symbol [ mode %tmp.44 177 15 19 ];
+        %tmp.44 = getv %tmp.43 :mode;
+        symbol [ C %tmp.45 177 23 24 ];
+        %tmp.45 = getm $.WristDungeon;
+        symbol [ MODE_GAMEOVER %tmp.46 177 25 38 ];
+        %tmp.46 = getv %tmp.45 :MODE_GAMEOVER;
+        %tmp.47 = eq %tmp.44 %tmp.46;
+        bf %tmp.47 @_Users_samar_Desktop_DOOM_source_MenuView_mc_177_8_177_80_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_177_8_177_80_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_177_44_177_80_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 177 46 ]
+        %tmp.48 = self;
+        symbol [ _handleEndScreen %tmp.49 177 53 69 ];
+        %tmp.49 = getv function %tmp.48 :_handleEndScreen;
+        %tmp.50 = lgetv %key.2;
+        symbol [ key %tmp.50 177 70 73 ];
+        %tmp.51 = lgetv %gs.1;
+        symbol [ gs %tmp.51 177 75 77 ];
+        %tmp.52 = invoke %tmp.48 %tmp.49(%tmp.50, %tmp.51);
+        ret %tmp.52;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_177_44_177_80_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_177_8_177_80_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_177_8_177_80_if_end:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 178 8 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_178_8_178_80_if_stmt:
+        %tmp.53 = lgetv %gs.1;
+        symbol [ gs %tmp.53 178 12 14 ];
+        symbol [ mode %tmp.54 178 15 19 ];
+        %tmp.54 = getv %tmp.53 :mode;
+        symbol [ C %tmp.55 178 23 24 ];
+        %tmp.55 = getm $.WristDungeon;
+        symbol [ MODE_WIN %tmp.56 178 25 33 ];
+        %tmp.56 = getv %tmp.55 :MODE_WIN;
+        %tmp.57 = eq %tmp.54 %tmp.56;
+        bf %tmp.57 @_Users_samar_Desktop_DOOM_source_MenuView_mc_178_8_178_80_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_178_8_178_80_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_178_44_178_80_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 178 46 ]
+        %tmp.58 = self;
+        symbol [ _handleEndScreen %tmp.59 178 53 69 ];
+        %tmp.59 = getv function %tmp.58 :_handleEndScreen;
+        %tmp.60 = lgetv %key.2;
+        symbol [ key %tmp.60 178 70 73 ];
+        %tmp.61 = lgetv %gs.1;
+        symbol [ gs %tmp.61 178 75 77 ];
+        %tmp.62 = invoke %tmp.58 %tmp.59(%tmp.60, %tmp.61);
+        ret %tmp.62;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_178_44_178_80_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_178_8_178_80_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_178_8_178_80_if_end:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 179 8 ]
+        %tmp.63 = false;
+        ret %tmp.63;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_169_55_180_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 182; @symbol_functiondef = [_handleMainMenu,182,20,35]; @symbol_param<0> = [key,182,36,39]; @symbol_param<0>_type<0> = [Number,182,43,49]; @symbol_param<1> = [typ,182,51,54]; @symbol_param<1>_type<0> = [Number,182,58,64]; @symbol_param<2> = [gs,182,66,68]; @symbol_param<2>_type<0> = [GameState,182,72,81]; @symbol_return<0> = [Boolean,182,86,93]; ]
+    protected
+    function _handleMainMenu(key as Number, typ as Number, gs as GameState) as Boolean {
+_Users_samar_Desktop_DOOM_source_MenuView_mc_182_94_205_4_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 183 8 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_183_8_203_8_if_stmt:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_183_12_183_52_begin:
+        %tmp.1 = lgetv %key;
+        symbol [ key %tmp.1 183 12 15 ];
+        symbol [ WatchUi %tmp.2 183 19 26 ];
+        %tmp.2 = getm $.Toybox.WatchUi;
+        symbol [ KEY_UP %tmp.3 183 27 33 ];
+        %tmp.3 = getv %tmp.2 :KEY_UP;
+        %tmp.4 = eq %tmp.1 %tmp.3;
+        bf %tmp.4 @_Users_samar_Desktop_DOOM_source_MenuView_mc_183_8_203_8_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_183_37_183_52_true:
+        %tmp.5 = lgetv %typ;
+        symbol [ typ %tmp.5 183 37 40 ];
+        symbol [ WatchUi %tmp.6 183 44 51 ];
+        %tmp.6 = getm $.Toybox.WatchUi;
+        symbol [ PRESS_TYPE_ACTION %tmp.7 183 52 69 ];
+        %tmp.7 = getv %tmp.6 :PRESS_TYPE_ACTION;
+        %tmp.8 = eq %tmp.5 %tmp.7;
+        push %tmp.8;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_183_37_183_52_end:
+        %tmp.9 = phi [%tmp.4 @_Users_samar_Desktop_DOOM_source_MenuView_mc_183_12_183_52_begin] [%tmp.8 @_Users_samar_Desktop_DOOM_source_MenuView_mc_183_37_183_52_true] [%tmp.9 @_Users_samar_Desktop_DOOM_source_MenuView_mc_183_37_183_52_end];
+        bf %tmp.9 @_Users_samar_Desktop_DOOM_source_MenuView_mc_183_8_203_8_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_183_8_203_8_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_183_71_186_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 184 12 ]
+        symbol [ _view %tmp.11 184 12 17 ];
+        %tmp.11 = getv ? :_view;
+        symbol [ setSelectedItem %tmp.12 184 18 33 ];
+        %tmp.12 = getv function %tmp.11 :setSelectedItem;
+        symbol [ _view %tmp.14 184 35 40 ];
+        %tmp.14 = getv ? :_view;
+        symbol [ getSelectedItem %tmp.15 184 41 56 ];
+        %tmp.15 = getv function %tmp.14 :getSelectedItem;
+        %tmp.16 = invoke %tmp.14 %tmp.15();
+        %tmp.17 = 1;
+        %tmp.18 = sub %tmp.16 %tmp.17;
+        %tmp.19 = 3;
+        %tmp.20 = add %tmp.18 %tmp.19;
+        %tmp.21 = 3;
+        %tmp.22 = mod %tmp.20 %tmp.21;
+        invoke %tmp.11 %tmp.12(%tmp.22);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 185 12 ]
+        symbol [ WatchUi %tmp.23 185 12 19 ];
+        %tmp.23 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.24 185 20 33 ];
+        %tmp.24 = getv function %tmp.23 :requestUpdate;
+        invoke %tmp.23 %tmp.24();
+_Users_samar_Desktop_DOOM_source_MenuView_mc_183_71_186_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_183_8_203_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_183_8_203_8_if_false:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 186 15 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_186_15_203_8_if_stmt:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_186_19_186_61_begin:
+        %tmp.25 = lgetv %key;
+        symbol [ key %tmp.25 186 19 22 ];
+        symbol [ WatchUi %tmp.26 186 26 33 ];
+        %tmp.26 = getm $.Toybox.WatchUi;
+        symbol [ KEY_DOWN %tmp.27 186 34 42 ];
+        %tmp.27 = getv %tmp.26 :KEY_DOWN;
+        %tmp.28 = eq %tmp.25 %tmp.27;
+        bf %tmp.28 @_Users_samar_Desktop_DOOM_source_MenuView_mc_186_15_203_8_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_186_46_186_61_true:
+        %tmp.29 = lgetv %typ;
+        symbol [ typ %tmp.29 186 46 49 ];
+        symbol [ WatchUi %tmp.30 186 53 60 ];
+        %tmp.30 = getm $.Toybox.WatchUi;
+        symbol [ PRESS_TYPE_ACTION %tmp.31 186 61 78 ];
+        %tmp.31 = getv %tmp.30 :PRESS_TYPE_ACTION;
+        %tmp.32 = eq %tmp.29 %tmp.31;
+        push %tmp.32;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_186_46_186_61_end:
+        %tmp.33 = phi [%tmp.28 @_Users_samar_Desktop_DOOM_source_MenuView_mc_186_19_186_61_begin] [%tmp.32 @_Users_samar_Desktop_DOOM_source_MenuView_mc_186_46_186_61_true] [%tmp.33 @_Users_samar_Desktop_DOOM_source_MenuView_mc_186_46_186_61_end];
+        bf %tmp.33 @_Users_samar_Desktop_DOOM_source_MenuView_mc_186_15_203_8_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_186_15_203_8_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_186_80_189_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 187 12 ]
+        symbol [ _view %tmp.35 187 12 17 ];
+        %tmp.35 = getv ? :_view;
+        symbol [ setSelectedItem %tmp.36 187 18 33 ];
+        %tmp.36 = getv function %tmp.35 :setSelectedItem;
+        symbol [ _view %tmp.38 187 35 40 ];
+        %tmp.38 = getv ? :_view;
+        symbol [ getSelectedItem %tmp.39 187 41 56 ];
+        %tmp.39 = getv function %tmp.38 :getSelectedItem;
+        %tmp.40 = invoke %tmp.38 %tmp.39();
+        %tmp.41 = 1;
+        %tmp.42 = add %tmp.40 %tmp.41;
+        %tmp.43 = 3;
+        %tmp.44 = mod %tmp.42 %tmp.43;
+        invoke %tmp.35 %tmp.36(%tmp.44);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 188 12 ]
+        symbol [ WatchUi %tmp.45 188 12 19 ];
+        %tmp.45 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.46 188 20 33 ];
+        %tmp.46 = getv function %tmp.45 :requestUpdate;
+        invoke %tmp.45 %tmp.46();
+_Users_samar_Desktop_DOOM_source_MenuView_mc_186_80_189_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_186_15_203_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_186_15_203_8_if_false:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 189 15 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_189_15_203_8_if_stmt:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_189_19_189_62_begin:
+        %tmp.47 = lgetv %key;
+        symbol [ key %tmp.47 189 19 22 ];
+        symbol [ WatchUi %tmp.48 189 26 33 ];
+        %tmp.48 = getm $.Toybox.WatchUi;
+        symbol [ KEY_START %tmp.49 189 34 43 ];
+        %tmp.49 = getv %tmp.48 :KEY_START;
+        %tmp.50 = eq %tmp.47 %tmp.49;
+        bf %tmp.50 @_Users_samar_Desktop_DOOM_source_MenuView_mc_189_15_203_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_189_47_189_62_true:
+        %tmp.51 = lgetv %typ;
+        symbol [ typ %tmp.51 189 47 50 ];
+        symbol [ WatchUi %tmp.52 189 54 61 ];
+        %tmp.52 = getm $.Toybox.WatchUi;
+        symbol [ PRESS_TYPE_ACTION %tmp.53 189 62 79 ];
+        %tmp.53 = getv %tmp.52 :PRESS_TYPE_ACTION;
+        %tmp.54 = eq %tmp.51 %tmp.53;
+        push %tmp.54;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_189_47_189_62_end:
+        %tmp.55 = phi [%tmp.50 @_Users_samar_Desktop_DOOM_source_MenuView_mc_189_19_189_62_begin] [%tmp.54 @_Users_samar_Desktop_DOOM_source_MenuView_mc_189_47_189_62_true] [%tmp.55 @_Users_samar_Desktop_DOOM_source_MenuView_mc_189_47_189_62_end];
+        bf %tmp.55 @_Users_samar_Desktop_DOOM_source_MenuView_mc_189_15_203_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_189_15_203_8_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_189_81_203_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 190 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_189_81_203_8_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_189_81_203_8_stop" ]
+        %sel.1 = local;
+        symbol [ sel %sel.1 190 16 19 ];
+        symbol [ _view %tmp.57 190 22 27 ];
+        %tmp.57 = getv ? :_view;
+        symbol [ getSelectedItem %tmp.58 190 28 43 ];
+        %tmp.58 = getv function %tmp.57 :getSelectedItem;
+        %tmp.59 = invoke %tmp.57 %tmp.58();
+        lputv %sel.1 %tmp.59;
+        symbol [ sel %sel.1 190 16 19 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 191 12 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_191_12_202_12_if_stmt:
+        %tmp.60 = lgetv %sel.1;
+        symbol [ sel %tmp.60 191 16 19 ];
+        %tmp.61 = 0;
+        %tmp.62 = eq %tmp.60 %tmp.61;
+        bf %tmp.62 @_Users_samar_Desktop_DOOM_source_MenuView_mc_191_12_202_12_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_191_12_202_12_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_191_26_197_12_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 192 16 ]
+        %tmp.63 = lgetv %gs;
+        symbol [ gs %tmp.63 192 16 18 ];
+        symbol [ resetGame %tmp.64 192 19 28 ];
+        %tmp.64 = getv function %tmp.63 :resetGame;
+        invoke %tmp.63 %tmp.64();
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 193 16 ]
+        %tmp.65 = lgetv %gs;
+        symbol [ gs %tmp.65 193 16 18 ];
+        symbol [ C %tmp.66 193 26 27 ];
+        %tmp.66 = getm $.WristDungeon;
+        symbol [ MODE_GAME %tmp.67 193 28 37 ];
+        %tmp.67 = getv %tmp.66 :MODE_GAME;
+        symbol [ mode ? 193 19 23 ];
+        putv %tmp.65 :mode %tmp.67;
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 194 16 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_191_26_197_12_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_191_26_197_12_stop" ]
+        %gameView.2 = local;
+        symbol [ gameView %gameView.2 194 20 28 ];
+        symbol [ GameView %tmp.71 194 35 43 ];
+        %tmp.71 = getv ? :GameView;
+        %tmp.68 = newc %tmp.71 ();
+        lputv %gameView.2 %tmp.68;
+        symbol [ gameView %gameView.2 194 20 28 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 195 16 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_191_26_197_12_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_191_26_197_12_stop" ]
+        %gameDelegate.3 = local;
+        symbol [ gameDelegate %gameDelegate.3 195 20 32 ];
+        symbol [ GameDelegate %tmp.75 195 39 51 ];
+        %tmp.75 = getv ? :GameDelegate;
+        %tmp.76 = lgetv %gameView.2;
+        symbol [ gameView %tmp.76 195 52 60 ];
+        %tmp.72 = newc %tmp.75 (%tmp.76);
+        lputv %gameDelegate.3 %tmp.72;
+        symbol [ gameDelegate %gameDelegate.3 195 20 32 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 196 16 ]
+        symbol [ WatchUi %tmp.77 196 16 23 ];
+        %tmp.77 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.78 196 24 32 ];
+        %tmp.78 = getv function %tmp.77 :pushView;
+        %tmp.79 = lgetv %gameView.2;
+        symbol [ gameView %tmp.79 196 33 41 ];
+        %tmp.80 = lgetv %gameDelegate.3;
+        symbol [ gameDelegate %tmp.80 196 43 55 ];
+        symbol [ WatchUi %tmp.81 196 57 64 ];
+        %tmp.81 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_LEFT %tmp.82 196 65 75 ];
+        %tmp.82 = getv %tmp.81 :SLIDE_LEFT;
+        invoke %tmp.77 %tmp.78(%tmp.79, %tmp.80, %tmp.82);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_191_26_197_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_191_12_202_12_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_191_12_202_12_if_false:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 197 19 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_197_19_202_12_if_stmt:
+        %tmp.83 = lgetv %sel.1;
+        symbol [ sel %tmp.83 197 23 26 ];
+        %tmp.84 = 1;
+        %tmp.85 = eq %tmp.83 %tmp.84;
+        bf %tmp.85 @_Users_samar_Desktop_DOOM_source_MenuView_mc_197_19_202_12_if_else_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_197_19_202_12_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_197_33_200_12_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 198 16 ]
+        %tmp.86 = lgetv %gs;
+        symbol [ gs %tmp.86 198 16 18 ];
+        symbol [ C %tmp.87 198 26 27 ];
+        %tmp.87 = getm $.WristDungeon;
+        symbol [ MODE_INSTRUCTIONS %tmp.88 198 28 45 ];
+        %tmp.88 = getv %tmp.87 :MODE_INSTRUCTIONS;
+        symbol [ mode ? 198 19 23 ];
+        putv %tmp.86 :mode %tmp.88;
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 199 16 ]
+        symbol [ WatchUi %tmp.89 199 16 23 ];
+        %tmp.89 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.90 199 24 37 ];
+        %tmp.90 = getv function %tmp.89 :requestUpdate;
+        invoke %tmp.89 %tmp.90();
+_Users_samar_Desktop_DOOM_source_MenuView_mc_197_33_200_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_197_19_202_12_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_197_19_202_12_if_else_false:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_200_19_202_12_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 201 16 ]
+        symbol [ System %tmp.91 201 16 22 ];
+        %tmp.91 = getm $.Toybox.System;
+        symbol [ exit %tmp.92 201 23 27 ];
+        %tmp.92 = getv function %tmp.91 :exit;
+        invoke %tmp.91 %tmp.92();
+_Users_samar_Desktop_DOOM_source_MenuView_mc_200_19_202_12_stop:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_197_19_202_12_if_end:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_191_12_202_12_if_end:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_189_81_203_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_189_15_203_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_189_15_203_8_if_end:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_186_15_203_8_if_end:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_183_8_203_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 204 8 ]
+        %tmp.93 = true;
+        ret %tmp.93;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_182_94_205_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 207; @symbol_functiondef = [_handleInstructions,207,20,39]; @symbol_param<0> = [key,207,40,43]; @symbol_param<0>_type<0> = [Number,207,47,53]; @symbol_param<1> = [gs,207,55,57]; @symbol_param<1>_type<0> = [GameState,207,61,70]; @symbol_return<0> = [Boolean,207,75,82]; ]
+    protected
+    function _handleInstructions(key as Number, gs as GameState) as Boolean {
+_Users_samar_Desktop_DOOM_source_MenuView_mc_207_83_213_4_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 208 8 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_208_8_211_8_if_stmt:
+        %tmp.1 = lgetv %key;
+        symbol [ key %tmp.1 208 12 15 ];
+        symbol [ WatchUi %tmp.2 208 19 26 ];
+        %tmp.2 = getm $.Toybox.WatchUi;
+        symbol [ KEY_LAP %tmp.3 208 27 34 ];
+        %tmp.3 = getv %tmp.2 :KEY_LAP;
+        %tmp.4 = eq %tmp.1 %tmp.3;
+        bf %tmp.4 @_Users_samar_Desktop_DOOM_source_MenuView_mc_208_8_211_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_208_8_211_8_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_208_36_211_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 209 12 ]
+        %tmp.5 = lgetv %gs;
+        symbol [ gs %tmp.5 209 12 14 ];
+        symbol [ C %tmp.6 209 22 23 ];
+        %tmp.6 = getm $.WristDungeon;
+        symbol [ MODE_MENU %tmp.7 209 24 33 ];
+        %tmp.7 = getv %tmp.6 :MODE_MENU;
+        symbol [ mode ? 209 15 19 ];
+        putv %tmp.5 :mode %tmp.7;
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 210 12 ]
+        symbol [ WatchUi %tmp.8 210 12 19 ];
+        %tmp.8 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.9 210 20 33 ];
+        %tmp.9 = getv function %tmp.8 :requestUpdate;
+        invoke %tmp.8 %tmp.9();
+_Users_samar_Desktop_DOOM_source_MenuView_mc_208_36_211_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_208_8_211_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_208_8_211_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 212 8 ]
+        %tmp.10 = true;
+        ret %tmp.10;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_207_83_213_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 215; @symbol_functiondef = [_handlePause,215,20,32]; @symbol_param<0> = [key,215,33,36]; @symbol_param<0>_type<0> = [Number,215,40,46]; @symbol_param<1> = [typ,215,48,51]; @symbol_param<1>_type<0> = [Number,215,55,61]; @symbol_param<2> = [gs,215,63,65]; @symbol_param<2>_type<0> = [GameState,215,69,78]; @symbol_return<0> = [Boolean,215,83,90]; ]
+    protected
+    function _handlePause(key as Number, typ as Number, gs as GameState) as Boolean {
+_Users_samar_Desktop_DOOM_source_MenuView_mc_215_91_244_4_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 216 8 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_216_8_242_8_if_stmt:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_216_12_216_52_begin:
+        %tmp.1 = lgetv %key;
+        symbol [ key %tmp.1 216 12 15 ];
+        symbol [ WatchUi %tmp.2 216 19 26 ];
+        %tmp.2 = getm $.Toybox.WatchUi;
+        symbol [ KEY_UP %tmp.3 216 27 33 ];
+        %tmp.3 = getv %tmp.2 :KEY_UP;
+        %tmp.4 = eq %tmp.1 %tmp.3;
+        bf %tmp.4 @_Users_samar_Desktop_DOOM_source_MenuView_mc_216_8_242_8_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_216_37_216_52_true:
+        %tmp.5 = lgetv %typ;
+        symbol [ typ %tmp.5 216 37 40 ];
+        symbol [ WatchUi %tmp.6 216 44 51 ];
+        %tmp.6 = getm $.Toybox.WatchUi;
+        symbol [ PRESS_TYPE_ACTION %tmp.7 216 52 69 ];
+        %tmp.7 = getv %tmp.6 :PRESS_TYPE_ACTION;
+        %tmp.8 = eq %tmp.5 %tmp.7;
+        push %tmp.8;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_216_37_216_52_end:
+        %tmp.9 = phi [%tmp.4 @_Users_samar_Desktop_DOOM_source_MenuView_mc_216_12_216_52_begin] [%tmp.8 @_Users_samar_Desktop_DOOM_source_MenuView_mc_216_37_216_52_true] [%tmp.9 @_Users_samar_Desktop_DOOM_source_MenuView_mc_216_37_216_52_end];
+        bf %tmp.9 @_Users_samar_Desktop_DOOM_source_MenuView_mc_216_8_242_8_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_216_8_242_8_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_216_71_219_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 217 12 ]
+        symbol [ _view %tmp.11 217 12 17 ];
+        %tmp.11 = getv ? :_view;
+        symbol [ setSelectedItem %tmp.12 217 18 33 ];
+        %tmp.12 = getv function %tmp.11 :setSelectedItem;
+        symbol [ _view %tmp.14 217 35 40 ];
+        %tmp.14 = getv ? :_view;
+        symbol [ getSelectedItem %tmp.15 217 41 56 ];
+        %tmp.15 = getv function %tmp.14 :getSelectedItem;
+        %tmp.16 = invoke %tmp.14 %tmp.15();
+        %tmp.17 = 1;
+        %tmp.18 = sub %tmp.16 %tmp.17;
+        %tmp.19 = 3;
+        %tmp.20 = add %tmp.18 %tmp.19;
+        %tmp.21 = 3;
+        %tmp.22 = mod %tmp.20 %tmp.21;
+        invoke %tmp.11 %tmp.12(%tmp.22);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 218 12 ]
+        symbol [ WatchUi %tmp.23 218 12 19 ];
+        %tmp.23 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.24 218 20 33 ];
+        %tmp.24 = getv function %tmp.23 :requestUpdate;
+        invoke %tmp.23 %tmp.24();
+_Users_samar_Desktop_DOOM_source_MenuView_mc_216_71_219_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_216_8_242_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_216_8_242_8_if_false:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 219 15 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_219_15_242_8_if_stmt:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_219_19_219_61_begin:
+        %tmp.25 = lgetv %key;
+        symbol [ key %tmp.25 219 19 22 ];
+        symbol [ WatchUi %tmp.26 219 26 33 ];
+        %tmp.26 = getm $.Toybox.WatchUi;
+        symbol [ KEY_DOWN %tmp.27 219 34 42 ];
+        %tmp.27 = getv %tmp.26 :KEY_DOWN;
+        %tmp.28 = eq %tmp.25 %tmp.27;
+        bf %tmp.28 @_Users_samar_Desktop_DOOM_source_MenuView_mc_219_15_242_8_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_219_46_219_61_true:
+        %tmp.29 = lgetv %typ;
+        symbol [ typ %tmp.29 219 46 49 ];
+        symbol [ WatchUi %tmp.30 219 53 60 ];
+        %tmp.30 = getm $.Toybox.WatchUi;
+        symbol [ PRESS_TYPE_ACTION %tmp.31 219 61 78 ];
+        %tmp.31 = getv %tmp.30 :PRESS_TYPE_ACTION;
+        %tmp.32 = eq %tmp.29 %tmp.31;
+        push %tmp.32;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_219_46_219_61_end:
+        %tmp.33 = phi [%tmp.28 @_Users_samar_Desktop_DOOM_source_MenuView_mc_219_19_219_61_begin] [%tmp.32 @_Users_samar_Desktop_DOOM_source_MenuView_mc_219_46_219_61_true] [%tmp.33 @_Users_samar_Desktop_DOOM_source_MenuView_mc_219_46_219_61_end];
+        bf %tmp.33 @_Users_samar_Desktop_DOOM_source_MenuView_mc_219_15_242_8_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_219_15_242_8_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_219_80_222_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 220 12 ]
+        symbol [ _view %tmp.35 220 12 17 ];
+        %tmp.35 = getv ? :_view;
+        symbol [ setSelectedItem %tmp.36 220 18 33 ];
+        %tmp.36 = getv function %tmp.35 :setSelectedItem;
+        symbol [ _view %tmp.38 220 35 40 ];
+        %tmp.38 = getv ? :_view;
+        symbol [ getSelectedItem %tmp.39 220 41 56 ];
+        %tmp.39 = getv function %tmp.38 :getSelectedItem;
+        %tmp.40 = invoke %tmp.38 %tmp.39();
+        %tmp.41 = 1;
+        %tmp.42 = add %tmp.40 %tmp.41;
+        %tmp.43 = 3;
+        %tmp.44 = mod %tmp.42 %tmp.43;
+        invoke %tmp.35 %tmp.36(%tmp.44);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 221 12 ]
+        symbol [ WatchUi %tmp.45 221 12 19 ];
+        %tmp.45 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.46 221 20 33 ];
+        %tmp.46 = getv function %tmp.45 :requestUpdate;
+        invoke %tmp.45 %tmp.46();
+_Users_samar_Desktop_DOOM_source_MenuView_mc_219_80_222_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_219_15_242_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_219_15_242_8_if_false:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 222 15 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_222_15_242_8_if_stmt:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_222_19_222_62_begin:
+        %tmp.47 = lgetv %key;
+        symbol [ key %tmp.47 222 19 22 ];
+        symbol [ WatchUi %tmp.48 222 26 33 ];
+        %tmp.48 = getm $.Toybox.WatchUi;
+        symbol [ KEY_START %tmp.49 222 34 43 ];
+        %tmp.49 = getv %tmp.48 :KEY_START;
+        %tmp.50 = eq %tmp.47 %tmp.49;
+        bf %tmp.50 @_Users_samar_Desktop_DOOM_source_MenuView_mc_222_15_242_8_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_222_47_222_62_true:
+        %tmp.51 = lgetv %typ;
+        symbol [ typ %tmp.51 222 47 50 ];
+        symbol [ WatchUi %tmp.52 222 54 61 ];
+        %tmp.52 = getm $.Toybox.WatchUi;
+        symbol [ PRESS_TYPE_ACTION %tmp.53 222 62 79 ];
+        %tmp.53 = getv %tmp.52 :PRESS_TYPE_ACTION;
+        %tmp.54 = eq %tmp.51 %tmp.53;
+        push %tmp.54;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_222_47_222_62_end:
+        %tmp.55 = phi [%tmp.50 @_Users_samar_Desktop_DOOM_source_MenuView_mc_222_19_222_62_begin] [%tmp.54 @_Users_samar_Desktop_DOOM_source_MenuView_mc_222_47_222_62_true] [%tmp.55 @_Users_samar_Desktop_DOOM_source_MenuView_mc_222_47_222_62_end];
+        bf %tmp.55 @_Users_samar_Desktop_DOOM_source_MenuView_mc_222_15_242_8_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_222_15_242_8_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_222_81_237_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 223 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_222_81_237_8_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_222_81_237_8_stop" ]
+        %sel.1 = local;
+        symbol [ sel %sel.1 223 16 19 ];
+        symbol [ _view %tmp.57 223 22 27 ];
+        %tmp.57 = getv ? :_view;
+        symbol [ getSelectedItem %tmp.58 223 28 43 ];
+        %tmp.58 = getv function %tmp.57 :getSelectedItem;
+        %tmp.59 = invoke %tmp.57 %tmp.58();
+        lputv %sel.1 %tmp.59;
+        symbol [ sel %sel.1 223 16 19 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 224 12 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_224_12_236_12_if_stmt:
+        %tmp.60 = lgetv %sel.1;
+        symbol [ sel %tmp.60 224 16 19 ];
+        %tmp.61 = 0;
+        %tmp.62 = eq %tmp.60 %tmp.61;
+        bf %tmp.62 @_Users_samar_Desktop_DOOM_source_MenuView_mc_224_12_236_12_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_224_12_236_12_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_224_26_228_12_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 225 16 ]
+        %tmp.63 = lgetv %gs;
+        symbol [ gs %tmp.63 225 16 18 ];
+        symbol [ C %tmp.64 225 27 28 ];
+        %tmp.64 = getm $.WristDungeon;
+        symbol [ MODE_GAME %tmp.65 225 29 38 ];
+        %tmp.65 = getv %tmp.64 :MODE_GAME;
+        symbol [ mode ? 225 19 23 ];
+        putv %tmp.63 :mode %tmp.65;
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 226 16 ]
+        %tmp.66 = lgetv %gs;
+        symbol [ gs %tmp.66 226 16 18 ];
+        %tmp.67 = true;
+        symbol [ needsRedraw ? 226 19 30 ];
+        putv %tmp.66 :needsRedraw %tmp.67;
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 227 16 ]
+        symbol [ WatchUi %tmp.68 227 16 23 ];
+        %tmp.68 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.69 227 24 31 ];
+        %tmp.69 = getv function %tmp.68 :popView;
+        symbol [ WatchUi %tmp.70 227 32 39 ];
+        %tmp.70 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.71 227 40 51 ];
+        %tmp.71 = getv %tmp.70 :SLIDE_RIGHT;
+        invoke %tmp.68 %tmp.69(%tmp.71);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_224_26_228_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_224_12_236_12_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_224_12_236_12_if_false:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 228 19 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_228_19_236_12_if_stmt:
+        %tmp.72 = lgetv %sel.1;
+        symbol [ sel %tmp.72 228 23 26 ];
+        %tmp.73 = 1;
+        %tmp.74 = eq %tmp.72 %tmp.73;
+        bf %tmp.74 @_Users_samar_Desktop_DOOM_source_MenuView_mc_228_19_236_12_if_else_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_228_19_236_12_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_228_33_232_12_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 229 16 ]
+        %tmp.75 = lgetv %gs;
+        symbol [ gs %tmp.75 229 16 18 ];
+        symbol [ resetGame %tmp.76 229 19 28 ];
+        %tmp.76 = getv function %tmp.75 :resetGame;
+        invoke %tmp.75 %tmp.76();
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 230 16 ]
+        %tmp.77 = lgetv %gs;
+        symbol [ gs %tmp.77 230 16 18 ];
+        symbol [ C %tmp.78 230 26 27 ];
+        %tmp.78 = getm $.WristDungeon;
+        symbol [ MODE_GAME %tmp.79 230 28 37 ];
+        %tmp.79 = getv %tmp.78 :MODE_GAME;
+        symbol [ mode ? 230 19 23 ];
+        putv %tmp.77 :mode %tmp.79;
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 231 16 ]
+        symbol [ WatchUi %tmp.80 231 16 23 ];
+        %tmp.80 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.81 231 24 31 ];
+        %tmp.81 = getv function %tmp.80 :popView;
+        symbol [ WatchUi %tmp.82 231 32 39 ];
+        %tmp.82 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.83 231 40 50 ];
+        %tmp.83 = getv %tmp.82 :SLIDE_DOWN;
+        invoke %tmp.80 %tmp.81(%tmp.83);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_228_33_232_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_228_19_236_12_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_228_19_236_12_if_else_false:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_232_19_236_12_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 233 16 ]
+        %tmp.84 = lgetv %gs;
+        symbol [ gs %tmp.84 233 16 18 ];
+        symbol [ C %tmp.85 233 26 27 ];
+        %tmp.85 = getm $.WristDungeon;
+        symbol [ MODE_MENU %tmp.86 233 28 37 ];
+        %tmp.86 = getv %tmp.85 :MODE_MENU;
+        symbol [ mode ? 233 19 23 ];
+        putv %tmp.84 :mode %tmp.86;
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 234 16 ]
+        symbol [ WatchUi %tmp.87 234 16 23 ];
+        %tmp.87 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.88 234 24 31 ];
+        %tmp.88 = getv function %tmp.87 :popView;
+        symbol [ WatchUi %tmp.89 234 32 39 ];
+        %tmp.89 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.90 234 40 50 ];
+        %tmp.90 = getv %tmp.89 :SLIDE_DOWN;
+        invoke %tmp.87 %tmp.88(%tmp.90);
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 235 16 ]
+        symbol [ WatchUi %tmp.91 235 16 23 ];
+        %tmp.91 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.92 235 24 31 ];
+        %tmp.92 = getv function %tmp.91 :popView;
+        symbol [ WatchUi %tmp.93 235 32 39 ];
+        %tmp.93 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.94 235 40 50 ];
+        %tmp.94 = getv %tmp.93 :SLIDE_DOWN;
+        invoke %tmp.91 %tmp.92(%tmp.94);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_232_19_236_12_stop:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_228_19_236_12_if_end:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_224_12_236_12_if_end:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_222_81_237_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_222_15_242_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_222_15_242_8_if_false:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 237 15 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_237_15_242_8_if_stmt:
+        %tmp.95 = lgetv %key;
+        symbol [ key %tmp.95 237 19 22 ];
+        symbol [ WatchUi %tmp.96 237 26 33 ];
+        %tmp.96 = getm $.Toybox.WatchUi;
+        symbol [ KEY_LAP %tmp.97 237 34 41 ];
+        %tmp.97 = getv %tmp.96 :KEY_LAP;
+        %tmp.98 = eq %tmp.95 %tmp.97;
+        bf %tmp.98 @_Users_samar_Desktop_DOOM_source_MenuView_mc_237_15_242_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_237_15_242_8_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_237_43_242_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 239 12 ]
+        %tmp.99 = lgetv %gs;
+        symbol [ gs %tmp.99 239 12 14 ];
+        symbol [ C %tmp.100 239 23 24 ];
+        %tmp.100 = getm $.WristDungeon;
+        symbol [ MODE_GAME %tmp.101 239 25 34 ];
+        %tmp.101 = getv %tmp.100 :MODE_GAME;
+        symbol [ mode ? 239 15 19 ];
+        putv %tmp.99 :mode %tmp.101;
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 240 12 ]
+        %tmp.102 = lgetv %gs;
+        symbol [ gs %tmp.102 240 12 14 ];
+        %tmp.103 = true;
+        symbol [ needsRedraw ? 240 15 26 ];
+        putv %tmp.102 :needsRedraw %tmp.103;
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 241 12 ]
+        symbol [ WatchUi %tmp.104 241 12 19 ];
+        %tmp.104 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.105 241 20 27 ];
+        %tmp.105 = getv function %tmp.104 :popView;
+        symbol [ WatchUi %tmp.106 241 28 35 ];
+        %tmp.106 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.107 241 36 47 ];
+        %tmp.107 = getv %tmp.106 :SLIDE_RIGHT;
+        invoke %tmp.104 %tmp.105(%tmp.107);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_237_43_242_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_237_15_242_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_237_15_242_8_if_end:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_222_15_242_8_if_end:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_219_15_242_8_if_end:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_216_8_242_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 243 8 ]
+        %tmp.108 = true;
+        ret %tmp.108;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_215_91_244_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 246; @symbol_functiondef = [_handleEndScreen,246,20,36]; @symbol_param<0> = [key,246,37,40]; @symbol_param<0>_type<0> = [Number,246,44,50]; @symbol_param<1> = [gs,246,52,54]; @symbol_param<1>_type<0> = [GameState,246,58,67]; @symbol_return<0> = [Boolean,246,72,79]; ]
+    protected
+    function _handleEndScreen(key as Number, gs as GameState) as Boolean {
+_Users_samar_Desktop_DOOM_source_MenuView_mc_246_80_258_4_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 247 8 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_247_8_256_8_if_stmt:
+        %tmp.1 = lgetv %key;
+        symbol [ key %tmp.1 247 12 15 ];
+        symbol [ WatchUi %tmp.2 247 19 26 ];
+        %tmp.2 = getm $.Toybox.WatchUi;
+        symbol [ KEY_START %tmp.3 247 27 36 ];
+        %tmp.3 = getv %tmp.2 :KEY_START;
+        %tmp.4 = eq %tmp.1 %tmp.3;
+        bf %tmp.4 @_Users_samar_Desktop_DOOM_source_MenuView_mc_247_8_256_8_if_false;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_247_8_256_8_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_247_38_253_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 248 12 ]
+        %tmp.5 = lgetv %gs;
+        symbol [ gs %tmp.5 248 12 14 ];
+        symbol [ resetGame %tmp.6 248 15 24 ];
+        %tmp.6 = getv function %tmp.5 :resetGame;
+        invoke %tmp.5 %tmp.6();
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 249 12 ]
+        %tmp.7 = lgetv %gs;
+        symbol [ gs %tmp.7 249 12 14 ];
+        symbol [ C %tmp.8 249 22 23 ];
+        %tmp.8 = getm $.WristDungeon;
+        symbol [ MODE_GAME %tmp.9 249 24 33 ];
+        %tmp.9 = getv %tmp.8 :MODE_GAME;
+        symbol [ mode ? 249 15 19 ];
+        putv %tmp.7 :mode %tmp.9;
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 250 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_247_38_253_8_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_247_38_253_8_stop" ]
+        %gameView.1 = local;
+        symbol [ gameView %gameView.1 250 16 24 ];
+        symbol [ GameView %tmp.13 250 31 39 ];
+        %tmp.13 = getv ? :GameView;
+        %tmp.10 = newc %tmp.13 ();
+        lputv %gameView.1 %tmp.10;
+        symbol [ gameView %gameView.1 250 16 24 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 251 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_MenuView_mc_247_38_253_8_start" "_Users_samar_Desktop_DOOM_source_MenuView_mc_247_38_253_8_stop" ]
+        %gameDelegate.2 = local;
+        symbol [ gameDelegate %gameDelegate.2 251 16 28 ];
+        symbol [ GameDelegate %tmp.17 251 35 47 ];
+        %tmp.17 = getv ? :GameDelegate;
+        %tmp.18 = lgetv %gameView.1;
+        symbol [ gameView %tmp.18 251 48 56 ];
+        %tmp.14 = newc %tmp.17 (%tmp.18);
+        lputv %gameDelegate.2 %tmp.14;
+        symbol [ gameDelegate %gameDelegate.2 251 16 28 ];
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 252 12 ]
+        symbol [ WatchUi %tmp.19 252 12 19 ];
+        %tmp.19 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.20 252 20 28 ];
+        %tmp.20 = getv function %tmp.19 :pushView;
+        %tmp.21 = lgetv %gameView.1;
+        symbol [ gameView %tmp.21 252 29 37 ];
+        %tmp.22 = lgetv %gameDelegate.2;
+        symbol [ gameDelegate %tmp.22 252 39 51 ];
+        symbol [ WatchUi %tmp.23 252 53 60 ];
+        %tmp.23 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_LEFT %tmp.24 252 61 71 ];
+        %tmp.24 = getv %tmp.23 :SLIDE_LEFT;
+        invoke %tmp.19 %tmp.20(%tmp.21, %tmp.22, %tmp.24);
+_Users_samar_Desktop_DOOM_source_MenuView_mc_247_38_253_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_247_8_256_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_247_8_256_8_if_false:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 253 15 ]
+_Users_samar_Desktop_DOOM_source_MenuView_mc_253_15_256_8_if_stmt:
+        %tmp.25 = lgetv %key;
+        symbol [ key %tmp.25 253 19 22 ];
+        symbol [ WatchUi %tmp.26 253 26 33 ];
+        %tmp.26 = getm $.Toybox.WatchUi;
+        symbol [ KEY_LAP %tmp.27 253 34 41 ];
+        %tmp.27 = getv %tmp.26 :KEY_LAP;
+        %tmp.28 = eq %tmp.25 %tmp.27;
+        bf %tmp.28 @_Users_samar_Desktop_DOOM_source_MenuView_mc_253_15_256_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_253_15_256_8_if_true:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_253_43_256_8_start:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 254 12 ]
+        %tmp.29 = lgetv %gs;
+        symbol [ gs %tmp.29 254 12 14 ];
+        symbol [ C %tmp.30 254 22 23 ];
+        %tmp.30 = getm $.WristDungeon;
+        symbol [ MODE_MENU %tmp.31 254 24 33 ];
+        %tmp.31 = getv %tmp.30 :MODE_MENU;
+        symbol [ mode ? 254 15 19 ];
+        putv %tmp.29 :mode %tmp.31;
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 255 12 ]
+        symbol [ WatchUi %tmp.32 255 12 19 ];
+        %tmp.32 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.33 255 20 33 ];
+        %tmp.33 = getv function %tmp.32 :requestUpdate;
+        invoke %tmp.32 %tmp.33();
+_Users_samar_Desktop_DOOM_source_MenuView_mc_253_43_256_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_MenuView_mc_253_15_256_8_if_end;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_253_15_256_8_if_end:
+_Users_samar_Desktop_DOOM_source_MenuView_mc_247_8_256_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/MenuView.mc" 257 8 ]
+        %tmp.34 = true;
+        ret %tmp.34;
+_Users_samar_Desktop_DOOM_source_MenuView_mc_246_80_258_4_stop:
+    }
+}
+[ @file = "/Users/samar/Desktop/DOOM/source/MenuView.mc"; @line = 3; ]
+<init> {
+}

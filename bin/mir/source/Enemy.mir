@@ -1,0 +1,912 @@
+[ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Graphics,3,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Lang,4,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 5; @symbol_usingdef<0> = [WristDungeon,5,6,18]; @symbol_usingAlias = [C,5,22,23]; ]
+using WristDungeon as :C;
+[ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 7; @symbol_classdef = [Enemy,7,6,11]; ]
+class Enemy {
+    [ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 7; ]
+    <init> {
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 11 8 ]
+        symbol [ C %tmp.1 11 27 28 ];
+        %tmp.1 = getm $.WristDungeon;
+        symbol [ ENEMY_HP %tmp.2 11 29 37 ];
+        %tmp.2 = getv %tmp.1 :ENEMY_HP;
+        putv self :hp %tmp.2;
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 9; @position = 8; @symbol_vardef = [x,9,8,9]; @symbol_type<0> = [Float,9,18,23]; ]
+    var x as Float;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 10; @position = 8; @symbol_vardef = [y,10,8,9]; @symbol_type<0> = [Float,10,18,23]; ]
+    var y as Float;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 11; @position = 8; @symbol_vardef = [hp,11,8,10]; @symbol_type<0> = [Number,11,18,24]; ]
+    var hp as Number;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 12; @position = 8; @symbol_vardef = [_aiTick,12,8,15]; @symbol_type<0> = [Number,12,19,25]; ]
+    var _aiTick as Number = 0;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 13; @position = 8; @symbol_vardef = [_dx,13,8,11]; @symbol_type<0> = [Float,13,18,23]; ]
+    var _dx as Float = 0.0f;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 14; @position = 8; @symbol_vardef = [_dy,14,8,11]; @symbol_type<0> = [Float,14,18,23]; ]
+    var _dy as Float = 0.0f;
+    [ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 16; @symbol_functiondef = [initialize,16,13,23]; @symbol_param<0> = [startX,16,24,30]; @symbol_param<0>_type<0> = [Float,16,34,39]; @symbol_param<1> = [startY,16,41,47]; @symbol_param<1>_type<0> = [Float,16,51,56]; ]
+    function initialize(startX as Float, startY as Float) as Void {
+_Users_samar_Desktop_DOOM_source_Enemy_mc_16_58_19_4_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 17 8 ]
+        %tmp.1 = lgetv %startX;
+        symbol [ startX %tmp.1 17 12 18 ];
+        symbol [ x ? 17 8 9 ];
+        putv self :x %tmp.1;
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 18 8 ]
+        %tmp.2 = lgetv %startY;
+        symbol [ startY %tmp.2 18 12 18 ];
+        symbol [ y ? 18 8 9 ];
+        putv self :y %tmp.2;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_16_58_19_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 22; @symbol_functiondef = [update,22,13,19]; ]
+    function update() as Void {
+_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 23 8 ]
+_Users_samar_Desktop_DOOM_source_Enemy_mc_23_8_23_31_if_stmt:
+        symbol [ hp %tmp.2 23 12 14 ];
+        %tmp.2 = getv ? :hp;
+        %tmp.3 = 0;
+        %tmp.4 = lte %tmp.2 %tmp.3;
+        bf %tmp.4 @_Users_samar_Desktop_DOOM_source_Enemy_mc_23_8_23_31_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_23_8_23_31_if_true:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_23_21_23_31_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 23 23 ]
+        ret ?;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_23_21_23_31_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Enemy_mc_23_8_23_31_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_23_8_23_31_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 24 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_stop" ]
+        %gs.1 = local;
+        symbol [ gs %gs.1 24 12 14 ];
+        symbol [ GameState %tmp.6 24 18 27 ];
+        %tmp.6 = getv ? :GameState;
+        symbol [ get %tmp.7 24 28 31 ];
+        %tmp.7 = getv function %tmp.6 :get;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        lputv %gs.1 %tmp.8;
+        symbol [ gs %gs.1 24 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 25 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_stop" ]
+        %map.2 = local;
+        symbol [ map %map.2 25 12 15 ];
+        %tmp.9 = lgetv %gs.1;
+        symbol [ gs %tmp.9 25 18 20 ];
+        symbol [ map %tmp.10 25 21 24 ];
+        %tmp.10 = getv %tmp.9 :map;
+        %tmp.11 = as %tmp.10 GameMap;
+        symbol [ GameMap %tmp.11 25 28 35 ];
+        lputv %map.2 %tmp.11;
+        symbol [ map %map.2 25 12 15 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 26 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_stop" ]
+        %p.3 = local;
+        symbol [ p %p.3 26 12 13 ];
+        %tmp.12 = lgetv %gs.1;
+        symbol [ gs %tmp.12 26 18 20 ];
+        symbol [ player %tmp.13 26 21 27 ];
+        %tmp.13 = getv %tmp.12 :player;
+        %tmp.14 = as %tmp.13 Player;
+        symbol [ Player %tmp.14 26 31 37 ];
+        lputv %p.3 %tmp.14;
+        symbol [ p %p.3 26 12 13 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 29 8 ]
+        symbol [ _aiTick %tmp.17 29 8 15 ];
+        %tmp.17 = getv ? :_aiTick;
+        %tmp.18 = add %tmp.17 1;
+        symbol [ _aiTick ? 29 8 15 ];
+        putv self :_aiTick dup %tmp.18;
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 30 8 ]
+_Users_samar_Desktop_DOOM_source_Enemy_mc_30_8_33_8_if_stmt:
+        symbol [ _aiTick %tmp.20 30 12 19 ];
+        %tmp.20 = getv ? :_aiTick;
+        symbol [ C %tmp.21 30 23 24 ];
+        %tmp.21 = getm $.WristDungeon;
+        symbol [ ENEMY_AI_TICKS %tmp.22 30 25 39 ];
+        %tmp.22 = getv %tmp.21 :ENEMY_AI_TICKS;
+        %tmp.23 = gte %tmp.20 %tmp.22;
+        bf %tmp.23 @_Users_samar_Desktop_DOOM_source_Enemy_mc_30_8_33_8_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_30_8_33_8_if_true:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_30_41_33_8_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 31 12 ]
+        %tmp.24 = 0;
+        symbol [ _aiTick ? 31 12 19 ];
+        putv self :_aiTick %tmp.24;
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 32 12 ]
+        %tmp.25 = self;
+        symbol [ _computeDir %tmp.26 32 12 23 ];
+        %tmp.26 = getv function %tmp.25 :_computeDir;
+        %tmp.27 = lgetv %p.3;
+        symbol [ p %tmp.27 32 24 25 ];
+        %tmp.28 = lgetv %map.2;
+        symbol [ map %tmp.28 32 27 30 ];
+        invoke %tmp.25 %tmp.26(%tmp.27, %tmp.28);
+_Users_samar_Desktop_DOOM_source_Enemy_mc_30_41_33_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Enemy_mc_30_8_33_8_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_30_8_33_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 36 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_stop" ]
+        %nx.4 = local;
+        symbol [ nx %nx.4 36 12 14 ];
+        symbol [ x %tmp.30 36 17 18 ];
+        %tmp.30 = getv ? :x;
+        symbol [ _dx %tmp.32 36 21 24 ];
+        %tmp.32 = getv ? :_dx;
+        %tmp.33 = add %tmp.30 %tmp.32;
+        lputv %nx.4 %tmp.33;
+        symbol [ nx %nx.4 36 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 37 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_stop" ]
+        %ny.5 = local;
+        symbol [ ny %ny.5 37 12 14 ];
+        symbol [ y %tmp.35 37 17 18 ];
+        %tmp.35 = getv ? :y;
+        symbol [ _dy %tmp.37 37 21 24 ];
+        %tmp.37 = getv ? :_dy;
+        %tmp.38 = add %tmp.35 %tmp.37;
+        lputv %ny.5 %tmp.38;
+        symbol [ ny %ny.5 37 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 38 8 ]
+_Users_samar_Desktop_DOOM_source_Enemy_mc_38_8_38_65_if_stmt:
+        %tmp.39 = lgetv %map.2;
+        symbol [ map %tmp.39 38 13 16 ];
+        symbol [ isWall %tmp.40 38 17 23 ];
+        %tmp.40 = getv function %tmp.39 :isWall;
+        %tmp.41 = lgetv %nx.4;
+        symbol [ nx %tmp.41 38 24 26 ];
+        symbol [ toNumber %tmp.42 38 27 35 ];
+        %tmp.42 = getv function %tmp.41 :toNumber;
+        %tmp.43 = invoke %tmp.41 %tmp.42();
+        symbol [ y %tmp.45 38 39 40 ];
+        %tmp.45 = getv ? :y;
+        symbol [ toNumber %tmp.46 38 41 49 ];
+        %tmp.46 = getv function %tmp.45 :toNumber;
+        %tmp.47 = invoke %tmp.45 %tmp.46();
+        %tmp.48 = invoke %tmp.39 %tmp.40(%tmp.43, %tmp.47);
+        %tmp.49 = not %tmp.48;
+        bf %tmp.49 @_Users_samar_Desktop_DOOM_source_Enemy_mc_38_8_38_65_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_38_8_38_65_if_true:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_38_55_38_65_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 38 57 ]
+        %tmp.50 = lgetv %nx.4;
+        symbol [ nx %tmp.50 38 61 63 ];
+        symbol [ x ? 38 57 58 ];
+        putv self :x %tmp.50;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_38_55_38_65_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Enemy_mc_38_8_38_65_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_38_8_38_65_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 39 8 ]
+_Users_samar_Desktop_DOOM_source_Enemy_mc_39_8_39_65_if_stmt:
+        %tmp.51 = lgetv %map.2;
+        symbol [ map %tmp.51 39 13 16 ];
+        symbol [ isWall %tmp.52 39 17 23 ];
+        %tmp.52 = getv function %tmp.51 :isWall;
+        symbol [ x %tmp.54 39 24 25 ];
+        %tmp.54 = getv ? :x;
+        symbol [ toNumber %tmp.55 39 26 34 ];
+        %tmp.55 = getv function %tmp.54 :toNumber;
+        %tmp.56 = invoke %tmp.54 %tmp.55();
+        %tmp.57 = lgetv %ny.5;
+        symbol [ ny %tmp.57 39 38 40 ];
+        symbol [ toNumber %tmp.58 39 41 49 ];
+        %tmp.58 = getv function %tmp.57 :toNumber;
+        %tmp.59 = invoke %tmp.57 %tmp.58();
+        %tmp.60 = invoke %tmp.51 %tmp.52(%tmp.56, %tmp.59);
+        %tmp.61 = not %tmp.60;
+        bf %tmp.61 @_Users_samar_Desktop_DOOM_source_Enemy_mc_39_8_39_65_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_39_8_39_65_if_true:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_39_55_39_65_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 39 57 ]
+        %tmp.62 = lgetv %ny.5;
+        symbol [ ny %tmp.62 39 61 63 ];
+        symbol [ y ? 39 57 58 ];
+        putv self :y %tmp.62;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_39_55_39_65_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Enemy_mc_39_8_39_65_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_39_8_39_65_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 42 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_stop" ]
+        %dx.6 = local;
+        symbol [ dx %dx.6 42 12 14 ];
+        %tmp.63 = lgetv %p.3;
+        symbol [ p %tmp.63 42 17 18 ];
+        symbol [ x %tmp.64 42 19 20 ];
+        %tmp.64 = getv %tmp.63 :x;
+        symbol [ x %tmp.66 42 23 24 ];
+        %tmp.66 = getv ? :x;
+        %tmp.67 = sub %tmp.64 %tmp.66;
+        lputv %dx.6 %tmp.67;
+        symbol [ dx %dx.6 42 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 43 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_stop" ]
+        %dy.7 = local;
+        symbol [ dy %dy.7 43 12 14 ];
+        %tmp.68 = lgetv %p.3;
+        symbol [ p %tmp.68 43 17 18 ];
+        symbol [ y %tmp.69 43 19 20 ];
+        %tmp.69 = getv %tmp.68 :y;
+        symbol [ y %tmp.71 43 23 24 ];
+        %tmp.71 = getv ? :y;
+        %tmp.72 = sub %tmp.69 %tmp.71;
+        lputv %dy.7 %tmp.72;
+        symbol [ dy %dy.7 43 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 44 8 ]
+_Users_samar_Desktop_DOOM_source_Enemy_mc_44_8_46_8_if_stmt:
+        %tmp.73 = lgetv %dx.6;
+        symbol [ dx %tmp.73 44 13 15 ];
+        %tmp.74 = lgetv %dx.6;
+        symbol [ dx %tmp.74 44 18 20 ];
+        %tmp.75 = mul %tmp.73 %tmp.74;
+        %tmp.76 = lgetv %dy.7;
+        symbol [ dy %tmp.76 44 23 25 ];
+        %tmp.77 = lgetv %dy.7;
+        symbol [ dy %tmp.77 44 28 30 ];
+        %tmp.78 = mul %tmp.76 %tmp.77;
+        %tmp.79 = add %tmp.75 %tmp.78;
+        %tmp.80 = 0.6f;
+        %tmp.81 = lt %tmp.79 %tmp.80;
+        bf %tmp.81 @_Users_samar_Desktop_DOOM_source_Enemy_mc_44_8_46_8_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_44_8_46_8_if_true:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_44_40_46_8_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 45 12 ]
+        %tmp.82 = lgetv %p.3;
+        symbol [ p %tmp.82 45 12 13 ];
+        symbol [ takeDamage %tmp.83 45 14 24 ];
+        %tmp.83 = getv function %tmp.82 :takeDamage;
+        symbol [ C %tmp.84 45 25 26 ];
+        %tmp.84 = getm $.WristDungeon;
+        symbol [ ENEMY_DAMAGE %tmp.85 45 27 39 ];
+        %tmp.85 = getv %tmp.84 :ENEMY_DAMAGE;
+        invoke %tmp.82 %tmp.83(%tmp.85);
+_Users_samar_Desktop_DOOM_source_Enemy_mc_44_40_46_8_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Enemy_mc_44_8_46_8_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_44_8_46_8_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 48 8 ]
+        %tmp.86 = lgetv %gs.1;
+        symbol [ gs %tmp.86 48 8 10 ];
+        symbol [ markDirty %tmp.87 48 11 20 ];
+        %tmp.87 = getv function %tmp.86 :markDirty;
+        invoke %tmp.86 %tmp.87();
+_Users_samar_Desktop_DOOM_source_Enemy_mc_22_30_49_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 52; @symbol_functiondef = [checkBulletHit,52,13,27]; @symbol_param<0> = [bx,52,28,30]; @symbol_param<0>_type<0> = [Float,52,34,39]; @symbol_param<1> = [by,52,41,43]; @symbol_param<1>_type<0> = [Float,52,47,52]; @symbol_return<0> = [Boolean,52,57,64]; ]
+    function checkBulletHit(bx as Float, by as Float) as Boolean {
+_Users_samar_Desktop_DOOM_source_Enemy_mc_52_65_56_4_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 53 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_52_65_56_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_52_65_56_4_stop" ]
+        %dx.1 = local;
+        symbol [ dx %dx.1 53 12 14 ];
+        %tmp.1 = lgetv %bx;
+        symbol [ bx %tmp.1 53 17 19 ];
+        symbol [ x %tmp.3 53 22 23 ];
+        %tmp.3 = getv ? :x;
+        %tmp.4 = sub %tmp.1 %tmp.3;
+        lputv %dx.1 %tmp.4;
+        symbol [ dx %dx.1 53 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 54 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_52_65_56_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_52_65_56_4_stop" ]
+        %dy.2 = local;
+        symbol [ dy %dy.2 54 12 14 ];
+        %tmp.5 = lgetv %by;
+        symbol [ by %tmp.5 54 17 19 ];
+        symbol [ y %tmp.7 54 22 23 ];
+        %tmp.7 = getv ? :y;
+        %tmp.8 = sub %tmp.5 %tmp.7;
+        lputv %dy.2 %tmp.8;
+        symbol [ dy %dy.2 54 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 55 8 ]
+        %tmp.9 = lgetv %dx.1;
+        symbol [ dx %tmp.9 55 16 18 ];
+        %tmp.10 = lgetv %dx.1;
+        symbol [ dx %tmp.10 55 21 23 ];
+        %tmp.11 = mul %tmp.9 %tmp.10;
+        %tmp.12 = lgetv %dy.2;
+        symbol [ dy %tmp.12 55 26 28 ];
+        %tmp.13 = lgetv %dy.2;
+        symbol [ dy %tmp.13 55 31 33 ];
+        %tmp.14 = mul %tmp.12 %tmp.13;
+        %tmp.15 = add %tmp.11 %tmp.14;
+        %tmp.16 = 0.25f;
+        %tmp.17 = lt %tmp.15 %tmp.16;
+        ret %tmp.17;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_52_65_56_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 59; @symbol_functiondef = [drawSprite,59,13,23]; @symbol_param<0> = [dc,59,24,26]; @symbol_param<0>_type<0> = [Graphics,59,30,38]; @symbol_param<0>_type<1> = [Dc,59,39,41]; @symbol_param<1> = [screenX,59,43,50]; @symbol_param<1>_type<0> = [Number,59,54,60]; @symbol_param<2> = [screenY,59,62,69]; @symbol_param<2>_type<0> = [Number,59,73,79]; @symbol_param<3> = [scale,59,81,86]; @symbol_param<3>_type<0> = [Float,59,90,95]; ]
+    function drawSprite(dc as Graphics.Dc, screenX as Number, screenY as Number, scale as Float) as Void {
+_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 60 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_stop" ]
+        %w.1 = local;
+        symbol [ w %w.1 60 12 13 ];
+        %tmp.1 = lgetv %scale;
+        symbol [ scale %tmp.1 60 17 22 ];
+        %tmp.2 = 20;
+        %tmp.3 = mul %tmp.1 %tmp.2;
+        symbol [ toNumber %tmp.4 60 29 37 ];
+        %tmp.4 = getv function %tmp.3 :toNumber;
+        %tmp.5 = invoke %tmp.3 %tmp.4();
+        lputv %w.1 %tmp.5;
+        symbol [ w %w.1 60 12 13 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 61 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_stop" ]
+        %h.2 = local;
+        symbol [ h %h.2 61 12 13 ];
+        %tmp.6 = lgetv %scale;
+        symbol [ scale %tmp.6 61 17 22 ];
+        %tmp.7 = 28;
+        %tmp.8 = mul %tmp.6 %tmp.7;
+        symbol [ toNumber %tmp.9 61 29 37 ];
+        %tmp.9 = getv function %tmp.8 :toNumber;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        lputv %h.2 %tmp.10;
+        symbol [ h %h.2 61 12 13 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 62 8 ]
+_Users_samar_Desktop_DOOM_source_Enemy_mc_62_8_62_28_if_stmt:
+        %tmp.11 = lgetv %w.1;
+        symbol [ w %tmp.11 62 12 13 ];
+        %tmp.12 = 4;
+        %tmp.13 = lt %tmp.11 %tmp.12;
+        bf %tmp.13 @_Users_samar_Desktop_DOOM_source_Enemy_mc_62_8_62_28_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_62_8_62_28_if_true:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_62_19_62_28_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 62 21 ]
+        %tmp.14 = 4;
+        lputv %w.1 %tmp.14;
+        symbol [ w %w.1 62 21 22 ];
+_Users_samar_Desktop_DOOM_source_Enemy_mc_62_19_62_28_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Enemy_mc_62_8_62_28_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_62_8_62_28_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 63 8 ]
+_Users_samar_Desktop_DOOM_source_Enemy_mc_63_8_63_28_if_stmt:
+        %tmp.15 = lgetv %h.2;
+        symbol [ h %tmp.15 63 12 13 ];
+        %tmp.16 = 6;
+        %tmp.17 = lt %tmp.15 %tmp.16;
+        bf %tmp.17 @_Users_samar_Desktop_DOOM_source_Enemy_mc_63_8_63_28_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_63_8_63_28_if_true:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_63_19_63_28_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 63 21 ]
+        %tmp.18 = 6;
+        lputv %h.2 %tmp.18;
+        symbol [ h %h.2 63 21 22 ];
+_Users_samar_Desktop_DOOM_source_Enemy_mc_63_19_63_28_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Enemy_mc_63_8_63_28_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_63_8_63_28_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 64 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_stop" ]
+        %x0.3 = local;
+        symbol [ x0 %x0.3 64 12 14 ];
+        %tmp.19 = lgetv %screenX;
+        symbol [ screenX %tmp.19 64 17 24 ];
+        %tmp.20 = lgetv %w.1;
+        symbol [ w %tmp.20 64 27 28 ];
+        %tmp.21 = 2;
+        %tmp.22 = div %tmp.20 %tmp.21;
+        %tmp.23 = sub %tmp.19 %tmp.22;
+        lputv %x0.3 %tmp.23;
+        symbol [ x0 %x0.3 64 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 65 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_stop" ]
+        %y0.4 = local;
+        symbol [ y0 %y0.4 65 12 14 ];
+        %tmp.24 = lgetv %screenY;
+        symbol [ screenY %tmp.24 65 17 24 ];
+        %tmp.25 = lgetv %h.2;
+        symbol [ h %tmp.25 65 27 28 ];
+        %tmp.26 = 2;
+        %tmp.27 = div %tmp.25 %tmp.26;
+        %tmp.28 = sub %tmp.24 %tmp.27;
+        lputv %y0.4 %tmp.28;
+        symbol [ y0 %y0.4 65 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 68 8 ]
+        %tmp.29 = lgetv %dc;
+        symbol [ dc %tmp.29 68 8 10 ];
+        symbol [ setColor %tmp.30 68 11 19 ];
+        %tmp.30 = getv function %tmp.29 :setColor;
+        symbol [ C %tmp.31 68 20 21 ];
+        %tmp.31 = getm $.WristDungeon;
+        symbol [ COLOR_ENEMY_BODY %tmp.32 68 22 38 ];
+        %tmp.32 = getv %tmp.31 :COLOR_ENEMY_BODY;
+        symbol [ Graphics %tmp.33 68 40 48 ];
+        %tmp.33 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.34 68 49 66 ];
+        %tmp.34 = getv %tmp.33 :COLOR_TRANSPARENT;
+        invoke %tmp.29 %tmp.30(%tmp.32, %tmp.34);
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 69 8 ]
+        %tmp.35 = lgetv %dc;
+        symbol [ dc %tmp.35 69 8 10 ];
+        symbol [ fillRectangle %tmp.36 69 11 24 ];
+        %tmp.36 = getv function %tmp.35 :fillRectangle;
+        %tmp.37 = lgetv %x0.3;
+        symbol [ x0 %tmp.37 69 25 27 ];
+        %tmp.38 = lgetv %y0.4;
+        symbol [ y0 %tmp.38 69 29 31 ];
+        %tmp.39 = lgetv %w.1;
+        symbol [ w %tmp.39 69 33 34 ];
+        %tmp.40 = lgetv %h.2;
+        symbol [ h %tmp.40 69 36 37 ];
+        invoke %tmp.35 %tmp.36(%tmp.37, %tmp.38, %tmp.39, %tmp.40);
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 72 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_stop" ]
+        %ew.5 = local;
+        symbol [ ew %ew.5 72 12 14 ];
+        %tmp.41 = lgetv %w.1;
+        symbol [ w %tmp.41 72 18 19 ];
+        %tmp.42 = 5;
+        %tmp.43 = div %tmp.41 %tmp.42;
+        symbol [ toNumber %tmp.44 72 25 33 ];
+        %tmp.44 = getv function %tmp.43 :toNumber;
+        %tmp.45 = invoke %tmp.43 %tmp.44();
+        lputv %ew.5 %tmp.45;
+        symbol [ ew %ew.5 72 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 73 8 ]
+_Users_samar_Desktop_DOOM_source_Enemy_mc_73_8_73_30_if_stmt:
+        %tmp.46 = lgetv %ew.5;
+        symbol [ ew %tmp.46 73 12 14 ];
+        %tmp.47 = 2;
+        %tmp.48 = lt %tmp.46 %tmp.47;
+        bf %tmp.48 @_Users_samar_Desktop_DOOM_source_Enemy_mc_73_8_73_30_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_73_8_73_30_if_true:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_73_20_73_30_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 73 22 ]
+        %tmp.49 = 2;
+        lputv %ew.5 %tmp.49;
+        symbol [ ew %ew.5 73 22 24 ];
+_Users_samar_Desktop_DOOM_source_Enemy_mc_73_20_73_30_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Enemy_mc_73_8_73_30_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_73_8_73_30_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 74 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_stop" ]
+        %eh.6 = local;
+        symbol [ eh %eh.6 74 12 14 ];
+        %tmp.50 = lgetv %h.2;
+        symbol [ h %tmp.50 74 18 19 ];
+        %tmp.51 = 6;
+        %tmp.52 = div %tmp.50 %tmp.51;
+        symbol [ toNumber %tmp.53 74 25 33 ];
+        %tmp.53 = getv function %tmp.52 :toNumber;
+        %tmp.54 = invoke %tmp.52 %tmp.53();
+        lputv %eh.6 %tmp.54;
+        symbol [ eh %eh.6 74 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 75 8 ]
+_Users_samar_Desktop_DOOM_source_Enemy_mc_75_8_75_30_if_stmt:
+        %tmp.55 = lgetv %eh.6;
+        symbol [ eh %tmp.55 75 12 14 ];
+        %tmp.56 = 2;
+        %tmp.57 = lt %tmp.55 %tmp.56;
+        bf %tmp.57 @_Users_samar_Desktop_DOOM_source_Enemy_mc_75_8_75_30_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_75_8_75_30_if_true:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_75_20_75_30_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 75 22 ]
+        %tmp.58 = 2;
+        lputv %eh.6 %tmp.58;
+        symbol [ eh %eh.6 75 22 24 ];
+_Users_samar_Desktop_DOOM_source_Enemy_mc_75_20_75_30_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Enemy_mc_75_8_75_30_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_75_8_75_30_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 76 8 ]
+        %tmp.59 = lgetv %dc;
+        symbol [ dc %tmp.59 76 8 10 ];
+        symbol [ setColor %tmp.60 76 11 19 ];
+        %tmp.60 = getv function %tmp.59 :setColor;
+        symbol [ C %tmp.61 76 20 21 ];
+        %tmp.61 = getm $.WristDungeon;
+        symbol [ COLOR_ENEMY_EYE %tmp.62 76 22 37 ];
+        %tmp.62 = getv %tmp.61 :COLOR_ENEMY_EYE;
+        symbol [ Graphics %tmp.63 76 39 47 ];
+        %tmp.63 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.64 76 48 65 ];
+        %tmp.64 = getv %tmp.63 :COLOR_TRANSPARENT;
+        invoke %tmp.59 %tmp.60(%tmp.62, %tmp.64);
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 77 8 ]
+        %tmp.65 = lgetv %dc;
+        symbol [ dc %tmp.65 77 8 10 ];
+        symbol [ fillRectangle %tmp.66 77 11 24 ];
+        %tmp.66 = getv function %tmp.65 :fillRectangle;
+        %tmp.67 = lgetv %x0.3;
+        symbol [ x0 %tmp.67 77 25 27 ];
+        %tmp.68 = lgetv %w.1;
+        symbol [ w %tmp.68 77 30 31 ];
+        %tmp.69 = 4;
+        %tmp.70 = div %tmp.68 %tmp.69;
+        %tmp.71 = add %tmp.67 %tmp.70;
+        %tmp.72 = lgetv %ew.5;
+        symbol [ ew %tmp.72 77 38 40 ];
+        %tmp.73 = 2;
+        %tmp.74 = div %tmp.72 %tmp.73;
+        %tmp.75 = sub %tmp.71 %tmp.74;
+        %tmp.76 = lgetv %y0.4;
+        symbol [ y0 %tmp.76 77 46 48 ];
+        %tmp.77 = lgetv %h.2;
+        symbol [ h %tmp.77 77 51 52 ];
+        %tmp.78 = 4;
+        %tmp.79 = div %tmp.77 %tmp.78;
+        %tmp.80 = add %tmp.76 %tmp.79;
+        %tmp.81 = lgetv %ew.5;
+        symbol [ ew %tmp.81 77 58 60 ];
+        %tmp.82 = lgetv %eh.6;
+        symbol [ eh %tmp.82 77 62 64 ];
+        invoke %tmp.65 %tmp.66(%tmp.75, %tmp.80, %tmp.81, %tmp.82);
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 78 8 ]
+        %tmp.83 = lgetv %dc;
+        symbol [ dc %tmp.83 78 8 10 ];
+        symbol [ fillRectangle %tmp.84 78 11 24 ];
+        %tmp.84 = getv function %tmp.83 :fillRectangle;
+        %tmp.85 = lgetv %x0.3;
+        symbol [ x0 %tmp.85 78 25 27 ];
+        %tmp.86 = 3;
+        %tmp.87 = lgetv %w.1;
+        symbol [ w %tmp.87 78 34 35 ];
+        %tmp.88 = mul %tmp.86 %tmp.87;
+        %tmp.89 = 4;
+        %tmp.90 = div %tmp.88 %tmp.89;
+        %tmp.91 = add %tmp.85 %tmp.90;
+        %tmp.92 = lgetv %ew.5;
+        symbol [ ew %tmp.92 78 42 44 ];
+        %tmp.93 = 2;
+        %tmp.94 = div %tmp.92 %tmp.93;
+        %tmp.95 = sub %tmp.91 %tmp.94;
+        %tmp.96 = lgetv %y0.4;
+        symbol [ y0 %tmp.96 78 50 52 ];
+        %tmp.97 = lgetv %h.2;
+        symbol [ h %tmp.97 78 55 56 ];
+        %tmp.98 = 4;
+        %tmp.99 = div %tmp.97 %tmp.98;
+        %tmp.100 = add %tmp.96 %tmp.99;
+        %tmp.101 = lgetv %ew.5;
+        symbol [ ew %tmp.101 78 62 64 ];
+        %tmp.102 = lgetv %eh.6;
+        symbol [ eh %tmp.102 78 66 68 ];
+        invoke %tmp.83 %tmp.84(%tmp.95, %tmp.100, %tmp.101, %tmp.102);
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 81 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_stop" ]
+        %mw.7 = local;
+        symbol [ mw %mw.7 81 12 14 ];
+        %tmp.103 = lgetv %w.1;
+        symbol [ w %tmp.103 81 18 19 ];
+        %tmp.104 = 2;
+        %tmp.105 = mul %tmp.103 %tmp.104;
+        %tmp.106 = 3;
+        %tmp.107 = div %tmp.105 %tmp.106;
+        symbol [ toNumber %tmp.108 81 29 37 ];
+        %tmp.108 = getv function %tmp.107 :toNumber;
+        %tmp.109 = invoke %tmp.107 %tmp.108();
+        lputv %mw.7 %tmp.109;
+        symbol [ mw %mw.7 81 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 82 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_stop" ]
+        %mh.8 = local;
+        symbol [ mh %mh.8 82 12 14 ];
+        %tmp.110 = lgetv %h.2;
+        symbol [ h %tmp.110 82 18 19 ];
+        %tmp.111 = 8;
+        %tmp.112 = div %tmp.110 %tmp.111;
+        symbol [ toNumber %tmp.113 82 25 33 ];
+        %tmp.113 = getv function %tmp.112 :toNumber;
+        %tmp.114 = invoke %tmp.112 %tmp.113();
+        lputv %mh.8 %tmp.114;
+        symbol [ mh %mh.8 82 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 83 8 ]
+_Users_samar_Desktop_DOOM_source_Enemy_mc_83_8_83_30_if_stmt:
+        %tmp.115 = lgetv %mh.8;
+        symbol [ mh %tmp.115 83 12 14 ];
+        %tmp.116 = 2;
+        %tmp.117 = lt %tmp.115 %tmp.116;
+        bf %tmp.117 @_Users_samar_Desktop_DOOM_source_Enemy_mc_83_8_83_30_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_83_8_83_30_if_true:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_83_20_83_30_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 83 22 ]
+        %tmp.118 = 2;
+        lputv %mh.8 %tmp.118;
+        symbol [ mh %mh.8 83 22 24 ];
+_Users_samar_Desktop_DOOM_source_Enemy_mc_83_20_83_30_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Enemy_mc_83_8_83_30_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_83_8_83_30_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 84 8 ]
+        %tmp.119 = lgetv %dc;
+        symbol [ dc %tmp.119 84 8 10 ];
+        symbol [ setColor %tmp.120 84 11 19 ];
+        %tmp.120 = getv function %tmp.119 :setColor;
+        symbol [ C %tmp.121 84 20 21 ];
+        %tmp.121 = getm $.WristDungeon;
+        symbol [ COLOR_ENEMY_MOUTH %tmp.122 84 22 39 ];
+        %tmp.122 = getv %tmp.121 :COLOR_ENEMY_MOUTH;
+        symbol [ Graphics %tmp.123 84 41 49 ];
+        %tmp.123 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.124 84 50 67 ];
+        %tmp.124 = getv %tmp.123 :COLOR_TRANSPARENT;
+        invoke %tmp.119 %tmp.120(%tmp.122, %tmp.124);
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 85 8 ]
+        %tmp.125 = lgetv %dc;
+        symbol [ dc %tmp.125 85 8 10 ];
+        symbol [ fillRectangle %tmp.126 85 11 24 ];
+        %tmp.126 = getv function %tmp.125 :fillRectangle;
+        %tmp.127 = lgetv %x0.3;
+        symbol [ x0 %tmp.127 85 25 27 ];
+        %tmp.128 = lgetv %w.1;
+        symbol [ w %tmp.128 85 30 31 ];
+        %tmp.129 = 6;
+        %tmp.130 = div %tmp.128 %tmp.129;
+        %tmp.131 = add %tmp.127 %tmp.130;
+        %tmp.132 = lgetv %y0.4;
+        symbol [ y0 %tmp.132 85 37 39 ];
+        %tmp.133 = lgetv %h.2;
+        symbol [ h %tmp.133 85 42 43 ];
+        %tmp.134 = 2;
+        %tmp.135 = mul %tmp.133 %tmp.134;
+        %tmp.136 = 3;
+        %tmp.137 = div %tmp.135 %tmp.136;
+        %tmp.138 = add %tmp.132 %tmp.137;
+        %tmp.139 = lgetv %mw.7;
+        symbol [ mw %tmp.139 85 53 55 ];
+        %tmp.140 = lgetv %mh.8;
+        symbol [ mh %tmp.140 85 57 59 ];
+        invoke %tmp.125 %tmp.126(%tmp.131, %tmp.138, %tmp.139, %tmp.140);
+_Users_samar_Desktop_DOOM_source_Enemy_mc_59_105_86_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 89; @symbol_functiondef = [_computeDir,89,20,31]; @symbol_param<0> = [p,89,32,33]; @symbol_param<0>_type<0> = [Player,89,37,43]; @symbol_param<1> = [map,89,45,48]; @symbol_param<1>_type<0> = [GameMap,89,52,59]; ]
+    protected
+    function _computeDir(p as Player, map as GameMap) as Void {
+_Users_samar_Desktop_DOOM_source_Enemy_mc_89_69_101_4_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 90 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_89_69_101_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_89_69_101_4_stop" ]
+        %dx.1 = local;
+        symbol [ dx %dx.1 90 12 14 ];
+        %tmp.1 = lgetv %p;
+        symbol [ p %tmp.1 90 17 18 ];
+        symbol [ x %tmp.2 90 19 20 ];
+        %tmp.2 = getv %tmp.1 :x;
+        symbol [ x %tmp.4 90 23 24 ];
+        %tmp.4 = getv ? :x;
+        %tmp.5 = sub %tmp.2 %tmp.4;
+        lputv %dx.1 %tmp.5;
+        symbol [ dx %dx.1 90 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 91 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_89_69_101_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_89_69_101_4_stop" ]
+        %dy.2 = local;
+        symbol [ dy %dy.2 91 12 14 ];
+        %tmp.6 = lgetv %p;
+        symbol [ p %tmp.6 91 17 18 ];
+        symbol [ y %tmp.7 91 19 20 ];
+        %tmp.7 = getv %tmp.6 :y;
+        symbol [ y %tmp.9 91 23 24 ];
+        %tmp.9 = getv ? :y;
+        %tmp.10 = sub %tmp.7 %tmp.9;
+        lputv %dy.2 %tmp.10;
+        symbol [ dy %dy.2 91 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 92 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_89_69_101_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_89_69_101_4_stop" ]
+        %dist.3 = local;
+        symbol [ dist %dist.3 92 12 16 ];
+        %tmp.11 = lgetv %dx.1;
+        symbol [ dx %tmp.11 92 20 22 ];
+        %tmp.12 = lgetv %dx.1;
+        symbol [ dx %tmp.12 92 25 27 ];
+        %tmp.13 = mul %tmp.11 %tmp.12;
+        %tmp.14 = lgetv %dy.2;
+        symbol [ dy %tmp.14 92 30 32 ];
+        %tmp.15 = lgetv %dy.2;
+        symbol [ dy %tmp.15 92 35 37 ];
+        %tmp.16 = mul %tmp.14 %tmp.15;
+        %tmp.17 = add %tmp.13 %tmp.16;
+        lputv %dist.3 %tmp.17;
+        symbol [ dist %dist.3 92 12 16 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 93 8 ]
+_Users_samar_Desktop_DOOM_source_Enemy_mc_93_8_93_61_if_stmt:
+        %tmp.18 = lgetv %dist.3;
+        symbol [ dist %tmp.18 93 12 16 ];
+        %tmp.19 = 0.001f;
+        %tmp.20 = lt %tmp.18 %tmp.19;
+        bf %tmp.20 @_Users_samar_Desktop_DOOM_source_Enemy_mc_93_8_93_61_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_93_8_93_61_if_true:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_93_27_93_61_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 93 29 ]
+        %tmp.21 = 0.0f;
+        symbol [ _dx ? 93 29 32 ];
+        putv self :_dx %tmp.21;
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 93 41 ]
+        %tmp.22 = 0.0f;
+        symbol [ _dy ? 93 41 44 ];
+        putv self :_dy %tmp.22;
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 93 53 ]
+        ret ?;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_93_27_93_61_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Enemy_mc_93_8_93_61_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_93_8_93_61_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 95 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_89_69_101_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_89_69_101_4_stop" ]
+        %len.4 = local;
+        symbol [ len %len.4 95 12 15 ];
+        %tmp.23 = self;
+        symbol [ _sqrt %tmp.24 95 18 23 ];
+        %tmp.24 = getv function %tmp.23 :_sqrt;
+        %tmp.25 = lgetv %dist.3;
+        symbol [ dist %tmp.25 95 24 28 ];
+        %tmp.26 = invoke %tmp.23 %tmp.24(%tmp.25);
+        lputv %len.4 %tmp.26;
+        symbol [ len %len.4 95 12 15 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 96 8 ]
+        %tmp.27 = lgetv %dx.1;
+        symbol [ dx %tmp.27 96 15 17 ];
+        %tmp.28 = lgetv %len.4;
+        symbol [ len %tmp.28 96 20 23 ];
+        %tmp.29 = div %tmp.27 %tmp.28;
+        symbol [ C %tmp.30 96 27 28 ];
+        %tmp.30 = getm $.WristDungeon;
+        symbol [ ENEMY_SPEED %tmp.31 96 29 40 ];
+        %tmp.31 = getv %tmp.30 :ENEMY_SPEED;
+        %tmp.32 = mul %tmp.29 %tmp.31;
+        symbol [ _dx ? 96 8 11 ];
+        putv self :_dx %tmp.32;
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 97 8 ]
+        %tmp.33 = lgetv %dy.2;
+        symbol [ dy %tmp.33 97 15 17 ];
+        %tmp.34 = lgetv %len.4;
+        symbol [ len %tmp.34 97 20 23 ];
+        %tmp.35 = div %tmp.33 %tmp.34;
+        symbol [ C %tmp.36 97 27 28 ];
+        %tmp.36 = getm $.WristDungeon;
+        symbol [ ENEMY_SPEED %tmp.37 97 29 40 ];
+        %tmp.37 = getv %tmp.36 :ENEMY_SPEED;
+        %tmp.38 = mul %tmp.35 %tmp.37;
+        symbol [ _dy ? 97 8 11 ];
+        putv self :_dy %tmp.38;
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 99 8 ]
+_Users_samar_Desktop_DOOM_source_Enemy_mc_99_8_99_74_if_stmt:
+        %tmp.39 = lgetv %map;
+        symbol [ map %tmp.39 99 12 15 ];
+        symbol [ isWall %tmp.40 99 16 22 ];
+        %tmp.40 = getv function %tmp.39 :isWall;
+        symbol [ x %tmp.42 99 24 25 ];
+        %tmp.42 = getv ? :x;
+        symbol [ _dx %tmp.44 99 28 31 ];
+        %tmp.44 = getv ? :_dx;
+        %tmp.45 = add %tmp.42 %tmp.44;
+        symbol [ toNumber %tmp.46 99 33 41 ];
+        %tmp.46 = getv function %tmp.45 :toNumber;
+        %tmp.47 = invoke %tmp.45 %tmp.46();
+        symbol [ y %tmp.49 99 45 46 ];
+        %tmp.49 = getv ? :y;
+        symbol [ toNumber %tmp.50 99 47 55 ];
+        %tmp.50 = getv function %tmp.49 :toNumber;
+        %tmp.51 = invoke %tmp.49 %tmp.50();
+        %tmp.52 = invoke %tmp.39 %tmp.40(%tmp.47, %tmp.51);
+        bf %tmp.52 @_Users_samar_Desktop_DOOM_source_Enemy_mc_99_8_99_74_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_99_8_99_74_if_true:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_99_60_99_74_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 99 62 ]
+        %tmp.53 = 0.0f;
+        symbol [ _dx ? 99 62 65 ];
+        putv self :_dx %tmp.53;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_99_60_99_74_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Enemy_mc_99_8_99_74_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_99_8_99_74_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 100 8 ]
+_Users_samar_Desktop_DOOM_source_Enemy_mc_100_8_100_75_if_stmt:
+        %tmp.54 = lgetv %map;
+        symbol [ map %tmp.54 100 12 15 ];
+        symbol [ isWall %tmp.55 100 16 22 ];
+        %tmp.55 = getv function %tmp.54 :isWall;
+        symbol [ x %tmp.57 100 23 24 ];
+        %tmp.57 = getv ? :x;
+        symbol [ toNumber %tmp.58 100 25 33 ];
+        %tmp.58 = getv function %tmp.57 :toNumber;
+        %tmp.59 = invoke %tmp.57 %tmp.58();
+        symbol [ y %tmp.61 100 38 39 ];
+        %tmp.61 = getv ? :y;
+        symbol [ _dy %tmp.63 100 42 45 ];
+        %tmp.63 = getv ? :_dy;
+        %tmp.64 = add %tmp.61 %tmp.63;
+        symbol [ toNumber %tmp.65 100 47 55 ];
+        %tmp.65 = getv function %tmp.64 :toNumber;
+        %tmp.66 = invoke %tmp.64 %tmp.65();
+        %tmp.67 = invoke %tmp.54 %tmp.55(%tmp.59, %tmp.66);
+        bf %tmp.67 @_Users_samar_Desktop_DOOM_source_Enemy_mc_100_8_100_75_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_100_8_100_75_if_true:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_100_61_100_75_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 100 63 ]
+        %tmp.68 = 0.0f;
+        symbol [ _dy ? 100 63 66 ];
+        putv self :_dy %tmp.68;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_100_61_100_75_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Enemy_mc_100_8_100_75_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_100_8_100_75_if_end:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_89_69_101_4_stop:
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 104; @symbol_functiondef = [_sqrt,104,20,25]; @symbol_param<0> = [v,104,26,27]; @symbol_param<0>_type<0> = [Float,104,31,36]; @symbol_return<0> = [Float,104,41,46]; ]
+    protected
+    function _sqrt(v as Float) as Float {
+_Users_samar_Desktop_DOOM_source_Enemy_mc_104_47_112_4_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 105 8 ]
+_Users_samar_Desktop_DOOM_source_Enemy_mc_105_8_105_38_if_stmt:
+        %tmp.1 = lgetv %v;
+        symbol [ v %tmp.1 105 12 13 ];
+        %tmp.2 = 0.0f;
+        %tmp.3 = lte %tmp.1 %tmp.2;
+        bf %tmp.3 @_Users_samar_Desktop_DOOM_source_Enemy_mc_105_8_105_38_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_105_8_105_38_if_true:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_105_23_105_38_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 105 25 ]
+        %tmp.4 = 0.0f;
+        ret %tmp.4;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_105_23_105_38_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Enemy_mc_105_8_105_38_if_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_105_8_105_38_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 106 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_104_47_112_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_104_47_112_4_stop" ]
+        %x.1 = local;
+        symbol [ x %x.1 106 12 13 ];
+        %tmp.5 = lgetv %v;
+        symbol [ v %tmp.5 106 16 17 ];
+        lputv %x.1 %tmp.5;
+        symbol [ x %x.1 106 12 13 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 107 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_104_47_112_4_start" "_Users_samar_Desktop_DOOM_source_Enemy_mc_104_47_112_4_stop" ]
+        %x1.2 = local;
+        symbol [ x1 %x1.2 107 12 14 ];
+        %tmp.6 = lgetv %x.1;
+        symbol [ x %tmp.6 107 18 19 ];
+        %tmp.7 = 1.0f;
+        %tmp.8 = add %tmp.6 %tmp.7;
+        %tmp.9 = 2.0f;
+        %tmp.10 = div %tmp.8 %tmp.9;
+        lputv %x1.2 %tmp.10;
+        symbol [ x1 %x1.2 107 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 108 8 ]
+        for @_Users_samar_Desktop_DOOM_source_Enemy_mc_108_8_110_8_for_test @_Users_samar_Desktop_DOOM_source_Enemy_mc_108_8_110_8_for_incr @_Users_samar_Desktop_DOOM_source_Enemy_mc_108_8_110_8_for_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_108_8_110_8_for_init:
+        [ "_Users_samar_Desktop_DOOM_source_Enemy_mc_108_8_110_8_for_begin" "_Users_samar_Desktop_DOOM_source_Enemy_mc_108_8_110_8_for_end" ]
+        %i.3 = local;
+        symbol [ i %i.3 108 17 18 ];
+        %tmp.11 = 0;
+        lputv %i.3 %tmp.11;
+        symbol [ i %i.3 108 17 18 ];
+_Users_samar_Desktop_DOOM_source_Enemy_mc_108_8_110_8_for_test:
+        %tmp.12 = lgetv %i.3;
+        symbol [ i %tmp.12 108 24 25 ];
+        %tmp.13 = 8;
+        %tmp.14 = lt %tmp.12 %tmp.13;
+        bf %tmp.14 @_Users_samar_Desktop_DOOM_source_Enemy_mc_108_8_110_8_for_end;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_108_8_110_8_for_begin:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_108_36_110_8_start:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 109 12 ]
+        %tmp.15 = lgetv %x1.2;
+        symbol [ x1 %tmp.15 109 18 20 ];
+        %tmp.16 = lgetv %v;
+        symbol [ v %tmp.16 109 23 24 ];
+        %tmp.17 = lgetv %x1.2;
+        symbol [ x1 %tmp.17 109 27 29 ];
+        %tmp.18 = div %tmp.16 %tmp.17;
+        %tmp.19 = add %tmp.15 %tmp.18;
+        %tmp.20 = 2.0f;
+        %tmp.21 = div %tmp.19 %tmp.20;
+        lputv %x1.2 %tmp.21;
+        symbol [ x1 %x1.2 109 12 14 ];
+_Users_samar_Desktop_DOOM_source_Enemy_mc_108_36_110_8_stop:
+_Users_samar_Desktop_DOOM_source_Enemy_mc_108_8_110_8_for_incr:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 108 ]
+        %tmp.24 = lgetv %i.3;
+        symbol [ i %tmp.24 108 31 32 ];
+        %tmp.25 = add %tmp.24 1;
+        lputv %i.3 %tmp.25;
+        symbol [ i %i.3 108 31 32 ];
+        goto @_Users_samar_Desktop_DOOM_source_Enemy_mc_108_8_110_8_for_test;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_108_8_110_8_for_end:
+[ "/Users/samar/Desktop/DOOM/source/Enemy.mc" 111 8 ]
+        %tmp.26 = lgetv %x1.2;
+        symbol [ x1 %tmp.26 111 15 17 ];
+        ret %tmp.26;
+_Users_samar_Desktop_DOOM_source_Enemy_mc_104_47_112_4_stop:
+    }
+}
+[ @file = "/Users/samar/Desktop/DOOM/source/Enemy.mc"; @line = 3; ]
+<init> {
+}

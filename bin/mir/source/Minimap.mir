@@ -1,0 +1,709 @@
+[ @file = "/Users/samar/Desktop/DOOM/source/Minimap.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Graphics,3,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/samar/Desktop/DOOM/source/Minimap.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Lang,4,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/samar/Desktop/DOOM/source/Minimap.mc"; @line = 5; @symbol_usingdef<0> = [WristDungeon,5,6,18]; @symbol_usingAlias = [C,5,22,23]; ]
+using WristDungeon as :C;
+[ @file = "/Users/samar/Desktop/DOOM/source/Minimap.mc"; @line = 7; @symbol_classdef = [Minimap,7,6,13]; ]
+class Minimap {
+    [ @file = "/Users/samar/Desktop/DOOM/source/Minimap.mc"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/Minimap.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/Minimap.mc"; @line = 9; @symbol_functiondef = [initialize,9,13,23]; ]
+    function initialize() as Void {
+    }
+    [ @file = "/Users/samar/Desktop/DOOM/source/Minimap.mc"; @line = 13; @symbol_functiondef = [draw,13,13,17]; @symbol_param<0> = [dc,13,18,20]; @symbol_param<0>_type<0> = [Graphics,13,24,32]; @symbol_param<0>_type<1> = [Dc,13,33,35]; ]
+    function draw(dc as Graphics.Dc) as Void {
+_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_start:
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 14 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_stop" ]
+        %gs.1 = local;
+        symbol [ gs %gs.1 14 12 14 ];
+        symbol [ GameState %tmp.2 14 21 30 ];
+        %tmp.2 = getv ? :GameState;
+        symbol [ get %tmp.3 14 31 34 ];
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %gs.1 %tmp.4;
+        symbol [ gs %gs.1 14 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 15 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_stop" ]
+        %map.2 = local;
+        symbol [ map %map.2 15 12 15 ];
+        %tmp.5 = lgetv %gs.1;
+        symbol [ gs %tmp.5 15 21 23 ];
+        symbol [ map %tmp.6 15 24 27 ];
+        %tmp.6 = getv %tmp.5 :map;
+        %tmp.7 = as %tmp.6 GameMap;
+        symbol [ GameMap %tmp.7 15 31 38 ];
+        lputv %map.2 %tmp.7;
+        symbol [ map %map.2 15 12 15 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 16 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_stop" ]
+        %player.3 = local;
+        symbol [ player %player.3 16 12 18 ];
+        %tmp.8 = lgetv %gs.1;
+        symbol [ gs %tmp.8 16 21 23 ];
+        symbol [ player %tmp.9 16 24 30 ];
+        %tmp.9 = getv %tmp.8 :player;
+        %tmp.10 = as %tmp.9 Player;
+        symbol [ Player %tmp.10 16 34 40 ];
+        lputv %player.3 %tmp.10;
+        symbol [ player %player.3 16 12 18 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 18 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_stop" ]
+        %originX.4 = local;
+        symbol [ originX %originX.4 18 12 19 ];
+        symbol [ C %tmp.11 18 22 23 ];
+        %tmp.11 = getm $.WristDungeon;
+        symbol [ SCREEN_W %tmp.12 18 24 32 ];
+        %tmp.12 = getv %tmp.11 :SCREEN_W;
+        symbol [ C %tmp.13 18 35 36 ];
+        %tmp.13 = getm $.WristDungeon;
+        symbol [ MINIMAP_SIZE %tmp.14 18 37 49 ];
+        %tmp.14 = getv %tmp.13 :MINIMAP_SIZE;
+        %tmp.15 = sub %tmp.12 %tmp.14;
+        %tmp.16 = 4;
+        %tmp.17 = sub %tmp.15 %tmp.16;
+        lputv %originX.4 %tmp.17;
+        symbol [ originX %originX.4 18 12 19 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 19 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_stop" ]
+        %originY.5 = local;
+        symbol [ originY %originY.5 19 12 19 ];
+        %tmp.18 = 4;
+        lputv %originY.5 %tmp.18;
+        symbol [ originY %originY.5 19 12 19 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 20 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_stop" ]
+        %tileW.6 = local;
+        symbol [ tileW %tileW.6 20 12 17 ];
+        symbol [ C %tmp.19 20 22 23 ];
+        %tmp.19 = getm $.WristDungeon;
+        symbol [ MINIMAP_TILE %tmp.20 20 24 36 ];
+        %tmp.20 = getv %tmp.19 :MINIMAP_TILE;
+        lputv %tileW.6 %tmp.20;
+        symbol [ tileW %tileW.6 20 12 17 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 23 8 ]
+        %tmp.21 = lgetv %dc;
+        symbol [ dc %tmp.21 23 8 10 ];
+        symbol [ setColor %tmp.22 23 11 19 ];
+        %tmp.22 = getv function %tmp.21 :setColor;
+        symbol [ C %tmp.23 23 20 21 ];
+        %tmp.23 = getm $.WristDungeon;
+        symbol [ COLOR_MINIMAP_BG %tmp.24 23 22 38 ];
+        %tmp.24 = getv %tmp.23 :COLOR_MINIMAP_BG;
+        symbol [ C %tmp.25 23 40 41 ];
+        %tmp.25 = getm $.WristDungeon;
+        symbol [ COLOR_MINIMAP_BG %tmp.26 23 42 58 ];
+        %tmp.26 = getv %tmp.25 :COLOR_MINIMAP_BG;
+        invoke %tmp.21 %tmp.22(%tmp.24, %tmp.26);
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 24 8 ]
+        %tmp.27 = lgetv %dc;
+        symbol [ dc %tmp.27 24 8 10 ];
+        symbol [ fillRectangle %tmp.28 24 11 24 ];
+        %tmp.28 = getv function %tmp.27 :fillRectangle;
+        %tmp.29 = lgetv %originX.4;
+        symbol [ originX %tmp.29 24 25 32 ];
+        %tmp.30 = 1;
+        %tmp.31 = sub %tmp.29 %tmp.30;
+        %tmp.32 = lgetv %originY.5;
+        symbol [ originY %tmp.32 24 38 45 ];
+        %tmp.33 = 1;
+        %tmp.34 = sub %tmp.32 %tmp.33;
+        symbol [ C %tmp.35 24 51 52 ];
+        %tmp.35 = getm $.WristDungeon;
+        symbol [ MINIMAP_SIZE %tmp.36 24 53 65 ];
+        %tmp.36 = getv %tmp.35 :MINIMAP_SIZE;
+        %tmp.37 = 2;
+        %tmp.38 = add %tmp.36 %tmp.37;
+        symbol [ C %tmp.39 24 71 72 ];
+        %tmp.39 = getm $.WristDungeon;
+        symbol [ MINIMAP_SIZE %tmp.40 24 73 85 ];
+        %tmp.40 = getv %tmp.39 :MINIMAP_SIZE;
+        %tmp.41 = 2;
+        %tmp.42 = add %tmp.40 %tmp.41;
+        invoke %tmp.27 %tmp.28(%tmp.31, %tmp.34, %tmp.38, %tmp.42);
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 27 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_stop" ]
+        %visR.7 = local;
+        symbol [ visR %visR.7 27 12 16 ];
+        symbol [ C %tmp.43 27 19 20 ];
+        %tmp.43 = getm $.WristDungeon;
+        symbol [ MINIMAP_SIZE %tmp.44 27 21 33 ];
+        %tmp.44 = getv %tmp.43 :MINIMAP_SIZE;
+        %tmp.45 = lgetv %tileW.6;
+        symbol [ tileW %tmp.45 27 36 41 ];
+        %tmp.46 = div %tmp.44 %tmp.45;
+        %tmp.47 = 2;
+        %tmp.48 = div %tmp.46 %tmp.47;
+        lputv %visR.7 %tmp.48;
+        symbol [ visR %visR.7 27 12 16 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 28 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_stop" ]
+        %cx.8 = local;
+        symbol [ cx %cx.8 28 12 14 ];
+        %tmp.49 = lgetv %player.3;
+        symbol [ player %tmp.49 28 19 25 ];
+        symbol [ x %tmp.50 28 26 27 ];
+        %tmp.50 = getv %tmp.49 :x;
+        symbol [ toNumber %tmp.51 28 28 36 ];
+        %tmp.51 = getv function %tmp.50 :toNumber;
+        %tmp.52 = invoke %tmp.50 %tmp.51();
+        lputv %cx.8 %tmp.52;
+        symbol [ cx %cx.8 28 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 29 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_stop" ]
+        %cy.9 = local;
+        symbol [ cy %cy.9 29 12 14 ];
+        %tmp.53 = lgetv %player.3;
+        symbol [ player %tmp.53 29 19 25 ];
+        symbol [ y %tmp.54 29 26 27 ];
+        %tmp.54 = getv %tmp.53 :y;
+        symbol [ toNumber %tmp.55 29 28 36 ];
+        %tmp.55 = getv function %tmp.54 :toNumber;
+        %tmp.56 = invoke %tmp.54 %tmp.55();
+        lputv %cy.9 %tmp.56;
+        symbol [ cy %cy.9 29 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 31 8 ]
+        for @_Users_samar_Desktop_DOOM_source_Minimap_mc_31_8_42_8_for_test @_Users_samar_Desktop_DOOM_source_Minimap_mc_31_8_42_8_for_incr @_Users_samar_Desktop_DOOM_source_Minimap_mc_31_8_42_8_for_end;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_31_8_42_8_for_init:
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_31_8_42_8_for_begin" "_Users_samar_Desktop_DOOM_source_Minimap_mc_31_8_42_8_for_end" ]
+        %row.10 = local;
+        symbol [ row %row.10 31 17 20 ];
+        %tmp.57 = lgetv %cy.9;
+        symbol [ cy %tmp.57 31 23 25 ];
+        %tmp.58 = lgetv %visR.7;
+        symbol [ visR %tmp.58 31 28 32 ];
+        %tmp.59 = sub %tmp.57 %tmp.58;
+        lputv %row.10 %tmp.59;
+        symbol [ row %row.10 31 17 20 ];
+_Users_samar_Desktop_DOOM_source_Minimap_mc_31_8_42_8_for_test:
+        %tmp.60 = lgetv %row.10;
+        symbol [ row %tmp.60 31 34 37 ];
+        %tmp.61 = lgetv %cy.9;
+        symbol [ cy %tmp.61 31 41 43 ];
+        %tmp.62 = lgetv %visR.7;
+        symbol [ visR %tmp.62 31 46 50 ];
+        %tmp.63 = add %tmp.61 %tmp.62;
+        %tmp.64 = lte %tmp.60 %tmp.63;
+        bf %tmp.64 @_Users_samar_Desktop_DOOM_source_Minimap_mc_31_8_42_8_for_end;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_31_8_42_8_for_begin:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_31_59_42_8_start:
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 32 12 ]
+        for @_Users_samar_Desktop_DOOM_source_Minimap_mc_32_12_41_12_for_test @_Users_samar_Desktop_DOOM_source_Minimap_mc_32_12_41_12_for_incr @_Users_samar_Desktop_DOOM_source_Minimap_mc_32_12_41_12_for_end;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_32_12_41_12_for_init:
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_32_12_41_12_for_begin" "_Users_samar_Desktop_DOOM_source_Minimap_mc_32_12_41_12_for_end" ]
+        %col.11 = local;
+        symbol [ col %col.11 32 21 24 ];
+        %tmp.65 = lgetv %cx.8;
+        symbol [ cx %tmp.65 32 27 29 ];
+        %tmp.66 = lgetv %visR.7;
+        symbol [ visR %tmp.66 32 32 36 ];
+        %tmp.67 = sub %tmp.65 %tmp.66;
+        lputv %col.11 %tmp.67;
+        symbol [ col %col.11 32 21 24 ];
+_Users_samar_Desktop_DOOM_source_Minimap_mc_32_12_41_12_for_test:
+        %tmp.68 = lgetv %col.11;
+        symbol [ col %tmp.68 32 38 41 ];
+        %tmp.69 = lgetv %cx.8;
+        symbol [ cx %tmp.69 32 45 47 ];
+        %tmp.70 = lgetv %visR.7;
+        symbol [ visR %tmp.70 32 50 54 ];
+        %tmp.71 = add %tmp.69 %tmp.70;
+        %tmp.72 = lte %tmp.68 %tmp.71;
+        bf %tmp.72 @_Users_samar_Desktop_DOOM_source_Minimap_mc_32_12_41_12_for_end;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_32_12_41_12_for_begin:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_32_63_41_12_start:
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 33 16 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_32_63_41_12_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_32_63_41_12_stop" ]
+        %px.12 = local;
+        symbol [ px %px.12 33 20 22 ];
+        %tmp.73 = lgetv %originX.4;
+        symbol [ originX %tmp.73 33 25 32 ];
+        %tmp.74 = lgetv %col.11;
+        symbol [ col %tmp.74 33 36 39 ];
+        %tmp.75 = lgetv %cx.8;
+        symbol [ cx %tmp.75 33 42 44 ];
+        %tmp.76 = sub %tmp.74 %tmp.75;
+        %tmp.77 = lgetv %visR.7;
+        symbol [ visR %tmp.77 33 47 51 ];
+        %tmp.78 = add %tmp.76 %tmp.77;
+        %tmp.79 = lgetv %tileW.6;
+        symbol [ tileW %tmp.79 33 55 60 ];
+        %tmp.80 = mul %tmp.78 %tmp.79;
+        %tmp.81 = add %tmp.73 %tmp.80;
+        lputv %px.12 %tmp.81;
+        symbol [ px %px.12 33 20 22 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 34 16 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_32_63_41_12_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_32_63_41_12_stop" ]
+        %py.13 = local;
+        symbol [ py %py.13 34 20 22 ];
+        %tmp.82 = lgetv %originY.5;
+        symbol [ originY %tmp.82 34 25 32 ];
+        %tmp.83 = lgetv %row.10;
+        symbol [ row %tmp.83 34 36 39 ];
+        %tmp.84 = lgetv %cy.9;
+        symbol [ cy %tmp.84 34 42 44 ];
+        %tmp.85 = sub %tmp.83 %tmp.84;
+        %tmp.86 = lgetv %visR.7;
+        symbol [ visR %tmp.86 34 47 51 ];
+        %tmp.87 = add %tmp.85 %tmp.86;
+        %tmp.88 = lgetv %tileW.6;
+        symbol [ tileW %tmp.88 34 55 60 ];
+        %tmp.89 = mul %tmp.87 %tmp.88;
+        %tmp.90 = add %tmp.82 %tmp.89;
+        lputv %py.13 %tmp.90;
+        symbol [ py %py.13 34 20 22 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 35 16 ]
+_Users_samar_Desktop_DOOM_source_Minimap_mc_35_16_39_16_if_stmt:
+        %tmp.91 = lgetv %map.2;
+        symbol [ map %tmp.91 35 20 23 ];
+        symbol [ isWall %tmp.92 35 24 30 ];
+        %tmp.92 = getv function %tmp.91 :isWall;
+        %tmp.93 = lgetv %col.11;
+        symbol [ col %tmp.93 35 31 34 ];
+        %tmp.94 = lgetv %row.10;
+        symbol [ row %tmp.94 35 36 39 ];
+        %tmp.95 = invoke %tmp.91 %tmp.92(%tmp.93, %tmp.94);
+        bf %tmp.95 @_Users_samar_Desktop_DOOM_source_Minimap_mc_35_16_39_16_if_else_false;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_35_16_39_16_if_true:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_35_42_37_16_start:
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 36 20 ]
+        %tmp.96 = lgetv %dc;
+        symbol [ dc %tmp.96 36 20 22 ];
+        symbol [ setColor %tmp.97 36 23 31 ];
+        %tmp.97 = getv function %tmp.96 :setColor;
+        symbol [ C %tmp.98 36 32 33 ];
+        %tmp.98 = getm $.WristDungeon;
+        symbol [ COLOR_MINIMAP_WALL %tmp.99 36 34 52 ];
+        %tmp.99 = getv %tmp.98 :COLOR_MINIMAP_WALL;
+        symbol [ Graphics %tmp.100 36 54 62 ];
+        %tmp.100 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.101 36 63 80 ];
+        %tmp.101 = getv %tmp.100 :COLOR_TRANSPARENT;
+        invoke %tmp.96 %tmp.97(%tmp.99, %tmp.101);
+_Users_samar_Desktop_DOOM_source_Minimap_mc_35_42_37_16_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Minimap_mc_35_16_39_16_if_end;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_35_16_39_16_if_else_false:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_37_23_39_16_start:
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 38 20 ]
+        %tmp.102 = lgetv %dc;
+        symbol [ dc %tmp.102 38 20 22 ];
+        symbol [ setColor %tmp.103 38 23 31 ];
+        %tmp.103 = getv function %tmp.102 :setColor;
+        symbol [ C %tmp.104 38 32 33 ];
+        %tmp.104 = getm $.WristDungeon;
+        symbol [ COLOR_MINIMAP_FLOOR %tmp.105 38 34 53 ];
+        %tmp.105 = getv %tmp.104 :COLOR_MINIMAP_FLOOR;
+        symbol [ Graphics %tmp.106 38 55 63 ];
+        %tmp.106 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.107 38 64 81 ];
+        %tmp.107 = getv %tmp.106 :COLOR_TRANSPARENT;
+        invoke %tmp.102 %tmp.103(%tmp.105, %tmp.107);
+_Users_samar_Desktop_DOOM_source_Minimap_mc_37_23_39_16_stop:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_35_16_39_16_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 40 16 ]
+        %tmp.108 = lgetv %dc;
+        symbol [ dc %tmp.108 40 16 18 ];
+        symbol [ fillRectangle %tmp.109 40 19 32 ];
+        %tmp.109 = getv function %tmp.108 :fillRectangle;
+        %tmp.110 = lgetv %px.12;
+        symbol [ px %tmp.110 40 33 35 ];
+        %tmp.111 = lgetv %py.13;
+        symbol [ py %tmp.111 40 37 39 ];
+        %tmp.112 = lgetv %tileW.6;
+        symbol [ tileW %tmp.112 40 41 46 ];
+        %tmp.113 = lgetv %tileW.6;
+        symbol [ tileW %tmp.113 40 48 53 ];
+        invoke %tmp.108 %tmp.109(%tmp.110, %tmp.111, %tmp.112, %tmp.113);
+_Users_samar_Desktop_DOOM_source_Minimap_mc_32_63_41_12_stop:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_32_12_41_12_for_incr:
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 32 ]
+        %tmp.116 = lgetv %col.11;
+        symbol [ col %tmp.116 32 56 59 ];
+        %tmp.117 = add %tmp.116 1;
+        lputv %col.11 %tmp.117;
+        symbol [ col %col.11 32 56 59 ];
+        goto @_Users_samar_Desktop_DOOM_source_Minimap_mc_32_12_41_12_for_test;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_32_12_41_12_for_end:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_31_59_42_8_stop:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_31_8_42_8_for_incr:
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 31 ]
+        %tmp.120 = lgetv %row.10;
+        symbol [ row %tmp.120 31 52 55 ];
+        %tmp.121 = add %tmp.120 1;
+        lputv %row.10 %tmp.121;
+        symbol [ row %row.10 31 52 55 ];
+        goto @_Users_samar_Desktop_DOOM_source_Minimap_mc_31_8_42_8_for_test;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_31_8_42_8_for_end:
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 45 8 ]
+        for @_Users_samar_Desktop_DOOM_source_Minimap_mc_45_8_56_8_for_test @_Users_samar_Desktop_DOOM_source_Minimap_mc_45_8_56_8_for_incr @_Users_samar_Desktop_DOOM_source_Minimap_mc_45_8_56_8_for_end;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_45_8_56_8_for_init:
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_45_8_56_8_for_begin" "_Users_samar_Desktop_DOOM_source_Minimap_mc_45_8_56_8_for_end" ]
+        %i.14 = local;
+        symbol [ i %i.14 45 17 18 ];
+        %tmp.122 = 0;
+        lputv %i.14 %tmp.122;
+        symbol [ i %i.14 45 17 18 ];
+_Users_samar_Desktop_DOOM_source_Minimap_mc_45_8_56_8_for_test:
+        %tmp.123 = lgetv %i.14;
+        symbol [ i %tmp.123 45 24 25 ];
+        symbol [ C %tmp.124 45 28 29 ];
+        %tmp.124 = getm $.WristDungeon;
+        symbol [ MAX_ENEMIES %tmp.125 45 30 41 ];
+        %tmp.125 = getv %tmp.124 :MAX_ENEMIES;
+        %tmp.126 = lt %tmp.123 %tmp.125;
+        bf %tmp.126 @_Users_samar_Desktop_DOOM_source_Minimap_mc_45_8_56_8_for_end;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_45_8_56_8_for_begin:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_45_48_56_8_start:
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 46 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_45_48_56_8_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_45_48_56_8_stop" ]
+        %en.15 = local;
+        symbol [ en %en.15 46 16 18 ];
+        %tmp.127 = lgetv %gs.1;
+        symbol [ gs %tmp.127 46 21 23 ];
+        symbol [ enemies %tmp.128 46 24 31 ];
+        %tmp.128 = getv %tmp.127 :enemies;
+        %tmp.129 = lgetv %i.14;
+        symbol [ i %tmp.129 46 32 33 ];
+        %tmp.130 = agetv %tmp.128 %tmp.129;
+        lputv %en.15 %tmp.130;
+        symbol [ en %en.15 46 16 18 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 47 12 ]
+_Users_samar_Desktop_DOOM_source_Minimap_mc_47_12_47_65_if_stmt:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_47_16_47_50_begin:
+        %tmp.131 = lgetv %en.15;
+        symbol [ en %tmp.131 47 16 18 ];
+        %tmp.132 = null;
+        %tmp.133 = eq %tmp.131 %tmp.132;
+        bt %tmp.133 @_Users_samar_Desktop_DOOM_source_Minimap_mc_47_12_47_65_if_true;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_47_30_47_50_false:
+        %tmp.134 = lgetv %en.15;
+        symbol [ en %tmp.134 47 31 33 ];
+        %tmp.135 = as %tmp.134 { (!Null) };
+        %tmp.136 = as %tmp.135 Enemy;
+        symbol [ Enemy %tmp.136 47 37 42 ];
+        symbol [ hp %tmp.137 47 44 46 ];
+        %tmp.137 = getv %tmp.136 :hp;
+        %tmp.138 = 0;
+        %tmp.139 = lte %tmp.137 %tmp.138;
+        push %tmp.139;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_47_30_47_50_end:
+        %tmp.140 = phi [%tmp.133 @_Users_samar_Desktop_DOOM_source_Minimap_mc_47_16_47_50_begin] [%tmp.139 @_Users_samar_Desktop_DOOM_source_Minimap_mc_47_30_47_50_false] [%tmp.140 @_Users_samar_Desktop_DOOM_source_Minimap_mc_47_30_47_50_end];
+        bf %tmp.140 @_Users_samar_Desktop_DOOM_source_Minimap_mc_47_12_47_65_if_end;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_47_12_47_65_if_true:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_47_53_47_65_start:
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 47 55 ]
+        goto break @_Users_samar_Desktop_DOOM_source_Minimap_mc_45_8_56_8_for_incr;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_47_53_47_65_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Minimap_mc_47_12_47_65_if_end;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_47_12_47_65_if_end:
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 48 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_45_48_56_8_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_45_48_56_8_stop" ]
+        %e.16 = local;
+        symbol [ e %e.16 48 16 17 ];
+        %tmp.141 = lgetv %en.15;
+        symbol [ en %tmp.141 48 21 23 ];
+        %tmp.142 = as %tmp.141 Enemy;
+        symbol [ Enemy %tmp.142 48 27 32 ];
+        lputv %e.16 %tmp.142;
+        symbol [ e %e.16 48 16 17 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 49 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_45_48_56_8_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_45_48_56_8_stop" ]
+        %ex.17 = local;
+        symbol [ ex %ex.17 49 16 18 ];
+        %tmp.143 = lgetv %originX.4;
+        symbol [ originX %tmp.143 49 22 29 ];
+        %tmp.144 = lgetv %e.16;
+        symbol [ e %tmp.144 49 33 34 ];
+        symbol [ x %tmp.145 49 35 36 ];
+        %tmp.145 = getv %tmp.144 :x;
+        symbol [ toNumber %tmp.146 49 37 45 ];
+        %tmp.146 = getv function %tmp.145 :toNumber;
+        %tmp.147 = invoke %tmp.145 %tmp.146();
+        %tmp.148 = lgetv %cx.8;
+        symbol [ cx %tmp.148 49 50 52 ];
+        %tmp.149 = sub %tmp.147 %tmp.148;
+        %tmp.150 = lgetv %visR.7;
+        symbol [ visR %tmp.150 49 55 59 ];
+        %tmp.151 = add %tmp.149 %tmp.150;
+        %tmp.152 = lgetv %tileW.6;
+        symbol [ tileW %tmp.152 49 63 68 ];
+        %tmp.153 = mul %tmp.151 %tmp.152;
+        %tmp.154 = add %tmp.143 %tmp.153;
+        symbol [ toNumber %tmp.155 49 70 78 ];
+        %tmp.155 = getv function %tmp.154 :toNumber;
+        %tmp.156 = invoke %tmp.154 %tmp.155();
+        lputv %ex.17 %tmp.156;
+        symbol [ ex %ex.17 49 16 18 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 50 12 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_45_48_56_8_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_45_48_56_8_stop" ]
+        %ey.18 = local;
+        symbol [ ey %ey.18 50 16 18 ];
+        %tmp.157 = lgetv %originY.5;
+        symbol [ originY %tmp.157 50 22 29 ];
+        %tmp.158 = lgetv %e.16;
+        symbol [ e %tmp.158 50 33 34 ];
+        symbol [ y %tmp.159 50 35 36 ];
+        %tmp.159 = getv %tmp.158 :y;
+        symbol [ toNumber %tmp.160 50 37 45 ];
+        %tmp.160 = getv function %tmp.159 :toNumber;
+        %tmp.161 = invoke %tmp.159 %tmp.160();
+        %tmp.162 = lgetv %cy.9;
+        symbol [ cy %tmp.162 50 50 52 ];
+        %tmp.163 = sub %tmp.161 %tmp.162;
+        %tmp.164 = lgetv %visR.7;
+        symbol [ visR %tmp.164 50 55 59 ];
+        %tmp.165 = add %tmp.163 %tmp.164;
+        %tmp.166 = lgetv %tileW.6;
+        symbol [ tileW %tmp.166 50 63 68 ];
+        %tmp.167 = mul %tmp.165 %tmp.166;
+        %tmp.168 = add %tmp.157 %tmp.167;
+        symbol [ toNumber %tmp.169 50 70 78 ];
+        %tmp.169 = getv function %tmp.168 :toNumber;
+        %tmp.170 = invoke %tmp.168 %tmp.169();
+        lputv %ey.18 %tmp.170;
+        symbol [ ey %ey.18 50 16 18 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 51 12 ]
+_Users_samar_Desktop_DOOM_source_Minimap_mc_51_12_55_12_if_stmt:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_51_16_52_50_begin:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_51_16_52_22_begin:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_51_16_51_50_begin:
+        %tmp.171 = lgetv %ex.17;
+        symbol [ ex %tmp.171 51 16 18 ];
+        %tmp.172 = lgetv %originX.4;
+        symbol [ originX %tmp.172 51 22 29 ];
+        %tmp.173 = gte %tmp.171 %tmp.172;
+        bf %tmp.173 @_Users_samar_Desktop_DOOM_source_Minimap_mc_51_12_55_12_if_end;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_51_33_51_50_true:
+        %tmp.174 = lgetv %ex.17;
+        symbol [ ex %tmp.174 51 33 35 ];
+        %tmp.175 = lgetv %originX.4;
+        symbol [ originX %tmp.175 51 38 45 ];
+        symbol [ C %tmp.176 51 48 49 ];
+        %tmp.176 = getm $.WristDungeon;
+        symbol [ MINIMAP_SIZE %tmp.177 51 50 62 ];
+        %tmp.177 = getv %tmp.176 :MINIMAP_SIZE;
+        %tmp.178 = add %tmp.175 %tmp.177;
+        %tmp.179 = lt %tmp.174 %tmp.178;
+        push %tmp.179;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_51_33_51_50_end:
+        %tmp.180 = phi [%tmp.173 @_Users_samar_Desktop_DOOM_source_Minimap_mc_51_16_51_50_begin] [%tmp.179 @_Users_samar_Desktop_DOOM_source_Minimap_mc_51_33_51_50_true] [%tmp.180 @_Users_samar_Desktop_DOOM_source_Minimap_mc_51_33_51_50_end];
+        bf %tmp.180 @_Users_samar_Desktop_DOOM_source_Minimap_mc_51_12_55_12_if_end;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_52_16_52_22_true:
+        %tmp.181 = lgetv %ey.18;
+        symbol [ ey %tmp.181 52 16 18 ];
+        %tmp.182 = lgetv %originY.5;
+        symbol [ originY %tmp.182 52 22 29 ];
+        %tmp.183 = gte %tmp.181 %tmp.182;
+        push %tmp.183;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_52_16_52_22_end:
+        %tmp.184 = phi [%tmp.180 @_Users_samar_Desktop_DOOM_source_Minimap_mc_51_16_52_22_begin] [%tmp.183 @_Users_samar_Desktop_DOOM_source_Minimap_mc_52_16_52_22_true] [%tmp.184 @_Users_samar_Desktop_DOOM_source_Minimap_mc_52_16_52_22_end];
+        bf %tmp.184 @_Users_samar_Desktop_DOOM_source_Minimap_mc_51_12_55_12_if_end;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_52_33_52_50_true:
+        %tmp.185 = lgetv %ey.18;
+        symbol [ ey %tmp.185 52 33 35 ];
+        %tmp.186 = lgetv %originY.5;
+        symbol [ originY %tmp.186 52 38 45 ];
+        symbol [ C %tmp.187 52 48 49 ];
+        %tmp.187 = getm $.WristDungeon;
+        symbol [ MINIMAP_SIZE %tmp.188 52 50 62 ];
+        %tmp.188 = getv %tmp.187 :MINIMAP_SIZE;
+        %tmp.189 = add %tmp.186 %tmp.188;
+        %tmp.190 = lt %tmp.185 %tmp.189;
+        push %tmp.190;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_52_33_52_50_end:
+        %tmp.191 = phi [%tmp.184 @_Users_samar_Desktop_DOOM_source_Minimap_mc_51_16_52_50_begin] [%tmp.190 @_Users_samar_Desktop_DOOM_source_Minimap_mc_52_33_52_50_true] [%tmp.191 @_Users_samar_Desktop_DOOM_source_Minimap_mc_52_33_52_50_end];
+        bf %tmp.191 @_Users_samar_Desktop_DOOM_source_Minimap_mc_51_12_55_12_if_end;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_51_12_55_12_if_true:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_52_64_55_12_start:
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 53 16 ]
+        %tmp.192 = lgetv %dc;
+        symbol [ dc %tmp.192 53 16 18 ];
+        symbol [ setColor %tmp.193 53 19 27 ];
+        %tmp.193 = getv function %tmp.192 :setColor;
+        symbol [ C %tmp.194 53 28 29 ];
+        %tmp.194 = getm $.WristDungeon;
+        symbol [ COLOR_MINIMAP_ENEMY %tmp.195 53 30 49 ];
+        %tmp.195 = getv %tmp.194 :COLOR_MINIMAP_ENEMY;
+        symbol [ Graphics %tmp.196 53 51 59 ];
+        %tmp.196 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.197 53 60 77 ];
+        %tmp.197 = getv %tmp.196 :COLOR_TRANSPARENT;
+        invoke %tmp.192 %tmp.193(%tmp.195, %tmp.197);
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 54 16 ]
+        %tmp.198 = lgetv %dc;
+        symbol [ dc %tmp.198 54 16 18 ];
+        symbol [ fillRectangle %tmp.199 54 19 32 ];
+        %tmp.199 = getv function %tmp.198 :fillRectangle;
+        %tmp.200 = lgetv %ex.17;
+        symbol [ ex %tmp.200 54 33 35 ];
+        %tmp.201 = lgetv %ey.18;
+        symbol [ ey %tmp.201 54 37 39 ];
+        %tmp.202 = lgetv %tileW.6;
+        symbol [ tileW %tmp.202 54 41 46 ];
+        %tmp.203 = lgetv %tileW.6;
+        symbol [ tileW %tmp.203 54 48 53 ];
+        invoke %tmp.198 %tmp.199(%tmp.200, %tmp.201, %tmp.202, %tmp.203);
+_Users_samar_Desktop_DOOM_source_Minimap_mc_52_64_55_12_stop:
+        goto @_Users_samar_Desktop_DOOM_source_Minimap_mc_51_12_55_12_if_end;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_51_12_55_12_if_end:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_45_48_56_8_stop:
+_Users_samar_Desktop_DOOM_source_Minimap_mc_45_8_56_8_for_incr:
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 45 ]
+        %tmp.206 = lgetv %i.14;
+        symbol [ i %tmp.206 45 43 44 ];
+        %tmp.207 = add %tmp.206 1;
+        lputv %i.14 %tmp.207;
+        symbol [ i %i.14 45 43 44 ];
+        goto @_Users_samar_Desktop_DOOM_source_Minimap_mc_45_8_56_8_for_test;
+_Users_samar_Desktop_DOOM_source_Minimap_mc_45_8_56_8_for_end:
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 59 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_stop" ]
+        %pdx.19 = local;
+        symbol [ pdx %pdx.19 59 12 15 ];
+        %tmp.208 = lgetv %originX.4;
+        symbol [ originX %tmp.208 59 18 25 ];
+        %tmp.209 = lgetv %visR.7;
+        symbol [ visR %tmp.209 59 28 32 ];
+        %tmp.210 = lgetv %tileW.6;
+        symbol [ tileW %tmp.210 59 35 40 ];
+        %tmp.211 = mul %tmp.209 %tmp.210;
+        %tmp.212 = add %tmp.208 %tmp.211;
+        lputv %pdx.19 %tmp.212;
+        symbol [ pdx %pdx.19 59 12 15 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 60 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_stop" ]
+        %pdy.20 = local;
+        symbol [ pdy %pdy.20 60 12 15 ];
+        %tmp.213 = lgetv %originY.5;
+        symbol [ originY %tmp.213 60 18 25 ];
+        %tmp.214 = lgetv %visR.7;
+        symbol [ visR %tmp.214 60 28 32 ];
+        %tmp.215 = lgetv %tileW.6;
+        symbol [ tileW %tmp.215 60 35 40 ];
+        %tmp.216 = mul %tmp.214 %tmp.215;
+        %tmp.217 = add %tmp.213 %tmp.216;
+        lputv %pdy.20 %tmp.217;
+        symbol [ pdy %pdy.20 60 12 15 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 61 8 ]
+        %tmp.218 = lgetv %dc;
+        symbol [ dc %tmp.218 61 8 10 ];
+        symbol [ setColor %tmp.219 61 11 19 ];
+        %tmp.219 = getv function %tmp.218 :setColor;
+        symbol [ C %tmp.220 61 20 21 ];
+        %tmp.220 = getm $.WristDungeon;
+        symbol [ COLOR_MINIMAP_PLAYER %tmp.221 61 22 42 ];
+        %tmp.221 = getv %tmp.220 :COLOR_MINIMAP_PLAYER;
+        symbol [ Graphics %tmp.222 61 44 52 ];
+        %tmp.222 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.223 61 53 70 ];
+        %tmp.223 = getv %tmp.222 :COLOR_TRANSPARENT;
+        invoke %tmp.218 %tmp.219(%tmp.221, %tmp.223);
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 62 8 ]
+        %tmp.224 = lgetv %dc;
+        symbol [ dc %tmp.224 62 8 10 ];
+        symbol [ fillRectangle %tmp.225 62 11 24 ];
+        %tmp.225 = getv function %tmp.224 :fillRectangle;
+        %tmp.226 = lgetv %pdx.19;
+        symbol [ pdx %tmp.226 62 25 28 ];
+        %tmp.227 = lgetv %pdy.20;
+        symbol [ pdy %tmp.227 62 30 33 ];
+        %tmp.228 = lgetv %tileW.6;
+        symbol [ tileW %tmp.228 62 35 40 ];
+        %tmp.229 = lgetv %tileW.6;
+        symbol [ tileW %tmp.229 62 42 47 ];
+        invoke %tmp.224 %tmp.225(%tmp.226, %tmp.227, %tmp.228, %tmp.229);
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 65 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_stop" ]
+        %dx.21 = local;
+        symbol [ dx %dx.21 65 12 14 ];
+        symbol [ C %tmp.230 65 18 19 ];
+        %tmp.230 = getm $.WristDungeon;
+        symbol [ cosTable %tmp.231 65 20 28 ];
+        %tmp.231 = getv %tmp.230 :cosTable;
+        %tmp.232 = lgetv %player.3;
+        symbol [ player %tmp.232 65 29 35 ];
+        symbol [ angle %tmp.233 65 36 41 ];
+        %tmp.233 = getv %tmp.232 :angle;
+        %tmp.234 = agetv %tmp.231 %tmp.233;
+        %tmp.235 = 3.0f;
+        %tmp.236 = mul %tmp.234 %tmp.235;
+        symbol [ toNumber %tmp.237 65 51 59 ];
+        %tmp.237 = getv function %tmp.236 :toNumber;
+        %tmp.238 = invoke %tmp.236 %tmp.237();
+        lputv %dx.21 %tmp.238;
+        symbol [ dx %dx.21 65 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 66 8 ]
+        [ "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_start" "_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_stop" ]
+        %dy.22 = local;
+        symbol [ dy %dy.22 66 12 14 ];
+        symbol [ C %tmp.239 66 18 19 ];
+        %tmp.239 = getm $.WristDungeon;
+        symbol [ sinTable %tmp.240 66 20 28 ];
+        %tmp.240 = getv %tmp.239 :sinTable;
+        %tmp.241 = lgetv %player.3;
+        symbol [ player %tmp.241 66 29 35 ];
+        symbol [ angle %tmp.242 66 36 41 ];
+        %tmp.242 = getv %tmp.241 :angle;
+        %tmp.243 = agetv %tmp.240 %tmp.242;
+        %tmp.244 = 3.0f;
+        %tmp.245 = mul %tmp.243 %tmp.244;
+        symbol [ toNumber %tmp.246 66 51 59 ];
+        %tmp.246 = getv function %tmp.245 :toNumber;
+        %tmp.247 = invoke %tmp.245 %tmp.246();
+        lputv %dy.22 %tmp.247;
+        symbol [ dy %dy.22 66 12 14 ];
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 67 8 ]
+        %tmp.248 = lgetv %dc;
+        symbol [ dc %tmp.248 67 8 10 ];
+        symbol [ setColor %tmp.249 67 11 19 ];
+        %tmp.249 = getv function %tmp.248 :setColor;
+        symbol [ C %tmp.250 67 20 21 ];
+        %tmp.250 = getm $.WristDungeon;
+        symbol [ COLOR_CROSSHAIR %tmp.251 67 22 37 ];
+        %tmp.251 = getv %tmp.250 :COLOR_CROSSHAIR;
+        symbol [ Graphics %tmp.252 67 39 47 ];
+        %tmp.252 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.253 67 48 65 ];
+        %tmp.253 = getv %tmp.252 :COLOR_TRANSPARENT;
+        invoke %tmp.248 %tmp.249(%tmp.251, %tmp.253);
+[ "/Users/samar/Desktop/DOOM/source/Minimap.mc" 68 8 ]
+        %tmp.254 = lgetv %dc;
+        symbol [ dc %tmp.254 68 8 10 ];
+        symbol [ drawLine %tmp.255 68 11 19 ];
+        %tmp.255 = getv function %tmp.254 :drawLine;
+        %tmp.256 = lgetv %pdx.19;
+        symbol [ pdx %tmp.256 68 20 23 ];
+        %tmp.257 = 1;
+        %tmp.258 = add %tmp.256 %tmp.257;
+        %tmp.259 = lgetv %pdy.20;
+        symbol [ pdy %tmp.259 68 29 32 ];
+        %tmp.260 = 1;
+        %tmp.261 = add %tmp.259 %tmp.260;
+        %tmp.262 = lgetv %pdx.19;
+        symbol [ pdx %tmp.262 68 38 41 ];
+        %tmp.263 = 1;
+        %tmp.264 = add %tmp.262 %tmp.263;
+        %tmp.265 = lgetv %dx.21;
+        symbol [ dx %tmp.265 68 48 50 ];
+        %tmp.266 = add %tmp.264 %tmp.265;
+        %tmp.267 = lgetv %pdy.20;
+        symbol [ pdy %tmp.267 68 52 55 ];
+        %tmp.268 = 1;
+        %tmp.269 = add %tmp.267 %tmp.268;
+        %tmp.270 = lgetv %dy.22;
+        symbol [ dy %tmp.270 68 62 64 ];
+        %tmp.271 = add %tmp.269 %tmp.270;
+        invoke %tmp.254 %tmp.255(%tmp.258, %tmp.261, %tmp.266, %tmp.271);
+_Users_samar_Desktop_DOOM_source_Minimap_mc_13_45_69_4_stop:
+    }
+}
+[ @file = "/Users/samar/Desktop/DOOM/source/Minimap.mc"; @line = 3; ]
+<init> {
+}
